@@ -24,7 +24,7 @@ const featuresContent = [
     icon: Icon3,
     title: 'Enhanced Security Measures',
     description:
-      'With SOL-CHAT, rest assured that your digital assets are protected. It conducts regular security checks and issues risk warnings to alert you about potential threats',
+      'With SOL-LIME , rest assured that your digital assets are protected. It conducts regular security checks and issues risk warnings to alert you about potential threats',
   },
 ];
 

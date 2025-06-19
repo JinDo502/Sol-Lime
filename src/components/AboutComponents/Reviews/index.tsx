@@ -20,7 +20,7 @@ const reviewsContent = [
   {
     avatar: '/images/review/3.png',
     name: 'Mark Thompson',
-    review: 'Navigating the blockchain has always seemed daunting, but with SOL-CHAT, I feel secure and confident. The security checks are robust and reliable.',
+    review: 'Navigating the blockchain has always seemed daunting, but with SOL-LIME , I feel secure and confident. The security checks are robust and reliable.',
   },
   {
     avatar: '/images/review/4.png',
@@ -30,7 +30,7 @@ const reviewsContent = [
   {
     avatar: '/images/review/1.png',
     name: 'Peter Brown',
-    review: 'I&apos;m genuinely thrilled with SOL-CHAT. It&apos;s been instrumental in helping me understand and navigate the crypto space effectively.',
+    review: 'I&apos;m genuinely thrilled with SOL-LIME . It&apos;s been instrumental in helping me understand and navigate the crypto space effectively.',
   },
   {
     avatar: '/images/review/1.png',
@@ -40,7 +40,7 @@ const reviewsContent = [
   {
     avatar: '/images/review/2.png',
     name: 'Luke Miller',
-    review: 'Keeping up with the fast-paced crypto market trends has never been easier, all thanks to SOL-CHAT!',
+    review: 'Keeping up with the fast-paced crypto market trends has never been easier, all thanks to SOL-LIME !',
   },
   {
     avatar: '/images/review/3.png',
@@ -55,7 +55,7 @@ const reviewsContent = [
   {
     avatar: '/images/review/1.png',
     name: 'Grace Lee',
-    review: 'Managing my crypto transactions has been a fantastic experience with SOL-CHAT. It&apos;s extremely user-friendly and simplifies every process.',
+    review: 'Managing my crypto transactions has been a fantastic experience with SOL-LIME . It&apos;s extremely user-friendly and simplifies every process.',
   },
 ];
 
@@ -168,7 +168,7 @@ const Reviews = () => {
             transition={{ duration: 0.7 }}
           >
             <motion.span className='text-[var(--primary)]' initial={{ opacity: 0, scale: 0.8 }} animate={{ opacity: 1, scale: 1 }} transition={{ duration: 0.5, delay: 0.3 }}>
-              SOL-CHAT.
+              SOL-LIME .
             </motion.span>
             Received{' '}
             <motion.span

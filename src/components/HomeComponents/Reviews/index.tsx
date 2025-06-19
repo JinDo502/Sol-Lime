@@ -25,7 +25,7 @@ const reviewsContent = [
   {
     avatar: '/images/review/3.png',
     name: 'Mark Thompson',
-    review: 'Navigating the blockchain has always seemed daunting, but with SOL-CHAT, I feel secure and confident. The security checks are robust and reliable.',
+    review: 'Navigating the blockchain has always seemed daunting, but with SOL-LIME , I feel secure and confident. The security checks are robust and reliable.',
   },
   {
     avatar: '/images/review/4.png',
@@ -65,7 +65,7 @@ const Reviews = () => {
       <div className='container mx-auto'>
         <AnimateOnScroll animation='fadeIn'>
           <h1 className='text-3xl md:text-4xl font-bold text-center'>
-            <span className='text-[var(--primary)]'>SOL-CHAT.</span>&nbsp;&nbsp;Received
+            <span className='text-[var(--primary)]'>SOL-LIME .</span>&nbsp;&nbsp;Received
             <motion.div className='inline-block w-10 h-10' initial={{ rotate: 0 }} animate={{ rotate: 360 }} transition={{ duration: 10, repeat: Infinity, ease: 'linear' }}>
               <Image className='w-10 h-10' src='/images/icons/star.png' alt='' width={16} height={16} />
             </motion.div>

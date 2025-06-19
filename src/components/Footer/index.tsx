@@ -130,7 +130,7 @@ const Footer = () => {
           <div className='grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-10'>
             {/* 静态内容，与动画版本相同但没有动画效果 */}
             <div className='text-center '>
-              <h6 className='mb-2 font-bold'>SOL-CHAT</h6>
+              <h6 className='mb-2 font-bold'>SOL-LIME </h6>
               <div className='flex flex-col gap-2 text-sm text-gray-400'>
                 {footerLinks.map((link) => (
                   <Link key={link.label} href={link.href}>
@@ -175,12 +175,12 @@ const Footer = () => {
                 <Image src='/images/logo.png' alt='SOL-Lime-Logo' className='img-fluid' height='30' width='30' />
                 <h1 className='text-xl md:text-2xl font-bold'>SOL-Lime</h1>
               </Link>
-              <div className='text-sm text-gray-400'>Experience the power of AI in navigating web3. Streamline your digital asset interactions with SOL-CHAT.</div>
+              <div className='text-sm text-gray-400'>Experience the power of AI in navigating web3. Streamline your digital asset interactions with SOL-LIME .</div>
             </div>
           </div>
 
           <div className='text-sm text-gray-400 text-center'>
-            Copyright <span className='text-[var(--primary)]'>SOL-CHAT</span>.
+            Copyright <span className='text-[var(--primary)]'>SOL-LIME </span>.
           </div>
         </div>
       </footer>
@@ -192,7 +192,7 @@ const Footer = () => {
       <div className={`container mx-auto px-6 flex flex-col gap-10`}>
         <div className='grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-10'>
           <motion.div className='text-center' variants={columnVariants}>
-            <h6 className='mb-2 font-bold'>SOL-CHAT</h6>
+            <h6 className='mb-2 font-bold'>SOL-LIME </h6>
             <div className='flex flex-col gap-2 text-sm text-gray-400'>
               {footerLinks.map((link, index) => (
                 <motion.div key={link.label} variants={linkVariants} custom={index}>
@@ -255,13 +255,13 @@ const Footer = () => {
               <h1 className='text-xl md:text-2xl font-bold'>SOL-Lime</h1>
             </Link>
             <motion.div className='text-sm text-gray-400' initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 0.5, duration: 0.8 }}>
-              Experience the power of AI in navigating web3. Streamline your digital asset interactions with SOL-CHAT.
+              Experience the power of AI in navigating web3. Streamline your digital asset interactions with SOL-LIME .
             </motion.div>
           </motion.div>
         </div>
 
         <motion.div className='text-sm text-gray-400 text-center' initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 0.8, duration: 1 }}>
-          Copyright <span className='text-[var(--primary)]'>SOL-CHAT</span>.
+          Copyright <span className='text-[var(--primary)]'>SOL-LIME </span>.
         </motion.div>
       </div>
     </motion.footer>

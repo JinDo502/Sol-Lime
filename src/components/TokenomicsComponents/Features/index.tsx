@@ -44,7 +44,7 @@ const features2 = [
   },
   {
     tag: 'Other Mechanism',
-    title: 'Staking & Mining with SOL-CHAT.',
+    title: 'Staking & Mining with SOL-LIME .',
     description: 'To further incentivize user engagement and participation, LinkAI offers staking and mining opportunities.',
     list: [
       'Users can earn rewards, contributing to the overall health and vibrancy of the ecosystem.',

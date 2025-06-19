@@ -29,7 +29,7 @@ const faqContent = [
   {
     question: 'Can I use SOL-LIME even if I have limited technical knowledge about blockchain and web3?',
     answer:
-      'Yes, SOL-CHAT&apos;s mission is to make web3 accessible to all, regardless of their technical background. The chatbot is designed to be user-friendly and easy to navigate.',
+      'Yes, SOL-LIME &apos;s mission is to make web3 accessible to all, regardless of their technical background. The chatbot is designed to be user-friendly and easy to navigate.',
   },
 ];
 
@@ -82,7 +82,7 @@ const FAQ = () => {
       <AnimateOnScroll animation='fadeIn'>
         <motion.h1 className='mb-10 text-center text-3xl md:text-4xl font-bold' initial={{ opacity: 0, y: 30 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.7 }}>
           <motion.span initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ duration: 0.5, delay: 0.3 }}>
-            Questions About our SOL-CHAT? <br />
+            Questions About our SOL-LIME ? <br />
           </motion.span>
           <motion.span initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.5, delay: 0.5 }} className='text-[var(--primary)]'>
             We have Answers!

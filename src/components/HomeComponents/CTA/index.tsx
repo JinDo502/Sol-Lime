@@ -24,7 +24,7 @@ const CTA = () => {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: 0.2 }}
             >
-              With <span className='text-[var(--primary)]'>SOL-CHAT</span> navigating the web3 space has never been easier or safer!
+              With <span className='text-[var(--primary)]'>SOL-LIME </span> navigating the web3 space has never been easier or safer!
             </motion.h2>
             <Pulse>
               <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>

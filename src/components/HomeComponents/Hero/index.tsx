@@ -29,7 +29,7 @@ const Hero = () => {
 
             <StaggerItem>
               <h1 className='text-4xl md:text-5xl font-bold leading-tight text-center'>
-                An AI Social App As Good As ChatGPT - <span className='text-[var(--primary)]'>SOL-CHAT</span> is arrived.
+                An AI Social App As Good As ChatGPT - <span className='text-[var(--primary)]'>SOL-LIME </span> is arrived.
               </h1>
             </StaggerItem>
 
@@ -83,7 +83,7 @@ const Hero = () => {
           <h4 className='font-[var(--font-montserrat)] text-2xl md:text-3xl font-bold'>
             <span className='text-transparent bg-clip-text bg-gradient-to-r from-[var(--primary)] to-[var(--secondary)]'>Famous Partners</span>
             &nbsp;that choose and trust&nbsp;
-            <span className='text-transparent bg-clip-text bg-gradient-to-r from-[var(--primary)] to-[var(--secondary)]'>SOL-CHAT.</span>
+            <span className='text-transparent bg-clip-text bg-gradient-to-r from-[var(--primary)] to-[var(--secondary)]'>SOL-LIME .</span>
           </h4>
 
           <div className='flex flex-wrap justify-center md:flex-nowrap md:gap-10'>

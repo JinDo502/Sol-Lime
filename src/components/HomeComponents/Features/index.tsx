@@ -19,7 +19,7 @@ const featuresContent = [
   {
     title: 'Elevate Your Web3 Experience',
     description:
-      'SOL-CHAT&apos;s innovative features aim to create a safer and more rewarding web3 experience. Embrace the power of blockchain technology with an easy-to-use interface',
+      'SOL-LIME &apos;s innovative features aim to create a safer and more rewarding web3 experience. Embrace the power of blockchain technology with an easy-to-use interface',
   },
 ];
 
@@ -44,12 +44,12 @@ const featuresContent2 = [
     img: '/images/illustrations/feature-illustration-2-dark.svg',
   },
   {
-    title: 'Manage Tokens, Transactions, & More with SOL-CHAT.',
+    title: 'Manage Tokens, Transactions, & More with SOL-LIME .',
     description: 'To take full advantage of the web3 ecosystem, you need a comprehensive tool. SOL-LIME offers a variety of features to enhance your digital asset interactions.',
     list: [
-      'Start navigating web3 effortlessly with SOL-CHAT',
+      'Start navigating web3 effortlessly with SOL-LIME ',
       'Engage with an AI chatbot that prioritizes user experience',
-      'Use SOL-CHAT&apos;s vast array of features designed to simplify your web3 operations',
+      'Use SOL-LIME &apos;s vast array of features designed to simplify your web3 operations',
     ],
     link: { text: 'Get Started Free', href: '#' },
     img: '/images/illustrations/feature-illustration-3-dark.svg',

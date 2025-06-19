@@ -15,12 +15,12 @@ const About = () => {
           <div className='text-center flex flex-col items-center gap-4 w-full md:w-2/5'>
             <StaggerItem>
               <motion.p className='text-[var(--primary)] text-sm font-bold' initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.5 }}>
-                About SOL-CHAT
+                About SOL-LIME
               </motion.p>
             </StaggerItem>
             <StaggerItem>
               <motion.h2 className='text-3xl md:text-4xl font-bold' initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.5, delay: 0.1 }}>
-                Blockchain enthusiasts love SOL-CHAT.
+                Blockchain enthusiasts love SOL-LIME .
               </motion.h2>
             </StaggerItem>
             <StaggerItem>

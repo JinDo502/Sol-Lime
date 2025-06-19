@@ -37,7 +37,7 @@ const AppUsers = () => {
                 }}
                 transition={{ duration: 3, repeat: Infinity }}
               >
-                SOL-CHAT
+                SOL-LIME
               </motion.span>{' '}
               ?
             </motion.h1>
