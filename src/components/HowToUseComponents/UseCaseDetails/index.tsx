@@ -32,11 +32,7 @@ const steps = [
 ];
 
 // 高级弹性动画变体
-const springTransition = {
-  type: 'spring' as const,
-  stiffness: 100,
-  damping: 10,
-};
+const springTransition = { type: 'spring' as const, stiffness: 100, damping: 10 };
 
 // 自定义CSS弹性动画
 const cssSpringTransition =
@@ -78,13 +74,7 @@ const UseCaseDetails = () => {
             </motion.form>
           </motion.div>
           <motion.div className='text-center md:w-1/2' initial={{ opacity: 0, x: 50 }} animate={{ opacity: 1, x: 0 }} transition={{ ...springTransition, delay: 0.3 }}>
-            <motion.div
-              whileHover={{ scale: 1.03 }}
-              transition={{ type: 'spring', stiffness: 300, damping: 10 }}
-              style={{
-                transition: `transform ${cssSpringTransition}`,
-              }}
-            >
+            <motion.div whileHover={{ scale: 1.03 }} transition={{ type: 'spring', stiffness: 300, damping: 10 }} style={{ transition: `transform ${cssSpringTransition}` }}>
               <Image src='/images/screens/screen-3.png' alt='' className='img-fluid d-inline-block' width={1000} height={1000} />
             </motion.div>
           </motion.div>
@@ -125,14 +115,7 @@ const UseCaseDetails = () => {
                   animate={{ opacity: 1, x: 0 }}
                   transition={{ ...springTransition, delay: 0.9 + index * 0.2 }}
                 >
-                  <motion.span
-                    className='text-[var(--primary)]'
-                    animate={{
-                      scale: [1, 1.1, 1],
-                      color: ['#3182ce', '#63b3ed', '#3182ce'],
-                    }}
-                    transition={{ duration: 2, repeat: Infinity, repeatDelay: 3 }}
-                  >
+                  <motion.span className='text-[var(--primary)]' animate={{ scale: [1, 1.1, 1] }} transition={{ duration: 2, repeat: Infinity, repeatDelay: 3 }}>
                     Step {index + 1}:
                   </motion.span>{' '}
                   {step.title}
@@ -156,9 +139,7 @@ const UseCaseDetails = () => {
                   transition={{ ...springTransition, delay: 1.1 + index * 0.2 }}
                   whileHover={{ scale: 1.02 }}
                   whileTap={{ scale: 0.98 }}
-                  style={{
-                    transition: `transform ${cssSpringTransition}`,
-                  }}
+                  style={{ transition: `transform ${cssSpringTransition}` }}
                 >
                   <Image src={step.image} alt='' className='rounded shadow-lg' width={1000} height={1000} />
                 </motion.div>
