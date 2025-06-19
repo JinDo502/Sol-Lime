@@ -19,11 +19,11 @@
 :root {
   --background: #ffffff;
   --foreground: #171717;
-  --primary: #9f43e5;
-  --demitint: #708fc8;
-  --secondary: #40c5ad;
-  --divider: #e0e2f0;
-  --card-bg: #f0f2f8;
+  --primary: #ba40ed;
+  --demitint: #708fc6;
+  --secondary: #26dea0;
+  --divider: #e0e0e0; 
+  --card-bg: #f5f5f5;
 }
 
 @theme inline {
@@ -37,9 +37,9 @@
 :root.dark {
   --background: #0a0a0a;
   --foreground: #ededed;
-  --primary: #c27ff7;
-  --demitint: #5a8ff0;
-  --secondary: #55f0d4;
+  --primary: #6C22A2;  
+  --demitint: #263340; 
+  --secondary: #196648; 
   --divider: #2e2f45;
   --card-bg: #171825;
 }

@@ -1,6 +1,10 @@
+'use client';
+
 import { BsArrowUpRight } from 'react-icons/bs';
 import { Icon1, Icon2, Icon3, Icon4, Icon5, Icon6, Icon7, Icon8, Icon9, Icon10, Icon11, Icon12 } from './Icon';
 import Link from 'next/link';
+import { motion } from 'framer-motion';
+import { AnimateOnScroll, StaggerContainer, StaggerItem } from '@/components/animations';
 
 const useCasesContent = [
   {
@@ -79,30 +83,61 @@ const useCasesContent = [
 
 const UseCases = () => {
   return (
-    <section className='pt-10 px-8'>
+    <section className='pt-10 px-8 md:px-0'>
       <div className='container mx-auto'>
-        <div className='text-center flex flex-col items-center gap-4'>
-          <p className='text-[var(--primary)] font-bold'>SOL-CHAT Use Cases</p>
-          <h1 className='text-foreground text-3xl md:text-4xl font-bold'>Streamline Your Web3 Experience, The Future of AI Blockchain Tools is Here</h1>
-        </div>
+        <StaggerContainer className='text-center flex flex-col items-center gap-4' staggerChildren={0.2}>
+          <StaggerItem>
+            <motion.p className='text-[var(--primary)] font-bold' initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.5 }}>
+              SOL-CHAT Use Cases
+            </motion.p>
+          </StaggerItem>
+          <StaggerItem>
+            <motion.h1
+              className='text-foreground text-3xl md:text-4xl font-bold'
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5, delay: 0.1 }}
+            >
+              Streamline Your Web3 Experience, The Future of AI Blockchain Tools is Here
+            </motion.h1>
+          </StaggerItem>
+        </StaggerContainer>
 
-        <div className='grid grid-cols-1 gap-10 py-15 md:grid-cols-2 lg:grid-cols-4'>
-          {useCasesContent.map((item) => {
+        <AnimateOnScroll animation='fadeIn' className='grid grid-cols-1 gap-10 py-15 md:grid-cols-2 lg:grid-cols-4'>
+          {useCasesContent.map((item, index) => {
             return (
-              <div className='flex flex-col items-start gap-4 h-full text-start' key={item.title}>
-                <div className='w-14 h-14 text-[var(--primary)] flex items-center justify-center rounded-2xl p-2 border border-[var(--divider)] bg-gradient-to-l from-[var(--card-bg)]/90 to-[var(--card-bg)]/50'>
+              <motion.div
+                className='flex flex-col items-start gap-4 h-full text-start p-6 rounded-xl border border-[var(--divider)] hover:border-[var(--primary)] transition-all duration-300'
+                key={item.title}
+                initial={{ opacity: 0, y: 30 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.5, delay: 0.1 * (index % 4) }}
+                whileHover={{
+                  y: -5,
+                  boxShadow: '0 10px 30px rgba(0, 0, 0, 0.1)',
+                }}
+              >
+                <motion.div
+                  className='w-14 h-14 text-[var(--primary)] flex items-center justify-center rounded-2xl p-2 border border-[var(--divider)] bg-gradient-to-l from-[var(--card-bg)]/90 to-[var(--card-bg)]/50'
+                  whileHover={{ rotate: [0, 10, -10, 0] }}
+                  transition={{ duration: 0.5 }}
+                >
                   {item.icon}
-                </div>
+                </motion.div>
                 <h5 className='text-xl font-bold'>{item.title}</h5>
                 <p className='m-0 text-gray-400 text-sm'>{item.description}</p>
-                <Link href={item.link.href} className='flex items-center justify-center gap-2 text-gray-500 text-sm font-bold'>
-                  <span>{item.link.text}</span>
-                  <BsArrowUpRight className='scale-75' />
-                </Link>
-              </div>
+                <motion.div whileHover={{ x: 5 }} transition={{ duration: 0.2 }}>
+                  <Link href={item.link.href} className='flex items-center justify-center gap-2 text-[var(--primary)] text-sm font-bold'>
+                    <span>{item.link.text}</span>
+                    <motion.div whileHover={{ rotate: 45 }} transition={{ duration: 0.2 }}>
+                      <BsArrowUpRight className='scale-75' />
+                    </motion.div>
+                  </Link>
+                </motion.div>
+              </motion.div>
             );
           })}
-        </div>
+        </AnimateOnScroll>
       </div>
     </section>
   );

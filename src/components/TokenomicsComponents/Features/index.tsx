@@ -1,7 +1,11 @@
+'use client';
+
 import Link from 'next/link';
 import { Icon1, Icon2, Icon3 } from './Icon';
 import Image from 'next/image';
-import { BsArrowUpRight, BsCheckLg } from 'react-icons/bs';
+import { BsArrowUpRight, BsCheck } from 'react-icons/bs';
+import { motion } from 'framer-motion';
+import { AnimateOnScroll } from '@/components/animations';
 
 const features = [
   {
@@ -57,7 +61,7 @@ const Features = () => {
     <>
       <section className='py-10 px-8'>
         <div className='container mx-auto'>
-          <h1 className='text-3xl md:text-4xl font-bold text-center'>Overview of SOL-CHAT Tokens $LIMO</h1>
+          <h1 className='text-3xl md:text-4xl font-bold text-center'>Overview of SOL-Lime Tokens $LIMO</h1>
 
           <div className='grid grid-cols-1 lg:grid-cols-3 gap-8 mt-15'>
             {features.map((item) => (
@@ -72,37 +76,69 @@ const Features = () => {
           </div>
 
           <Link href='#' className='block w-max bg-[var(--primary)] text-[var(--background)] px-6 py-4 rounded-lg mt-12 mx-auto'>
-            Join IDO
+            Join Now
           </Link>
         </div>
       </section>
 
-      <section className='py-10 px-8'>
-        <div className='container mx-auto'>
-          {features2.map((item) => (
-            <div key={item?.title} className='grid grid-cols-1 lg:grid-cols-2 gap-8'>
-              <div className='flex flex-col gap-4'>
-                <p className='text-[var(--primary)]'>{item?.tag}</p>
-                <h1 className='text-foreground text-3xl md:text-4xl font-bold'>{item?.title}</h1>
-                <p className='text-gray-500 '>{item?.description}</p>
-                <ul className='list-disc list-outside text-gray-500'>
-                  {item?.list.map((item) => (
-                    <li key={item} className='flex items-center gap-4'>
-                      <BsCheckLg />
-                      <span>{item}</span>
-                    </li>
-                  ))}
-                </ul>
-                <Link href={item?.url.href} target='_blank' className='flex items-center justify-start gap-2 text-[var(--primary)] text-sm font-bold'>
-                  <span>{item?.url.text}</span>
-                  <BsArrowUpRight className='scale-75' />
-                </Link>
-              </div>
-              <div className='rounded-xl overflow-hidden'>
-                <Image width={1000} height={1000} src={item?.img} alt='' className='w-full h-full object-cover' />
-              </div>
-            </div>
-          ))}
+      <section className='py-10 px-6'>
+        <div className='container mx-auto grid grid-cols-1 gap-8'>
+          {features2?.map((item, index) => {
+            return (
+              <AnimateOnScroll key={item.title} className={`bg-[var(--card-bg)] rounded-2xl p-6 flex flex-col md:flex-row gap-8`} animation='fadeIn' delay={index * 0.3}>
+                <div className='w-full md:1/2 flex flex-col gap-6'>
+                  <motion.p
+                    className='text-[var(--primary)] font-bold md:text-xl'
+                    initial={{ opacity: 0, x: -20 }}
+                    animate={{ opacity: 1, x: 0 }}
+                    transition={{ delay: 0.2 + index * 0.3, duration: 0.5 }}
+                  >
+                    Features {index + 1}
+                  </motion.p>
+                  <motion.h1
+                    className='text-2xl md:text-4xl font-bold'
+                    initial={{ opacity: 0, x: -20 }}
+                    animate={{ opacity: 1, x: 0 }}
+                    transition={{ delay: 0.3 + index * 0.3, duration: 0.5 }}
+                  >
+                    {item.title}
+                  </motion.h1>
+                  <motion.p className='text-gray-500' initial={{ opacity: 0, x: -20 }} animate={{ opacity: 1, x: 0 }} transition={{ delay: 0.4 + index * 0.3, duration: 0.5 }}>
+                    {item.description}
+                  </motion.p>
+                  <div className='flex flex-col gap-2 text-gray-500 text-sm'>
+                    {item.list?.map((listItem, listIndex) => {
+                      return (
+                        <motion.div
+                          key={listItem}
+                          className='flex items-start gap-2'
+                          initial={{ opacity: 0, x: -20 }}
+                          animate={{ opacity: 1, x: 0 }}
+                          transition={{ delay: 0.5 + listIndex * 0.1 + index * 0.3, duration: 0.5 }}
+                        >
+                          <BsCheck className='text-xl' />
+                          {listItem}
+                        </motion.div>
+                      );
+                    })}
+                  </div>
+                  <motion.div whileHover={{ x: 5 }} transition={{ duration: 0.2 }}>
+                    <Link href={item.url.href} className='flex font-bold items-center gap-3 text-[var(--primary)]'>
+                      <span>{item.url.text}</span>
+                      <motion.div animate={{ x: [0, 5, 0] }} transition={{ duration: 1.5, repeat: Infinity }}>
+                        <BsArrowUpRight />
+                      </motion.div>
+                    </Link>
+                  </motion.div>
+                </div>
+                <div className='w-full md:1/2 lg:w-1/3 flex justify-end'>
+                  <motion.div whileHover={{ scale: 1.05 }} transition={{ duration: 0.3 }}>
+                    <Image src={item.img} alt='' width={1000} height={1000} className='w-full' />
+                  </motion.div>
+                </div>
+              </AnimateOnScroll>
+            );
+          })}
         </div>
       </section>
     </>

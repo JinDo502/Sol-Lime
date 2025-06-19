@@ -1,8 +1,12 @@
+'use client';
+
 import Image from 'next/image';
 import { Icon1 } from './Icon';
 import { Icon2 } from './Icon';
 import { Icon3 } from './Icon';
 import { BsCaretRightFill } from 'react-icons/bs';
+import { motion } from 'framer-motion';
+import { AnimateOnScroll, StaggerContainer, StaggerItem } from '@/components/animations';
 
 const featuresContent = [
   {
@@ -28,33 +32,72 @@ const Features = () => {
   return (
     <section className='py-10 px-6'>
       <div className='container mx-auto'>
-        <div className='text-center flex flex-col items-center gap-4'>
-          <p className='text-[var(--primary)] font-bold'>SOL-CHAT Features</p>
-          <h1 className='text-foreground text-3xl md:text-4xl font-bold'>Streamline Your Web3 Experience, The Future of AI Blockchain Tools is Here</h1>
-        </div>
+        <StaggerContainer className='text-center flex flex-col items-center gap-4' staggerChildren={0.2}>
+          <StaggerItem>
+            <motion.p className='text-[var(--primary)] font-bold' initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.5 }}>
+              SOL-CHAT Features
+            </motion.p>
+          </StaggerItem>
+          <StaggerItem>
+            <motion.h1
+              className='text-foreground text-3xl md:text-4xl font-bold'
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5, delay: 0.1 }}
+            >
+              Streamline Your Web3 Experience, The Future of AI Blockchain Tools is Here
+            </motion.h1>
+          </StaggerItem>
+        </StaggerContainer>
 
-        <div className='grid grid-cols-1 lg:grid-cols-3 gap-8 mt-15'>
-          {featuresContent.map((item) => {
+        <AnimateOnScroll animation='fadeIn' className='grid grid-cols-1 lg:grid-cols-3 gap-8 mt-15'>
+          {featuresContent.map((item, index) => {
             return (
-              <div key={item?.title} className='flex flex-col gap-4'>
-                <div className='w-14 h-14 text-[var(--primary)] flex items-center justify-center rounded-2xl p-2 border border-[var(--divider)] bg-gradient-to-l from-[var(--card-bg)]/90 to-[var(--card-bg)]/50'>
+              <motion.div
+                key={item?.title}
+                className='flex flex-col gap-4 p-6 rounded-xl border border-[var(--divider)] hover:border-[var(--primary)] transition-all duration-300'
+                initial={{ opacity: 0, y: 30 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.5, delay: 0.2 + index * 0.1 }}
+                whileHover={{
+                  y: -5,
+                  boxShadow: '0 10px 30px rgba(0, 0, 0, 0.1)',
+                }}
+              >
+                <motion.div
+                  className='w-14 h-14 text-[var(--primary)] flex items-center justify-center rounded-2xl p-2 border border-[var(--divider)] bg-gradient-to-l from-[var(--card-bg)]/90 to-[var(--card-bg)]/50'
+                  whileHover={{ rotate: [0, 10, -10, 0] }}
+                  transition={{ duration: 0.5 }}
+                >
                   <item.icon />
-                </div>
+                </motion.div>
                 <h4 className='text-2xl md:text-3xl font-bold'>{item?.title}</h4>
                 <p className='text-gray-400 text-sm'>{item?.description}</p>
-              </div>
+              </motion.div>
             );
           })}
-        </div>
+        </AnimateOnScroll>
 
-        <div className='relative mt-16'>
-          <div className='rounded-xl overflow-hidden'>
+        <AnimateOnScroll animation='scale' className='relative mt-16'>
+          <motion.div className='rounded-xl overflow-hidden' initial={{ opacity: 0, scale: 0.9 }} animate={{ opacity: 1, scale: 1 }} transition={{ duration: 0.8 }}>
             <Image src='/images/thumbnails/video-thumb.jpg' width={1000} height={1000} alt='' className='w-full h-full object-cover' />
-          </div>
-          <div className='absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 bg-[var(--primary)] rounded-full p-4'>
+          </motion.div>
+          <motion.div
+            className='absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 bg-[var(--primary)] rounded-full p-4 cursor-pointer'
+            whileHover={{ scale: 1.1 }}
+            whileTap={{ scale: 0.9 }}
+            initial={{ opacity: 0, scale: 0 }}
+            animate={{ opacity: 1, scale: 1 }}
+            transition={{
+              type: 'spring',
+              stiffness: 260,
+              damping: 20,
+              delay: 0.5,
+            }}
+          >
             <BsCaretRightFill className='text-[var(--background)] text-4xl md:text-5xl' />
-          </div>
-        </div>
+          </motion.div>
+        </AnimateOnScroll>
       </div>
     </section>
   );

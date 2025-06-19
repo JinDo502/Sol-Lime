@@ -23,7 +23,7 @@ const roadmap = [
 
 const Pricing = () => {
   return (
-    <section className='pt-20 pb-10 px-8'>
+    <section className='pt-20 pb-10 px-8 md:px-0'>
       <div className='container mx-auto'>
         <div className='flex flex-col items-center justify-center gap-4 mb-10'>
           <p className='text-[var(--primary)]'>Roadmap</p>
@@ -32,7 +32,7 @@ const Pricing = () => {
             Our Plans
           </h1>
           <p className='text-center text-gray-500 text-sm'>
-            Understand <span className='text-[var(--primary)]'>Sol Chat</span> roadmap and start involve today!
+            Understand <span className='text-[var(--primary)]'>Sol Lime</span> roadmap and start involve today!
           </p>
         </div>
         <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mt-10'>

@@ -4,6 +4,7 @@ import Image from 'next/image';
 import { AiFillStar } from 'react-icons/ai';
 import { useRef, useEffect, useState } from 'react';
 import { motion, useAnimation } from 'framer-motion';
+import { AnimateOnScroll } from '@/components/animations';
 
 const reviewsContent = [
   {
@@ -158,11 +159,31 @@ const ReviewsScroll = ({ direction = 'rtl', speed = 5 }: ReviewsScrollProps) => 
 const Reviews = () => {
   return (
     <section className='overflow-hidden py-10'>
-      <div className='container mx-auto mx-auto px-8'>
-        <h1 className='text-foreground text-center text-3xl md:text-4xl font-bold mb-10'>
-          <span className='text-[var(--primary)]'>SOL-CHAT.</span>
-          Received <Image src='/images/icons/star.png' className='inline-block w-10' alt='' width={1000} height={1000} /> 4.8/5 Stars in Over 10,000+ Reviews.
-        </h1>
+      <div className='container mx-auto mx-auto px-8 md:px-0'>
+        <AnimateOnScroll animation='fadeIn'>
+          <motion.h1
+            className='text-foreground text-center text-3xl md:text-4xl font-bold mb-10'
+            initial={{ opacity: 0, y: 30 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.7 }}
+          >
+            <motion.span className='text-[var(--primary)]' initial={{ opacity: 0, scale: 0.8 }} animate={{ opacity: 1, scale: 1 }} transition={{ duration: 0.5, delay: 0.3 }}>
+              SOL-CHAT.
+            </motion.span>
+            Received{' '}
+            <motion.span
+              initial={{ rotate: -180, opacity: 0 }}
+              animate={{ rotate: 0, opacity: 1 }}
+              transition={{ duration: 0.8, delay: 0.5, type: 'spring' }}
+              className='inline-block'
+            >
+              <Image src='/images/icons/star.png' className='inline-block w-10' alt='' width={1000} height={1000} />
+            </motion.span>{' '}
+            <motion.span initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ duration: 0.5, delay: 0.7 }}>
+              4.8/5 Stars in Over 10,000+ Reviews.
+            </motion.span>
+          </motion.h1>
+        </AnimateOnScroll>
       </div>
       <ReviewsScroll direction='rtl' speed={4} />
       <div className='mt-4'>

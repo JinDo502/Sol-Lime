@@ -1,6 +1,10 @@
+'use client';
+
 import { BsArrowUpRight } from 'react-icons/bs';
 import { Icon1, Icon2, Icon3, Icon4, Icon5, Icon6, Icon7, Icon8 } from './Icon';
 import Link from 'next/link';
+import { motion } from 'framer-motion';
+import { AnimateOnScroll, StaggerContainer, StaggerItem } from '@/components/animations';
 
 const useCasesContent = [
   {
@@ -56,28 +60,47 @@ const useCasesContent = [
 
 const UseCases = () => {
   return (
-    <section className='pt-10 px-8'>
+    <section className='pt-10 px-8 md:px-0'>
       <div className='container mx-auto'>
-        <div className='text-center flex flex-col items-center gap-4'>
-          <p className='text-[var(--primary)] font-bold'>SOL-CHAT Use Cases</p>
-          <h1 className='text-foreground text-3xl md:text-4xl font-bold'>Navigate Web3 Easier and Faster, The Future of AI in Blockchain is Here</h1>
-        </div>
+        <AnimateOnScroll animation='fadeIn'>
+          <div className='text-center flex flex-col items-center gap-4'>
+            <motion.p className='text-[var(--primary)] font-bold' initial={{ opacity: 0, y: -20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.5 }}>
+              SOL-CHAT Use Cases
+            </motion.p>
+            <motion.h1
+              className='text-foreground text-3xl md:text-4xl font-bold'
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5, delay: 0.2 }}
+            >
+              Navigate Web3 Easier and Faster, The Future of AI in Blockchain is Here
+            </motion.h1>
+          </div>
+        </AnimateOnScroll>
 
-        <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10 py-15'>
+        <StaggerContainer className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10 py-15' staggerChildren={0.1}>
           {useCasesContent.map((item) => {
             return (
-              <div className='flex flex-col justify-between gap-4 h-full text-center' key={item.title}>
-                <div className='w-14 h-14 text-[var(--primary)] mx-auto'>{item.icon}</div>
-                <h5 className='text-xl font-bold'>{item.title}</h5>
+              <StaggerItem key={item.title} className='flex flex-col justify-between gap-4 h-full text-center'>
+                <motion.div className='w-14 h-14 text-[var(--primary)] mx-auto' whileHover={{ scale: 1.1, rotate: 10, transition: { duration: 0.2 } }}>
+                  {item.icon}
+                </motion.div>
+                <motion.h5 className='text-xl font-bold' whileHover={{ color: 'var(--primary)', scale: 1.02 }} transition={{ duration: 0.2 }}>
+                  {item.title}
+                </motion.h5>
                 <p className='mb-0 text-gray-400 text-sm'>{item.description}</p>
-                <Link href={item.link.href} className='flex items-center justify-center gap-2 text-gray-500 text-sm font-bold'>
-                  <span>{item.link.text}</span>
-                  <BsArrowUpRight className='scale-75' />
-                </Link>
-              </div>
+                <motion.div whileHover={{ x: 5 }} transition={{ duration: 0.2 }}>
+                  <Link href={item.link.href} className='flex items-center justify-center gap-2 text-gray-500 text-sm font-bold'>
+                    <span>{item.link.text}</span>
+                    <motion.div animate={{ x: [0, 5, 0] }} transition={{ duration: 1.5, repeat: Infinity }}>
+                      <BsArrowUpRight className='scale-75' />
+                    </motion.div>
+                  </Link>
+                </motion.div>
+              </StaggerItem>
             );
           })}
-        </div>
+        </StaggerContainer>
       </div>
     </section>
   );
