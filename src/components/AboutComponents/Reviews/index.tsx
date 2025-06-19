@@ -10,12 +10,12 @@ const reviewsContent = [
   {
     avatar: '/images/review/1.png',
     name: 'John Davis',
-    review: 'SOL-CHAT has completely changed how I manage my digital assets. It&apos;s user-friendly and intuitive, which makes it an absolute breeze to use.',
+    review: 'SOL-LIME has completely changed how I manage my digital assets. It&apos;s user-friendly and intuitive, which makes it an absolute breeze to use.',
   },
   {
     avatar: '/images/review/2.png',
     name: 'Linda Smith',
-    review: 'The way SOL-CHAT simplifies the complex world of web3 is amazing. It truly is a game-changer for me!',
+    review: 'The way SOL-LIME simplifies the complex world of web3 is amazing. It truly is a game-changer for me!',
   },
   {
     avatar: '/images/review/3.png',
@@ -25,7 +25,7 @@ const reviewsContent = [
   {
     avatar: '/images/review/4.png',
     name: 'Emily Roberts',
-    review: 'SOL-CHAT is simply amazing! It&apos;s the perfect tool for newcomers to the crypto world like me. I appreciate its ease of use and comprehensive features.',
+    review: 'SOL-LIME is simply amazing! It&apos;s the perfect tool for newcomers to the crypto world like me. I appreciate its ease of use and comprehensive features.',
   },
   {
     avatar: '/images/review/1.png',
@@ -35,7 +35,7 @@ const reviewsContent = [
   {
     avatar: '/images/review/1.png',
     name: 'Samantha Kim',
-    review: 'The token swapping feature in SOL-CHAT is seamless and straightforward. It&apos;s become my go-to tool for managing my crypto assets.',
+    review: 'The token swapping feature in SOL-LIME is seamless and straightforward. It&apos;s become my go-to tool for managing my crypto assets.',
   },
   {
     avatar: '/images/review/2.png',
@@ -45,12 +45,12 @@ const reviewsContent = [
   {
     avatar: '/images/review/3.png',
     name: 'Cynthia Harris',
-    review: 'SOL-CHAT has become my trusted partner for all things blockchain. Its array of features and intuitive design is nothing short of awesome!',
+    review: 'SOL-LIME has become my trusted partner for all things blockchain. Its array of features and intuitive design is nothing short of awesome!',
   },
   {
     avatar: '/images/review/4.png',
     name: 'Anthony Johnson',
-    review: 'SOL-CHAT is a lifesaver in the truest sense. It makes the web3 ecosystem accessible and easy to understand, even for a non-techie like me.',
+    review: 'SOL-LIME is a lifesaver in the truest sense. It makes the web3 ecosystem accessible and easy to understand, even for a non-techie like me.',
   },
   {
     avatar: '/images/review/1.png',

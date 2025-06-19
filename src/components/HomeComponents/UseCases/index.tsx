@@ -65,7 +65,7 @@ const UseCases = () => {
         <AnimateOnScroll animation='fadeIn'>
           <div className='text-center flex flex-col items-center gap-4'>
             <motion.p className='text-[var(--primary)] font-bold' initial={{ opacity: 0, y: -20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.5 }}>
-              SOL-CHAT Use Cases
+              SOL-LIME Use Cases
             </motion.p>
             <motion.h1
               className='text-foreground text-3xl md:text-4xl font-bold'

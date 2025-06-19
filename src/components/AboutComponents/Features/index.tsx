@@ -12,13 +12,13 @@ const featuresContent = [
   {
     icon: Icon1,
     title: 'Effortless Token Management',
-    description: "SOL-CHAT simplifies token transfers, token swapping, and even borrowing tokens from DeFi platforms. It's like having your personal blockchain assistant",
+    description: "SOL-LIME simplifies token transfers, token swapping, and even borrowing tokens from DeFi platforms. It's like having your personal blockchain assistant",
   },
   {
     icon: Icon2,
     title: 'Insightful Information Retrieval',
     description:
-      'SOL-CHAT provides you with essential token information and updates on the latest market trends and news, equipping you with valuable insights for your blockchain activities',
+      'SOL-LIME provides you with essential token information and updates on the latest market trends and news, equipping you with valuable insights for your blockchain activities',
   },
   {
     icon: Icon3,
@@ -35,7 +35,7 @@ const Features = () => {
         <StaggerContainer className='text-center flex flex-col items-center gap-4' staggerChildren={0.2}>
           <StaggerItem>
             <motion.p className='text-[var(--primary)] font-bold' initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.5 }}>
-              SOL-CHAT Features
+              SOL-LIME Features
             </motion.p>
           </StaggerItem>
           <StaggerItem>

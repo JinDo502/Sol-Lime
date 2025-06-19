@@ -88,7 +88,7 @@ const UseCases = () => {
         <StaggerContainer className='text-center flex flex-col items-center gap-4' staggerChildren={0.2}>
           <StaggerItem>
             <motion.p className='text-[var(--primary)] font-bold' initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.5 }}>
-              SOL-CHAT Use Cases
+              SOL-LIME Use Cases
             </motion.p>
           </StaggerItem>
           <StaggerItem>

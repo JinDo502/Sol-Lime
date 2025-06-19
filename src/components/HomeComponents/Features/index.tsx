@@ -9,12 +9,12 @@ import { AnimateOnScroll, Pulse } from '@/components/animations';
 const featuresContent = [
   {
     title: 'Simplify Token Transfers',
-    description: 'SOL-CHAT facilitates the transfer of tokens between addresses. By issuing a simple command, you can move digital assets effortlessly',
+    description: 'SOL-LIME facilitates the transfer of tokens between addresses. By issuing a simple command, you can move digital assets effortlessly',
   },
   {
     title: 'Informative Token Insights',
     description:
-      'SOL-CHAT provides crucial data about different tokens, equipping users with valuable insights to make informed decisions about their token transactions or investments',
+      'SOL-LIME provides crucial data about different tokens, equipping users with valuable insights to make informed decisions about their token transactions or investments',
   },
   {
     title: 'Elevate Your Web3 Experience',
@@ -27,7 +27,7 @@ const featuresContent2 = [
   {
     title: 'Experience the Power of AI in Navigating Web3.',
     description:
-      'To optimize your web3 operations, understanding the dynamic ecosystem is key. SOL-CHAT bridges this complexity, making blockchain technologies accessible to everyone.',
+      'To optimize your web3 operations, understanding the dynamic ecosystem is key. SOL-LIME bridges this complexity, making blockchain technologies accessible to everyone.',
 
     list: [
       'Start managing your digital assets more efficiently',
@@ -39,13 +39,13 @@ const featuresContent2 = [
   },
   {
     title: 'A Revolutionary Tool to Simplify Your Web3 Interactions.',
-    description: 'SOL-CHAT enables you to navigate the web3 space seamlessly. Identify your blockchain needs and understand how SOL-CHAT can streamline your experience.',
+    description: 'SOL-LIME enables you to navigate the web3 space seamlessly. Identify your blockchain needs and understand how SOL-LIME can streamline your experience.',
     link: { text: 'Join Community For Updates', href: 'https://twitter.com/SOL-CHAT_eth' },
     img: '/images/illustrations/feature-illustration-2-dark.svg',
   },
   {
     title: 'Manage Tokens, Transactions, & More with SOL-CHAT.',
-    description: 'To take full advantage of the web3 ecosystem, you need a comprehensive tool. SOL-CHAT offers a variety of features to enhance your digital asset interactions.',
+    description: 'To take full advantage of the web3 ecosystem, you need a comprehensive tool. SOL-LIME offers a variety of features to enhance your digital asset interactions.',
     list: [
       'Start navigating web3 effortlessly with SOL-CHAT',
       'Engage with an AI chatbot that prioritizes user experience',
