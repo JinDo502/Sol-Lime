@@ -1,0 +1,18 @@
+.swiper-wrapper {
+  align-items: stretch;
+  padding-bottom: 2rem;
+}
+
+.swiper-pagination-bullet {
+  background-color: var(--foreground);
+  height: 0.75rem;
+  width: 0.75rem;
+}
+
+.swiper-pagination-bullet-active {
+  background-color: var(--primary);
+}
+
+.swiper-pagination {
+  bottom: 0 !important;
+}

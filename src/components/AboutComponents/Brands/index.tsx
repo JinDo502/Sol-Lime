@@ -1,0 +1,33 @@
+import Image from 'next/image';
+
+const brands = [
+  { name: 'Brand 1', image: '/images/brands/1.png' },
+  { name: 'Brand 2', image: '/images/brands/2.png' },
+  { name: 'Brand 3', image: '/images/brands/3.png' },
+  { name: 'Brand 4', image: '/images/brands/4.png' },
+  { name: 'Brand 5', image: '/images/brands/5.png' },
+];
+
+const Brands = () => {
+  return (
+    <section className='py-10 px-6'>
+      <div className='container mx-auto flex flex-col mt-10 items-center gap-10 text-center'>
+        <h4 className='font-[var(--font-montserrat)] text-2xl md:text-3xl font-bold'>
+          <span className='text-transparent bg-clip-text bg-gradient-to-r from-[var(--primary)] to-[var(--secondary)]'>Famous Partners</span>
+          &nbsp;that choose and trust&nbsp;
+          <span className='text-transparent bg-clip-text bg-gradient-to-r from-[var(--primary)] to-[var(--secondary)]'>SOL-CHAT.</span>
+        </h4>
+
+        <div className='flex flex-wrap justify-center'>
+          {brands.map((brand) => (
+            <div key={brand.name} className='w-1/3 py-1'>
+              <Image src={brand.image} alt={brand.name} width={1000} height={1000} className='img-fluid brand-img' />
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+  );
+};
+
+export default Brands;

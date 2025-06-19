@@ -1,0 +1,100 @@
+'use client';
+
+import Image from 'next/image';
+import { Swiper, SwiperSlide } from 'swiper/react';
+import 'swiper/css';
+import 'swiper/css/pagination';
+import 'swiper/css/autoplay';
+import { AiFillStar } from 'react-icons/ai';
+import './index.css';
+import { Autoplay, Pagination } from 'swiper/modules';
+
+const reviewsContent = [
+  {
+    avatar: '/images/review/1.png',
+    name: 'John Davis',
+    review: "SOL-CHAT has completely changed how I manage my digital assets. It's user-friendly and intuitive, which makes it an absolute breeze to use.",
+  },
+  {
+    avatar: '/images/review/2.png',
+    name: 'Linda Smith',
+    review: 'The way SOL-CHAT simplifies the complex world of web3 is amazing. It truly is a game-changer for me!',
+  },
+  {
+    avatar: '/images/review/3.png',
+    name: 'Mark Thompson',
+    review: 'Navigating the blockchain has always seemed daunting, but with SOL-CHAT, I feel secure and confident. The security checks are robust and reliable.',
+  },
+  {
+    avatar: '/images/review/4.png',
+    name: 'Emily Roberts',
+    review: "SOL-CHAT is simply amazing! It's the perfect tool for newcomers to the crypto world like me. I appreciate its ease of use and comprehensive features.",
+  },
+  {
+    avatar: '/images/review/5.png',
+    name: 'David Johnson',
+    review:
+      "I've been using SOL-CHAT for a few months now, and it has completely transformed my experience in the crypto world. The platform is user-friendly and secure, making it a must-have for anyone looking to navigate the blockchain.",
+  },
+];
+
+const Reviews = () => {
+  return (
+    <section className='pt-20 pb-10 px-8'>
+      <div className='container mx-auto'>
+        <h1 className='text-3xl md:text-4xl font-bold text-center'>
+          <span className='text-[var(--primary)]'>SOL-CHAT.</span>&nbsp;&nbsp;Received
+          <Image className='inline-block w-10 h-10' src='/images/icons/star.png' alt='' width={16} height={16} /> 4.8/5 Stars in Over 10,000+ Reviews.
+        </h1>
+
+        <Swiper
+          slidesPerView='auto'
+          spaceBetween={10}
+          breakpoints={{
+            768: {
+              slidesPerView: 2,
+              spaceBetween: 10,
+            },
+            1024: {
+              slidesPerView: 3,
+              spaceBetween: 10,
+            },
+          }}
+          modules={[Pagination, Autoplay]}
+          pagination={{ dynamicBullets: true, clickable: true }}
+          className='mt-10 h-max'
+          autoplay={{
+            delay: 2500,
+            disableOnInteraction: false,
+          }}
+          loop={true}
+        >
+          {reviewsContent.map((item, index) => (
+            <SwiperSlide key={index} className='!h-auto'>
+              <div className='bg-[var(--card-bg)] rounded-2xl p-6 border border-[var(--divider)] border-opacity-10 h-full'>
+                <div className='flex items-center gap-4 mb-6'>
+                  <div className='w-12 h-12 rounded-full overflow-hidden'>
+                    <Image src={item.avatar} alt='' className='w-full h-full object-cover' width={48} height={48} />
+                  </div>
+                  <h6 className='mb-1 text-lg font-bold'>{item.name}</h6>
+                </div>
+                <div className='flex flex-col gap-3'>
+                  <div className='flex items-center gap-1 mb-3 text-lg'>
+                    {Array(5)
+                      .fill(0)
+                      .map((_, index) => (
+                        <AiFillStar key={index} className='text-[var(--primary)]' />
+                      ))}
+                  </div>
+                  <p className='mb-0 text-gray-500'>{item?.review}</p>
+                </div>
+              </div>
+            </SwiperSlide>
+          ))}
+        </Swiper>
+      </div>
+    </section>
+  );
+};
+
+export default Reviews;

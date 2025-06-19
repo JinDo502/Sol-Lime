@@ -1,0 +1,63 @@
+import Image from 'next/image';
+import { Icon1 } from './Icon';
+import { Icon2 } from './Icon';
+import { Icon3 } from './Icon';
+import { BsCaretRightFill } from 'react-icons/bs';
+
+const featuresContent = [
+  {
+    icon: Icon1,
+    title: 'Effortless Token Management',
+    description: "SOL-CHAT simplifies token transfers, token swapping, and even borrowing tokens from DeFi platforms. It's like having your personal blockchain assistant",
+  },
+  {
+    icon: Icon2,
+    title: 'Insightful Information Retrieval',
+    description:
+      'SOL-CHAT provides you with essential token information and updates on the latest market trends and news, equipping you with valuable insights for your blockchain activities',
+  },
+  {
+    icon: Icon3,
+    title: 'Enhanced Security Measures',
+    description:
+      'With SOL-CHAT, rest assured that your digital assets are protected. It conducts regular security checks and issues risk warnings to alert you about potential threats',
+  },
+];
+
+const Features = () => {
+  return (
+    <section className='py-10 px-6'>
+      <div className='container mx-auto'>
+        <div className='text-center flex flex-col items-center gap-4'>
+          <p className='text-[var(--primary)] font-bold'>SOL-CHAT Features</p>
+          <h1 className='text-foreground text-3xl md:text-4xl font-bold'>Streamline Your Web3 Experience, The Future of AI Blockchain Tools is Here</h1>
+        </div>
+
+        <div className='grid grid-cols-1 lg:grid-cols-3 gap-8 mt-15'>
+          {featuresContent.map((item) => {
+            return (
+              <div key={item?.title} className='flex flex-col gap-4'>
+                <div className='w-14 h-14 text-[var(--primary)] flex items-center justify-center rounded-2xl p-2 border border-[var(--divider)] bg-gradient-to-l from-[var(--card-bg)]/90 to-[var(--card-bg)]/50'>
+                  <item.icon />
+                </div>
+                <h4 className='text-2xl md:text-3xl font-bold'>{item?.title}</h4>
+                <p className='text-gray-400 text-sm'>{item?.description}</p>
+              </div>
+            );
+          })}
+        </div>
+
+        <div className='relative mt-16'>
+          <div className='rounded-xl overflow-hidden'>
+            <Image src='/images/thumbnails/video-thumb.jpg' width={1000} height={1000} alt='' className='w-full h-full object-cover' />
+          </div>
+          <div className='absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 bg-[var(--primary)] rounded-full p-4'>
+            <BsCaretRightFill className='text-[var(--background)] text-4xl md:text-5xl' />
+          </div>
+        </div>
+      </div>
+    </section>
+  );
+};
+
+export default Features;

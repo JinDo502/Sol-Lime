@@ -1,0 +1,86 @@
+import { BsArrowUpRight } from 'react-icons/bs';
+import { Icon1, Icon2, Icon3, Icon4, Icon5, Icon6, Icon7, Icon8 } from './Icon';
+import Link from 'next/link';
+
+const useCasesContent = [
+  {
+    title: 'Token Transfers',
+    description: <>Transfer tokens between addresses effortlessly with SOL-CHAT&apos;s simple command interface</>,
+    icon: <Icon1 />,
+    link: { text: 'Try Transfer Your Token', href: '#' },
+  },
+  {
+    title: 'Querying Token Information',
+    description: <>Get crucial data about different tokens easily with SOL-CHAT</>,
+    icon: <Icon2 />,
+    link: { text: 'Query a Token', href: '#' },
+  },
+  {
+    title: 'Transaction History',
+    description: <>Easily track and manage your transactions with SOL-CHAT&apos;s transaction history feature</>,
+    icon: <Icon3 />,
+    link: { text: 'Start Tracking', href: '#' },
+  },
+  {
+    title: 'Token Swapping',
+    description: <>Exchange one type of token for another with SOL-CHAT, making your experience as easy as sending a message</>,
+    icon: <Icon4 />,
+    link: { text: 'Try Swap Now', href: '#' },
+  },
+  {
+    title: 'Freezing and Unfreezing Tokens',
+    description: <>Have additional control over your digital assets with SOL-CHAT&apos;s freezing and unfreezing tokens feature</>,
+    icon: <Icon5 />,
+    link: { text: 'Freeze a Token', href: '#' },
+  },
+  {
+    title: 'Security Checks',
+    description: <>Protect your digital assets from potential risks with SOL-CHAT&apos;s security check feature</>,
+    icon: <Icon6 />,
+    link: { text: 'Try Security Checks', href: '#' },
+  },
+
+  {
+    title: 'Market Trends and News Updates',
+    description: <>Stay updated with the latest market trends and news with SOL-CHAT</>,
+    icon: <Icon7 />,
+    link: { text: 'Get Latest Updates', href: '#' },
+  },
+  {
+    title: 'Risk Warnings',
+    description: <>Get alerts about potential risks in your blockchain transactions and activities with SOL-CHAT</>,
+    icon: <Icon8 />,
+    link: { text: 'Get Alert Today', href: '#' },
+  },
+];
+
+const UseCases = () => {
+  return (
+    <section className='pt-10 px-8'>
+      <div className='container mx-auto'>
+        <div className='text-center flex flex-col items-center gap-4'>
+          <p className='text-[var(--primary)] font-bold'>SOL-CHAT Use Cases</p>
+          <h1 className='text-foreground text-3xl md:text-4xl font-bold'>Navigate Web3 Easier and Faster, The Future of AI in Blockchain is Here</h1>
+        </div>
+
+        <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10 py-15'>
+          {useCasesContent.map((item) => {
+            return (
+              <div className='flex flex-col justify-between gap-4 h-full text-center' key={item.title}>
+                <div className='w-14 h-14 text-[var(--primary)] mx-auto'>{item.icon}</div>
+                <h5 className='text-xl font-bold'>{item.title}</h5>
+                <p className='mb-0 text-gray-400 text-sm'>{item.description}</p>
+                <Link href={item.link.href} className='flex items-center justify-center gap-2 text-gray-500 text-sm font-bold'>
+                  <span>{item.link.text}</span>
+                  <BsArrowUpRight className='scale-75' />
+                </Link>
+              </div>
+            );
+          })}
+        </div>
+      </div>
+    </section>
+  );
+};
+
+export default UseCases;
