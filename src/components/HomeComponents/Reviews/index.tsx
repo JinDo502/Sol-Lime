@@ -18,28 +18,28 @@ const reviewsContent = [
   {
     avatar: '/images/review/1.png',
     name: 'John Davis',
-    review: "SOL-LIME has completely changed how I manage my digital assets. It's user-friendly and intuitive, which makes it an absolute breeze to use.",
+    review: "SOLIME has completely changed how I manage my digital assets. It's user-friendly and intuitive, which makes it an absolute breeze to use.",
   },
   {
     avatar: '/images/review/2.png',
     name: 'Linda Smith',
-    review: 'The way SOL-LIME simplifies the complex world of web3 is amazing. It truly is a game-changer for me!',
+    review: 'The way SOLIME simplifies the complex world of web3 is amazing. It truly is a game-changer for me!',
   },
   {
     avatar: '/images/review/3.png',
     name: 'Mark Thompson',
-    review: 'Navigating the blockchain has always seemed daunting, but with SOL-LIME , I feel secure and confident. The security checks are robust and reliable.',
+    review: 'Navigating the blockchain has always seemed daunting, but with SOLIME , I feel secure and confident. The security checks are robust and reliable.',
   },
   {
     avatar: '/images/review/4.png',
     name: 'Emily Roberts',
-    review: "SOL-LIME is simply amazing! It's the perfect tool for newcomers to the crypto world like me. I appreciate its ease of use and comprehensive features.",
+    review: "SOLIME is simply amazing! It's the perfect tool for newcomers to the crypto world like me. I appreciate its ease of use and comprehensive features.",
   },
   {
     avatar: '/images/review/5.png',
     name: 'David Johnson',
     review:
-      "I've been using SOL-LIME for a few months now, and it has completely transformed my experience in the crypto world. The platform is user-friendly and secure, making it a must-have for anyone looking to navigate the blockchain.",
+      "I've been using SOLIME for a few months now, and it has completely transformed my experience in the crypto world. The platform is user-friendly and secure, making it a must-have for anyone looking to navigate the blockchain.",
   },
 ];
 
@@ -68,8 +68,7 @@ const ReviewCard = memo(({ item }: { item: (typeof reviewsContent)[0] }) => {
     >
       <div className='flex items-center gap-4 mb-6'>
         <motion.div className='w-12 h-12 rounded-full overflow-hidden' whileHover={{ scale: 1.1 }} transition={springs.bouncy}>
-          {/* eslint-disable-next-line jsx-a11y/alt-text */}
-          <Image {...getImageProps({ src: item.avatar, alt: item.name, className: 'w-full h-full object-cover', width: 48, height: 48 })} />
+          <Image alt={item.name} {...getImageProps({ src: item.avatar, className: 'w-full h-full object-cover', width: 48, height: 48 })} />
         </motion.div>
         <h6 className='mb-1 text-lg font-bold'>{item.name}</h6>
       </div>
@@ -92,12 +91,11 @@ const Reviews = () => {
         <AnimateIn>
           <h1 className='text-3xl md:text-4xl font-bold text-center'>
             <motion.span className='text-primary' whileHover={{ scale: 1.1 }} transition={springs.bouncy}>
-              SOL-LIME .
+              SOLIME .
             </motion.span>
             &nbsp;&nbsp;Received
             <motion.div className='inline-block w-10 h-10' animate={{ rotate: [0, 10, -10, 0], scale: [1, 1.2, 1] }} transition={{ duration: 2, repeat: Infinity, repeatDelay: 3 }}>
-              {/* eslint-disable-next-line jsx-a11y/alt-text */}
-              <Image {...getImageProps({ src: '/images/icons/star.png', alt: 'Star rating', className: 'w-10 h-10', width: 40, height: 40, priority: true })} />
+              <Image alt='Star rating' {...getImageProps({ src: '/images/icons/star.png', className: 'w-10 h-10', width: 40, height: 40, priority: true })} />
             </motion.div>
             4.8/5 Stars in Over 10,000+ Reviews.
           </h1>

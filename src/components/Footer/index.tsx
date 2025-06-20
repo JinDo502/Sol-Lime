@@ -40,7 +40,7 @@ const Footer = () => {
       <motion.div className={`container mx-auto px-6 flex flex-col gap-10`} initial='hidden' animate={controls} variants={fadeInUp}>
         <div className='grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-10'>
           <AnimateIn className='text-center'>
-            <h6 className='mb-2 font-bold'>SOL-LIME </h6>
+            <h6 className='mb-2 font-bold'>SOLIME </h6>
             <MotionContainer className='flex flex-col gap-2 text-sm text-gray-400' staggerChildren={0.05}>
               {footerLinks.map((link) => (
                 <motion.div key={link.label} variants={fadeInUp} whileHover={{ x: 5 }} transition={springs.soft}>
@@ -89,16 +89,16 @@ const Footer = () => {
           <AnimateIn className='text-center flex flex-col gap-2 items-center'>
             <motion.div whileHover={{ scale: 1.05 }} transition={springs.soft}>
               <Link href='/' className='flex items-center gap-2'>
-                <Image src='/images/logo.png' alt='SOL-Lime-Logo' className='img-fluid' height='30' width='30' />
-                <h1 className='text-xl md:text-2xl font-bold'>SOL-Lime</h1>
+                <Image src='/images/logo.png' alt='SOLIME-Logo' className='img-fluid' height='30' width='30' />
+                <h1 className='text-xl md:text-2xl font-bold'>SOLIME</h1>
               </Link>
             </motion.div>
-            <div className='text-sm text-gray-400'>Experience the power of AI in navigating web3. Streamline your digital asset interactions with SOL-LIME .</div>
+            <div className='text-sm text-gray-400'>Experience the power of AI in navigating web3. Streamline your digital asset interactions with SOLIME .</div>
           </AnimateIn>
         </div>
 
         <motion.div className='text-sm text-gray-400 text-center' initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 1, duration: 0.5 }}>
-          Copyright <span className='text-primary'>SOL-LIME </span>.
+          Copyright <span className='text-primary'>SOLIME </span>.
         </motion.div>
       </motion.div>
     </footer>

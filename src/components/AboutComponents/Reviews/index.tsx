@@ -9,52 +9,52 @@ const reviewsContent = [
   {
     avatar: '/images/review/1.png',
     name: 'John Davis',
-    review: 'SOL-LIME has completely changed how I manage my digital assets. It&apos;s user-friendly and intuitive, which makes it an absolute breeze to use.',
+    review: 'SOLIME has completely changed how I manage my digital assets. It&apos;s user-friendly and intuitive, which makes it an absolute breeze to use.',
   },
   {
     avatar: '/images/review/2.png',
     name: 'Linda Smith',
-    review: 'The way SOL-LIME simplifies the complex world of web3 is amazing. It truly is a game-changer for me!',
+    review: 'The way SOLIME simplifies the complex world of web3 is amazing. It truly is a game-changer for me!',
   },
   {
     avatar: '/images/review/3.png',
     name: 'Mark Thompson',
-    review: 'Navigating the blockchain has always seemed daunting, but with SOL-LIME , I feel secure and confident. The security checks are robust and reliable.',
+    review: 'Navigating the blockchain has always seemed daunting, but with SOLIME , I feel secure and confident. The security checks are robust and reliable.',
   },
   {
     avatar: '/images/review/4.png',
     name: 'Emily Roberts',
-    review: 'SOL-LIME is simply amazing! It&apos;s the perfect tool for newcomers to the crypto world like me. I appreciate its ease of use and comprehensive features.',
+    review: 'SOLIME is simply amazing! It&apos;s the perfect tool for newcomers to the crypto world like me. I appreciate its ease of use and comprehensive features.',
   },
   {
     avatar: '/images/review/1.png',
     name: 'Peter Brown',
-    review: 'I&apos;m genuinely thrilled with SOL-LIME . It&apos;s been instrumental in helping me understand and navigate the crypto space effectively.',
+    review: 'I&apos;m genuinely thrilled with SOLIME . It&apos;s been instrumental in helping me understand and navigate the crypto space effectively.',
   },
   {
     avatar: '/images/review/1.png',
     name: 'Samantha Kim',
-    review: 'The token swapping feature in SOL-LIME is seamless and straightforward. It&apos;s become my go-to tool for managing my crypto assets.',
+    review: 'The token swapping feature in SOLIME is seamless and straightforward. It&apos;s become my go-to tool for managing my crypto assets.',
   },
   {
     avatar: '/images/review/2.png',
     name: 'Luke Miller',
-    review: 'Keeping up with the fast-paced crypto market trends has never been easier, all thanks to SOL-LIME !',
+    review: 'Keeping up with the fast-paced crypto market trends has never been easier, all thanks to SOLIME !',
   },
   {
     avatar: '/images/review/3.png',
     name: 'Cynthia Harris',
-    review: 'SOL-LIME has become my trusted partner for all things blockchain. Its array of features and intuitive design is nothing short of awesome!',
+    review: 'SOLIME has become my trusted partner for all things blockchain. Its array of features and intuitive design is nothing short of awesome!',
   },
   {
     avatar: '/images/review/4.png',
     name: 'Anthony Johnson',
-    review: 'SOL-LIME is a lifesaver in the truest sense. It makes the web3 ecosystem accessible and easy to understand, even for a non-techie like me.',
+    review: 'SOLIME is a lifesaver in the truest sense. It makes the web3 ecosystem accessible and easy to understand, even for a non-techie like me.',
   },
   {
     avatar: '/images/review/1.png',
     name: 'Grace Lee',
-    review: 'Managing my crypto transactions has been a fantastic experience with SOL-LIME . It&apos;s extremely user-friendly and simplifies every process.',
+    review: 'Managing my crypto transactions has been a fantastic experience with SOLIME . It&apos;s extremely user-friendly and simplifies every process.',
   },
 ];
 
@@ -148,7 +148,7 @@ const Reviews = () => {
         <AnimateIn>
           <h1 className='text-2xl md:text-3xl font-bold'>
             <motion.span className='text-primary' whileHover={{ scale: 1.1 }} transition={springs.bouncy}>
-              SOL-LIME .
+              SOLIME .
             </motion.span>
             Received{' '}
             <span className='inline-block'>

@@ -26,7 +26,7 @@ const Hero = () => {
             </motion.p>
 
             <h1 className='text-4xl md:text-5xl font-bold leading-tight text-center'>
-              An AI Social App As Good As ChatGPT - <span className='text-primary'>SOL-LIME </span> is arrived.
+              An AI Social App As Good As ChatGPT - <span className='text-primary'>SOLIME </span> is arrived.
             </h1>
 
             <form action='#' className='flex flex-col gap-4'>
@@ -50,9 +50,9 @@ const Hero = () => {
           <motion.div className='relative w-full md:w-3/5' variants={fadeInRight}>
             <motion.div className='relative z-10' whileHover={{ scale: 1.02 }} transition={springs.soft}>
               <Image
+                alt='SOLIME App Screenshot'
                 {...getImageProps({
                   src: '/images/screens/screen-2.jpg',
-                  alt: 'SOL-LIME App Screenshot',
                   width: 800,
                   height: 600,
                   className: 'w-full object-cover border-1 border-divider rounded-md',
@@ -65,9 +65,9 @@ const Hero = () => {
 
             <div className='z-1'>
               <Image
+                alt='Decorative blurry shape'
                 {...getImageProps({
                   src: '/images/shapes/blurry-shape-2.svg',
-                  alt: '',
                   className: 'absolute top-[-20rem] md:top-[-25rem] left-[-7rem] w-[500px] h-auto',
                   unoptimized: true,
                 })}
@@ -80,16 +80,16 @@ const Hero = () => {
           <h4 className='font-[var(--font-montserrat)] text-2xl md:text-3xl font-bold'>
             <span className='text-transparent bg-clip-text bg-gradient-to-r from-primary to-secondary'>Famous Partners</span>
             &nbsp;that choose and trust&nbsp;
-            <span className='text-transparent bg-clip-text bg-gradient-to-r from-primary to-secondary'>SOL-LIME .</span>
+            <span className='text-transparent bg-clip-text bg-gradient-to-r from-primary to-secondary'>SOLIME .</span>
           </h4>
 
           <MotionContainer className='flex flex-wrap justify-center md:flex-nowrap md:gap-10' staggerChildren={0.1}>
             {brands.map((brand) => (
               <motion.div key={brand.name} className='w-1/3 py-1' variants={fadeInUp} whileHover={{ scale: 1.1 }} transition={springs.soft}>
                 <Image
+                  alt={brand.name}
                   {...getImageProps({
                     src: brand.image,
-                    alt: brand.name,
                     className: 'md:w-full md:h-auto',
                     width: 200,
                     height: 100,

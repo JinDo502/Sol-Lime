@@ -3,25 +3,25 @@ import ContactContent from '@/components/ContactComponents/ContactContent';
 import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
-  title: 'Contact SOL-Lime - Get in Touch With Our Team',
-  description: 'Contact the SOL-Lime team for partnership opportunities, technical support, or general inquiries about our Web3.0 AI social platform on Solana.',
-  keywords: 'SOL-Lime contact, contact form, partnership, technical support, Web3 social app support, Solana dApp contact',
+  title: 'Contact SOLIME - Get in Touch With Our Team',
+  description: 'Contact the SOLIME team for partnership opportunities, technical support, or general inquiries about our Web3.0 AI social platform on Solana.',
+  keywords: 'SOLIME contact, contact form, partnership, technical support, Web3 social app support, Solana dApp contact',
   alternates: { canonical: 'https://solime.xyz/contact' },
   openGraph: {
-    title: 'Contact SOL-Lime - Get in Touch With Our Team',
-    description: 'Contact the SOL-Lime team for partnership opportunities, technical support, or general inquiries about our Web3.0 AI social platform on Solana.',
+    title: 'Contact SOLIME - Get in Touch With Our Team',
+    description: 'Contact the SOLIME team for partnership opportunities, technical support, or general inquiries about our Web3.0 AI social platform on Solana.',
     url: 'https://solime.xyz/contact',
-    siteName: 'SOL-Lime',
-    images: [{ url: 'https://solime.xyz/screen-1.jpg', width: 1200, height: 630, alt: 'SOL-Lime - Web3.0 AI Social App' }],
+    siteName: 'SOLIME',
+    images: [{ url: 'https://solime.xyz/screen-1.jpg', width: 1200, height: 630, alt: 'SOLIME - Web3.0 AI Social App' }],
     locale: 'en_US',
     type: 'website',
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Contact SOL-Lime - Get in Touch With Our Team',
-    description: 'Contact the SOL-Lime team for partnership opportunities, technical support, or general inquiries about our Web3.0 AI social platform on Solana.',
+    title: 'Contact SOLIME - Get in Touch With Our Team',
+    description: 'Contact the SOLIME team for partnership opportunities, technical support, or general inquiries about our Web3.0 AI social platform on Solana.',
     images: ['https://solime.xyz/screen-1.jpg'],
-    creator: '@solime',
+    creator: '@SOLIME',
   },
 };
 

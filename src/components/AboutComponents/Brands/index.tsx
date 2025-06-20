@@ -35,7 +35,7 @@ const Brands = () => {
               transition={{ duration: 8, repeat: Infinity, repeatType: 'reverse', delay: 0.5 }}
               style={{ backgroundSize: '200% 200%' }}
             >
-              SOL-LIME .
+              SOLIME .
             </motion.span>
           </h4>
         </AnimateIn>

@@ -17,7 +17,7 @@ const CTA = () => {
         >
           <motion.div className='text-center flex flex-col gap-4 md:w-1/2 items-cneter justify-center' variants={fadeInLeft}>
             <h2 className='text-3xl md:text-4xl font-bold text-pretty mb-6'>
-              With <span className='text-primary'>SOL-LIME</span> navigating the web3 space has never been easier or safer!
+              With <span className='text-primary'>SOLIME</span> navigating the web3 space has never been easier or safer!
             </h2>
             <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }} transition={springs.bouncy}>
               <Link href='#' className='h-max w-max mx-auto bg-primary text-background px-6 py-4 rounded-md inline-block'>

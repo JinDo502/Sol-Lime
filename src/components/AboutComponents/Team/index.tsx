@@ -56,7 +56,7 @@ const Team = () => {
         <AnimateIn>
           <h1 className='text-foreground text-center text-3xl md:text-4xl font-bold mb-10'>
             <motion.span className='text-primary' whileHover={{ scale: 1.1 }} transition={springs.bouncy}>
-              SOL-LIME
+              SOLIME
             </motion.span>{' '}
             Powered by a Team of Web3 Enthusiasts
           </h1>

@@ -30,7 +30,7 @@ const AppUsers = () => {
           <h1 className='text-3xl md:text-4xl font-bold'>
             Who are the users of&nbsp;
             <motion.span className='text-primary' animate={{ scale: [1, 1.05, 1] }} transition={{ duration: 2, repeat: Infinity, repeatType: 'reverse' }}>
-              SOL-LIME
+              SOLIME
             </motion.span>{' '}
             ?
           </h1>

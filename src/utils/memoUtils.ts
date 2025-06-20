@@ -6,8 +6,9 @@ import { useMemo, useCallback, DependencyList } from 'react';
  * @param deps 依赖数组
  * @returns 记忆化的计算结果
  */
-export function useMemoizedValue<T>(factory: () => T, deps: DependencyList): T {
-  return useMemo(() => factory(), deps);
+export function useMemoizedValue<T>(factory: () => T, deps: DependencyList | undefined): T {
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+  return useMemo(() => factory(), deps || []);
 }
 
 /**
@@ -16,6 +17,7 @@ export function useMemoizedValue<T>(factory: () => T, deps: DependencyList): T {
  * @param deps 依赖数组
  * @returns 记忆化的回调函数
  */
-export function useMemoizedCallback<T extends (...args: unknown[]) => unknown>(callback: T, deps: DependencyList): T {
-  return useCallback(callback, deps);
+export function useMemoizedCallback<T extends (...args: unknown[]) => unknown>(callback: T, deps: DependencyList | undefined): T {
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+  return useCallback(callback, deps || []);
 }

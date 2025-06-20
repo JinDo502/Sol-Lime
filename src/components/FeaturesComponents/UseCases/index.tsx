@@ -9,7 +9,7 @@ import { AnimateIn, springs, fadeInUp, useScrollAnimation } from '@/animations';
 const useCasesContent = [
   {
     title: 'Token Transfers',
-    description: <>Execute token transfers with SOL-LIME , ensuring a secure and straightforward experience. No need for complex blockchain commands.</>,
+    description: <>Execute token transfers with SOLIME , ensuring a secure and straightforward experience. No need for complex blockchain commands.</>,
     icon: <Icon1 />,
     link: { text: 'Try Token Transfers', href: '#' },
   },
@@ -21,61 +21,61 @@ const useCasesContent = [
   },
   {
     title: 'Transaction History',
-    description: <>Track your blockchain transactions seamlessly with SOL-LIME . Get a clear, chronological account of your activities.</>,
+    description: <>Track your blockchain transactions seamlessly with SOLIME . Get a clear, chronological account of your activities.</>,
     icon: <Icon3 />,
     link: { text: 'Try Transaction History', href: '#' },
   },
   {
     title: 'Token Swapping',
-    description: <>Swap one type of token for another effortlessly with SOL-LIME . Diversify your portfolio and seize market opportunities.</>,
+    description: <>Swap one type of token for another effortlessly with SOLIME . Diversify your portfolio and seize market opportunities.</>,
     icon: <Icon4 />,
     link: { text: 'Try Token Swapping', href: '#' },
   },
   {
     title: 'Freezing and Unfreezing Tokens',
-    description: <>Control your digital assets by making your tokens non-transferrable or transferrable again with SOL-LIME .</>,
+    description: <>Control your digital assets by making your tokens non-transferrable or transferrable again with SOLIME .</>,
     icon: <Icon5 />,
     link: { text: 'Try Freezing and Unfreezing', href: '#' },
   },
   {
     title: 'Borrowing Tokens',
-    description: <>Leverage your existing assets to borrow tokens with SOL-LIME . Simplify your loan process on DeFi platforms.</>,
+    description: <>Leverage your existing assets to borrow tokens with SOLIME . Simplify your loan process on DeFi platforms.</>,
     icon: <Icon6 />,
     link: { text: 'Try Borrowing Tokens', href: '#' },
   },
   {
     title: 'Security Checks',
-    description: <>Protect your digital assets with SOL-LIME &apos;s security checks. Stay safe from potential risks in the blockchain environment.</>,
+    description: <>Protect your digital assets with SOLIME &apos;s security checks. Stay safe from potential risks in the blockchain environment.</>,
     icon: <Icon7 />,
     link: { text: 'Try Security Checks', href: '#' },
   },
   {
     title: 'Market Trends and News Updates',
-    description: <>Stay updated with the latest market trends and news in the blockchain and cryptocurrency world with SOL-LIME .</>,
+    description: <>Stay updated with the latest market trends and news in the blockchain and cryptocurrency world with SOLIME .</>,
     icon: <Icon8 />,
     link: { text: 'Try Market Trends', href: '#' },
   },
   {
     title: 'Risk Warnings',
-    description: <>Enhance your awareness of blockchain risks with SOL-LIME . Get alerts for potential risks in your transactions and activities.</>,
+    description: <>Enhance your awareness of blockchain risks with SOLIME . Get alerts for potential risks in your transactions and activities.</>,
     icon: <Icon9 />,
     link: { text: 'Try Risk Warnings', href: '#' },
   },
   {
     title: 'Real-time Messaging',
-    description: <>Engage in real-time conversations with SOL-LIME &apos;s social feature. Communicate with other users instantly and efficiently.</>,
+    description: <>Engage in real-time conversations with SOLIME &apos;s social feature. Communicate with other users instantly and efficiently.</>,
     icon: <Icon10 />,
     link: { text: 'Try Real-time Messaging', href: '#' },
   },
   {
     title: 'AI Bot Interactions',
-    description: <>Interact with SOL-LIME &apos;s advanced AI bot for streamlined and intuitive web3 operations. Make your blockchain experience seamless.</>,
+    description: <>Interact with SOLIME &apos;s advanced AI bot for streamlined and intuitive web3 operations. Make your blockchain experience seamless.</>,
     icon: <Icon11 />,
     link: { text: 'Try AI Bot Interactions', href: '#' },
   },
   {
     title: 'Navigating Web3 Ecosystem',
-    description: <>Navigate the web3 ecosystem effortlessly with SOL-LIME , irrespective of your technical background. Experience the democratization of access to web3.</>,
+    description: <>Navigate the web3 ecosystem effortlessly with SOLIME , irrespective of your technical background. Experience the democratization of access to web3.</>,
     icon: <Icon12 />,
     link: { text: 'Try Navigating Web3', href: '#' },
   },
@@ -88,7 +88,7 @@ const UseCases = () => {
     <section className='py-10 px-6' ref={ref}>
       <div className='container mx-auto'>
         <AnimateIn className='text-center flex flex-col items-center gap-4'>
-          <p className='text-primary font-bold'>SOL-LIME Use Cases</p>
+          <p className='text-primary font-bold'>SOLIME Use Cases</p>
           <h1 className='text-foreground text-3xl md:text-4xl font-bold'>Streamline Your Web3 Experience, The Future of AI Blockchain Tools is Here</h1>
         </AnimateIn>
 

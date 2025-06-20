@@ -1,5 +1,5 @@
 {
-  "name": "sol-lime",
+  "name": "solime",
   "version": "0.1.0",
   "private": true,
   "scripts": {
@@ -9,6 +9,7 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "critters": "^0.0.23",
     "motion": "^12.18.1",
     "next": "15.3.3",
     "next-themes": "^0.4.4",

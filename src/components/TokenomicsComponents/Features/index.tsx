@@ -15,8 +15,8 @@ const features = [
   },
   {
     icon: Icon2,
-    title: 'Ethereum Chain',
-    description: 'Tokenized on Ethereum Chain. An Ethereum-powered decentralized applications and trade it on decentralized exchanges.',
+    title: 'Solana Chain',
+    description: 'Tokenized on Solana Chain. An Solana-powered decentralized applications and trade it on decentralized exchanges.',
   },
   {
     icon: Icon3,
@@ -28,7 +28,7 @@ const features = [
 const features2 = [
   {
     tag: 'Tokenomics',
-    title: 'Launch on Ethereum Chain.',
+    title: 'Launch on Solana Chain.',
     description: "The total supply is set at one quadrillion tokens (1,000,000,000,000,000). Here's how we've allocated them",
     list: ['IDO: 50%', 'Initial LP: 20%', 'Operation: 7%', 'Technology: 5%', 'Ecosystem: 13%', 'Exchange: 5%'],
     url: { text: 'Read Whitepaper', href: '#' },
@@ -44,7 +44,7 @@ const features2 = [
   },
   {
     tag: 'Other Mechanism',
-    title: 'Staking & Mining with SOL-LIME .',
+    title: 'Staking & Mining with SOLIME .',
     description: 'To further incentivize user engagement and participation, LinkAI offers staking and mining opportunities.',
     list: [
       'Users can earn rewards, contributing to the overall health and vibrancy of the ecosystem.',
@@ -65,7 +65,7 @@ const Features = () => {
       <section className='py-10 px-6' ref={ref}>
         <div className='container mx-auto'>
           <AnimateIn>
-            <h1 className='text-3xl md:text-4xl font-bold text-center'>Overview of SOL-Lime Tokens $LIMO</h1>
+            <h1 className='text-3xl md:text-4xl font-bold text-center'>Overview of SOLIME Tokens $LIMO</h1>
           </AnimateIn>
 
           <MotionContainer className='grid grid-cols-1 lg:grid-cols-3 gap-8 mt-15' staggerChildren={0.2}>

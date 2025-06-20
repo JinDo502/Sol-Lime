@@ -14,12 +14,12 @@ export function LazyLoadWrapper({ children, fallback = <div className='min-h-[10
 LazyLoadWrapper.displayName = 'LazyLoadWrapper';
 
 // 简化版本的懒加载函数，避免复杂的类型问题
-export function lazyLoad<P>(importFunc: () => Promise<{ default: ComponentType<P> }>, options?: { fallback?: React.ReactNode }) {
+export function lazyLoad<P extends object>(importFunc: () => Promise<{ default: ComponentType<P> }>, options?: { fallback?: React.ReactNode }) {
   const LazyComponent = lazy(importFunc);
 
   const LazyLoadComponent = (props: P) => (
     <LazyLoadWrapper fallback={options?.fallback}>
-      <LazyComponent {...props} />
+      <LazyComponent {...(props as React.ComponentProps<typeof LazyComponent>)} />
     </LazyLoadWrapper>
   );
 

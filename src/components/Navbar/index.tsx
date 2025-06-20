@@ -18,7 +18,7 @@ const navItems = [
   { label: 'Roadmap', href: '/roadmap' },
   { label: 'How To Use', href: '/how-to-use' },
   { label: 'Contact', href: '/contact' },
-  { label: 'Join Now', href: '#' },
+  { label: 'Start', href: '#' },
 ];
 
 const navItemVariants = {
@@ -38,8 +38,8 @@ const Navbar = () => {
       <div className='container mx-auto py-4 flex justify-between items-center relative'>
         <motion.div whileHover={{ scale: 1.05 }} transition={springs.soft}>
           <Link href='/' className='flex items-center h-8'>
-            <Image src='/images/logo.png' alt='SOL-Lime-Logo' className='h-full object-contain aspect-square' height={50} width={50} />
-            <h1 className='text-xl lg:text-3xl font-bold'>SOL-Lime</h1>
+            <Image src='/images/logo.png' alt='SOLIME-Logo' className='h-full object-contain aspect-square' height={50} width={50} />
+            <h1 className='text-xl lg:text-3xl font-bold'>SOLIME</h1>
           </Link>
         </motion.div>
         <div className='flex items-center gap-4'>

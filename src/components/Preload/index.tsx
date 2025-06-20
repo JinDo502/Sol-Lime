@@ -41,7 +41,7 @@ const Preload: React.FC<PreloadProps> = ({ fonts = true, images = [], scripts = 
     <>
       {/* 预加载关键脚本 */}
       {scripts.map((script, index) => (
-        <Script key={`preload-script-${index}`} src={script} strategy='beforeInteractive' />
+        <Script key={`preload-script-${index}`} src={script} strategy='afterInteractive' />
       ))}
     </>
   );

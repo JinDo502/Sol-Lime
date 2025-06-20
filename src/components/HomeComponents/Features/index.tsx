@@ -9,17 +9,17 @@ import { AnimateIn, MotionContainer, fadeInUp, springs, useScrollAnimation } fro
 const featuresContent = [
   {
     title: 'Simplify Token Transfers',
-    description: 'SOL-LIME facilitates the transfer of tokens between addresses. By issuing a simple command, you can move digital assets effortlessly',
+    description: 'SOLIME facilitates the transfer of tokens between addresses. By issuing a simple command, you can move digital assets effortlessly',
   },
   {
     title: 'Informative Token Insights',
     description:
-      'SOL-LIME provides crucial data about different tokens, equipping users with valuable insights to make informed decisions about their token transactions or investments',
+      'SOLIME provides crucial data about different tokens, equipping users with valuable insights to make informed decisions about their token transactions or investments',
   },
   {
     title: 'Elevate Your Web3 Experience',
     description:
-      'SOL-LIME &apos;s innovative features aim to create a safer and more rewarding web3 experience. Embrace the power of blockchain technology with an easy-to-use interface',
+      'SOLIME &apos;s innovative features aim to create a safer and more rewarding web3 experience. Embrace the power of blockchain technology with an easy-to-use interface',
   },
 ];
 
@@ -27,7 +27,7 @@ const featuresContent2 = [
   {
     title: 'Experience the Power of AI in Navigating Web3.',
     description:
-      'To optimize your web3 operations, understanding the dynamic ecosystem is key. SOL-LIME bridges this complexity, making blockchain technologies accessible to everyone.',
+      'To optimize your web3 operations, understanding the dynamic ecosystem is key. SOLIME bridges this complexity, making blockchain technologies accessible to everyone.',
 
     list: [
       'Start managing your digital assets more efficiently',
@@ -39,17 +39,17 @@ const featuresContent2 = [
   },
   {
     title: 'A Revolutionary Tool to Simplify Your Web3 Interactions.',
-    description: 'SOL-LIME enables you to navigate the web3 space seamlessly. Identify your blockchain needs and understand how SOL-LIME can streamline your experience.',
+    description: 'SOLIME enables you to navigate the web3 space seamlessly. Identify your blockchain needs and understand how SOLIME can streamline your experience.',
     link: { text: 'Join Community For Updates', href: 'https://twitter.com/SOL-CHAT_eth' },
     img: '/images/illustrations/feature-illustration-2-dark.svg',
   },
   {
-    title: 'Manage Tokens, Transactions, & More with SOL-LIME .',
-    description: 'To take full advantage of the web3 ecosystem, you need a comprehensive tool. SOL-LIME offers a variety of features to enhance your digital asset interactions.',
+    title: 'Manage Tokens, Transactions, & More with SOLIME .',
+    description: 'To take full advantage of the web3 ecosystem, you need a comprehensive tool. SOLIME offers a variety of features to enhance your digital asset interactions.',
     list: [
-      'Start navigating web3 effortlessly with SOL-LIME ',
+      'Start navigating web3 effortlessly with SOLIME ',
       'Engage with an AI chatbot that prioritizes user experience',
-      'Use SOL-LIME &apos;s vast array of features designed to simplify your web3 operations',
+      'Use SOLIME &apos;s vast array of features designed to simplify your web3 operations',
     ],
     link: { text: 'Get Started Free', href: '#' },
     img: '/images/illustrations/feature-illustration-3-dark.svg',

@@ -12,19 +12,19 @@ const featuresContent = [
   {
     icon: Icon1,
     title: 'Effortless Token Management',
-    description: "SOL-LIME simplifies token transfers, token swapping, and even borrowing tokens from DeFi platforms. It's like having your personal blockchain assistant",
+    description: "SOLIME simplifies token transfers, token swapping, and even borrowing tokens from DeFi platforms. It's like having your personal blockchain assistant",
   },
   {
     icon: Icon2,
     title: 'Insightful Information Retrieval',
     description:
-      'SOL-LIME provides you with essential token information and updates on the latest market trends and news, equipping you with valuable insights for your blockchain activities',
+      'SOLIME provides you with essential token information and updates on the latest market trends and news, equipping you with valuable insights for your blockchain activities',
   },
   {
     icon: Icon3,
     title: 'Enhanced Security Measures',
     description:
-      'With SOL-LIME , rest assured that your digital assets are protected. It conducts regular security checks and issues risk warnings to alert you about potential threats',
+      'With SOLIME , rest assured that your digital assets are protected. It conducts regular security checks and issues risk warnings to alert you about potential threats',
   },
 ];
 
@@ -35,7 +35,7 @@ const Features = () => {
     <section className='py-10 px-6' ref={ref}>
       <div className='container mx-auto'>
         <AnimateIn className='text-center flex flex-col items-center gap-4'>
-          <p className='text-primary font-bold'>SOL-LIME Features</p>
+          <p className='text-primary font-bold'>SOLIME Features</p>
           <h1 className='text-foreground text-3xl md:text-4xl font-bold'>Streamline Your Web3 Experience, The Future of AI Blockchain Tools is Here</h1>
         </AnimateIn>
 

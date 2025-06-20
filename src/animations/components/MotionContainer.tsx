@@ -11,7 +11,7 @@ interface MotionContainerProps {
   delay?: number;
   staggerChildren?: number;
   viewport?: { once?: boolean; amount?: number | 'some' | 'all'; margin?: string };
-  tag?: keyof JSX.IntrinsicElements;
+  tag?: 'div' | 'span' | 'section' | 'article' | 'ul' | 'li' | 'header' | 'footer' | 'main';
 }
 
 /**
@@ -33,13 +33,40 @@ const MotionContainer: React.FC<MotionContainerProps> = ({
   // 合并过渡配置
   const mergedTransition: Transition = { ...createStaggerTransition(staggerChildren, delay), ...transition };
 
-  const MotionTag = motion[tag as keyof typeof motion];
+  const renderMotionComponent = () => {
+    const props = {
+      initial: 'hidden',
+      whileInView: 'visible',
+      viewport,
+      variants,
+      transition: mergedTransition,
+      className,
+      children,
+    };
 
-  return (
-    <MotionTag initial='hidden' whileInView='visible' viewport={viewport} variants={variants} transition={mergedTransition} className={className}>
-      {children}
-    </MotionTag>
-  );
+    switch (tag) {
+      case 'span':
+        return <motion.span {...props} />;
+      case 'section':
+        return <motion.section {...props} />;
+      case 'article':
+        return <motion.article {...props} />;
+      case 'ul':
+        return <motion.ul {...props} />;
+      case 'li':
+        return <motion.li {...props} />;
+      case 'header':
+        return <motion.header {...props} />;
+      case 'footer':
+        return <motion.footer {...props} />;
+      case 'main':
+        return <motion.main {...props} />;
+      default:
+        return <motion.div {...props} />;
+    }
+  };
+
+  return renderMotionComponent();
 };
 
 export default MotionContainer;
