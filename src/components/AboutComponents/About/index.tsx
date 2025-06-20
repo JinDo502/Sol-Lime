@@ -7,7 +7,7 @@ import { useTheme } from 'next-themes';
 const About = () => {
   const { theme } = useTheme();
   return (
-    <section className='py-15 px-8 md:px-0'>
+    <section className='py-10 px-6 '>
       <div className='container mx-auto'>
         <div className='flex flex-col items-center gap-8 md:flex-row'>
           <div className='text-center flex flex-col items-center gap-4 w-full md:w-2/5'>

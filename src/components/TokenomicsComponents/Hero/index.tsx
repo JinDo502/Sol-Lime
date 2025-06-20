@@ -25,7 +25,7 @@ const Hero = () => {
           </Link>
         </div>
       </div>
-      <div className='relative px-8 md:px-0'>
+      <div className='relative px-8'>
         <div className='absolute top-0 left-0 -translate-x-1/2 -translate-y-1/2 w-[700px] h-auto z-[-1]'>
           <Image src='/images/shapes/blurry-shape-1.svg' className='w-full' alt='' width={1000} height={1000} />
         </div>

@@ -23,7 +23,7 @@ const roadmap = [
 
 const Pricing = () => {
   return (
-    <section className='pt-20 pb-10 px-8 md:px-0'>
+    <section className='py-10 px-6'>
       <div className='container mx-auto'>
         <div className='flex flex-col items-center justify-center gap-4 mb-10'>
           <p className='text-primary'>Roadmap</p>

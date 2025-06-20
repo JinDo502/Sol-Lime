@@ -36,7 +36,7 @@ const cssSpringTransition =
 
 const UseCaseDetails = () => {
   return (
-    <section className='pt-10 pb-20 px-8 md:px-0'>
+    <section className='py-10 px-6'>
       <div className='container mx-auto'>
         <div className='flex flex-col md:flex-row md:items-center gap-10 pt-10'>
           <div className='text-center text-lg-start md:w-1/2'>

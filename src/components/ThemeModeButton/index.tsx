@@ -46,8 +46,8 @@ export default function ThemeModeButton() {
   }
 
   return (
-    <button onClick={toggleTheme} className='p-2 rounded-lg transition-colors hover:bg-foreground/10' aria-label='Toggle theme'>
-      <div>{theme === 'dark' ? <BsSun className='w-5 h-5' /> : <BsMoon className='w-5 h-5' />}</div>
+    <button onClick={toggleTheme} className='p-2 rounded-lg' aria-label='Toggle theme'>
+      {theme === 'dark' ? <BsSun className='w-5 h-5' /> : <BsMoon className='w-5 h-5' />}
     </button>
   );
 }

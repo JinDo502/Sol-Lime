@@ -109,8 +109,8 @@ const ReviewsScroll = () => {
 
 const Reviews = () => {
   return (
-    <section className='overflow-hidden py-10'>
-      <div className='container mx-auto mx-auto px-8 md:px-0'>
+    <section className='overflow-hidden w-screen'>
+      <div className='container mx-auto py-10 px-6 '>
         <div>
           <h1>
             <span className='text-primary'>SOL-LIME .</span>

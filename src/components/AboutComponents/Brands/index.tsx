@@ -12,7 +12,7 @@ const brands = [
 
 const Brands = () => {
   return (
-    <section className='py-10 px-6'>
+    <section className='py-10 px-6 '>
       <div className='container mx-auto flex flex-col mt-10 items-center gap-10 text-center'>
         <h4 className='font-[var(--font-montserrat)] text-2xl md:text-3xl font-bold'>
           <span className='text-transparent bg-clip-text bg-gradient-to-r from-primary to-secondary'>Famous Partners</span>

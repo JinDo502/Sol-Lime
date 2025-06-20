@@ -6,7 +6,7 @@ import { BsPerson, BsPhone } from 'react-icons/bs';
 
 const ContactContent = () => {
   return (
-    <section className='py-15 px-8 md:px-0'>
+    <section className='py-10 px-6'>
       <div className='container mx-auto'>
         <div className='flex flex-col gap-8 text-center md:flex-row md:py-10'>
           <div className='flex items-center gap-4 flex-col md:w-1/2 md:px-10'>

@@ -28,7 +28,7 @@ const featuresContent = [
 
 const Features = () => {
   return (
-    <section className='py-10 px-6'>
+    <section className='py-10 px-6 '>
       <div className='container mx-auto'>
         <div className='text-center flex flex-col items-center gap-4'>
           <p className='text-primary font-bold'>SOL-LIME Features</p>

@@ -81,7 +81,7 @@ const useCasesContent = [
 
 const UseCases = () => {
   return (
-    <section className='pt-10 px-8 md:px-0'>
+    <section className='py-10 px-6'>
       <div className='container mx-auto'>
         <div className='text-center flex flex-col items-center gap-4'>
           <p className='text-primary font-bold'>SOL-LIME Use Cases</p>

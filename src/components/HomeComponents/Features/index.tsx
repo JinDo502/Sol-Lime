@@ -59,11 +59,11 @@ const Features = () => {
     <>
       <section className='relative overflow-hidden py-10 px-6'>
         <div className='absolute top-0 left-1/2 -translate-x-1/2 w-[1000px] z-[-1]'>
-          <Image src='/images/shapes/blurry-shape-3.svg' alt='' width={1000} height={1000} className='img-fluid' />
+          <Image src='/images/shapes/blurry-shape-3.svg' alt='' width={1000} height={1000} />
         </div>
         <div className='container mx-auto'>
           <div className='text-center mb-18'>
-            <h1 className=' mb-0 text-3xl md:text-4xl font-bold'>
+            <h1 className='mb-0 text-3xl md:text-4xl font-bold'>
               Seamlessly Navigate Web3 with AI, <br className='d-none d-lg-block' />
               Across Your Favorite Platforms
             </h1>
@@ -99,7 +99,7 @@ const Features = () => {
         <div className='container mx-auto grid grid-cols-1 gap-8'>
           {featuresContent2?.map((item, index) => {
             return (
-              <div key={item.title} className={`bg-card-bg rounded-2xl p-6 flex flex-col md:flex-row gap-8`}>
+              <div key={item.title} className={`bg-card-bg rounded-2xl p-6 flex flex-col md:flex-row gap-8 hover-lift`}>
                 <div className='w-full md:1/2 flex flex-col gap-6'>
                   <p className='text-primary font-bold md:text-xl'>Features {index + 1}</p>
                   <h1 className='text-2xl md:text-4xl font-bold'>{item.title}</h1>
@@ -108,7 +108,7 @@ const Features = () => {
                     {item.list?.map((listItem) => {
                       return (
                         <div key={listItem} className='flex items-start gap-2'>
-                          <BsCheck className='text-xl' />
+                          <BsCheck className='text-xl text-primary' />
                           {listItem}
                         </div>
                       );

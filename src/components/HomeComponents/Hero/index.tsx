@@ -50,7 +50,14 @@ const Hero = () => {
 
           <div className='relative w-full md:w-3/5'>
             <div className='relative z-10'>
-              <Image src='/images/screens/screen-2.jpg' alt='' width={1000} height={1000} className='w-full object-cover border-1 border-divider rounded-md' />
+              <Image
+                src='/images/screens/screen-2.jpg'
+                alt=''
+                width={1000}
+                height={1000}
+                className='w-full object-cover border-1 border-divider rounded-md'
+                priority // 优先加载图片
+              />
             </div>
 
             <div className='z-1'>

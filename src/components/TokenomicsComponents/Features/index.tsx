@@ -57,7 +57,7 @@ const features2 = [
 const Features = () => {
   return (
     <>
-      <section className='py-10 px-8'>
+      <section className='py-10 px-6'>
         <div className='container mx-auto'>
           <h1 className='text-3xl md:text-4xl font-bold text-center'>Overview of SOL-Lime Tokens $LIMO</h1>
 

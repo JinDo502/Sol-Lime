@@ -54,7 +54,7 @@ const StarRating = () => {
 
 const Reviews = () => {
   return (
-    <section className='pt-20 pb-10 px-8 md:px-0'>
+    <section className='py-10 px-6'>
       <div className='container mx-auto'>
         <h1 className='text-3xl md:text-4xl font-bold text-center'>
           <span className='text-primary'>SOL-LIME .</span>&nbsp;&nbsp;Received

@@ -22,7 +22,7 @@ const appUsersContent = [
 
 const AppUsers = () => {
   return (
-    <section className='py-20 px-8 md:px-0 bg-card-bg'>
+    <section className='py-10 px-6 bg-card-bg'>
       <div className='container mx-auto'>
         <div className='text-center flex flex-col items-center gap-4'>
           <h1 className='text-3xl md:text-4xl font-bold'>
