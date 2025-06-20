@@ -56,7 +56,7 @@ const Pricing = () => {
               <motion.h3 className='text-primary text-2xl md:text-3xl font-bold mb-0' whileHover={{ scale: 1.05 }} transition={springs.bouncy}>
                 {item?.title}
               </motion.h3>
-              <p className=' lead fw-normal mt-4 mb-0'>{item?.description}</p>
+              <p className='mt-4 mb-0'>{item?.description}</p>
               <ul className='list-disc list-outside text-gray-500 text-sm mt-4'>
                 {item?.features.map((feature, featureIndex) => (
                   <motion.li

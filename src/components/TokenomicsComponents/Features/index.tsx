@@ -1,27 +1,26 @@
 'use client';
 
 import Link from 'next/link';
-import { Icon1, Icon2, Icon3 } from './Icon';
 import Image from 'next/image';
-import { BsArrowUpRight, BsCheck } from 'react-icons/bs';
+import { BsArrowUpRight, BsCheck, BsCurrencyExchange, BsPieChart, BsRocket } from 'react-icons/bs';
 import { motion } from 'framer-motion';
 import { AnimateIn, MotionContainer, fadeInUp, springs, useScrollAnimation } from '@/animations';
 
 const features = [
   {
-    icon: Icon1,
-    title: 'Usage of Tokens',
-    description: 'The LinkAI token serves as the lifeblood of the LinkAI ecosystem. It provides a means of exchange, drives user engagement, and incentivizes behaviors.',
+    icon: <BsCurrencyExchange />,
+    title: 'Token Symbol',
+    description: '$SLC - The native utility token powering the SOLIME ecosystem, used for transactions, rewards, and governance',
   },
   {
-    icon: Icon2,
-    title: 'Solana Chain',
-    description: 'Tokenized on Solana Chain. An Solana-powered decentralized applications and trade it on decentralized exchanges.',
+    icon: <BsPieChart />,
+    title: 'Total Supply',
+    description: '1,000,000,000 SLC - Fixed supply with no additional minting to ensure long-term value preservation and prevent inflation',
   },
   {
-    icon: Icon3,
-    title: 'Future Outlook',
-    description: 'LinkAI plans to continue innovating and expanding its capabilities, and keeping up with the latest trends in blockchain technology and AI',
+    icon: <BsRocket />,
+    title: 'Launch Method',
+    description: 'Fair launch on Pump.fun - Ensuring equal opportunity for all participants with no pre-mining or team allocation advantages',
   },
 ];
 
@@ -29,16 +28,16 @@ const features2 = [
   {
     tag: 'Tokenomics',
     title: 'Launch on Solana Chain.',
-    description: "The total supply is set at one quadrillion tokens (1,000,000,000,000,000). Here's how we've allocated them",
+    description: "The total supply is set at one quadrillion tokens (1,000,000,000). Here's how we've allocated them",
     list: ['IDO: 50%', 'Initial LP: 20%', 'Operation: 7%', 'Technology: 5%', 'Ecosystem: 13%', 'Exchange: 5%'],
     url: { text: 'Read Whitepaper', href: '#' },
     img: '/images/illustrations/feature-illustration-1-dark.svg',
   },
   {
     tag: 'About IDO',
-    title: 'Join our IDO and get your $LIMO!',
+    title: 'Join our IDO and get your $SLC!',
     description: 'We will be launching our IDO here at our official platform Please stay tuned for more information and updates.',
-    list: ['Hard Cap: 270 ETH', '1 ETH = 1,851,851,851,851 $LIMO', 'Whitelist Volume: 80ETH (Min: 0.1ETH, Max:1ETH)', 'Public IDO Volume: 190ETH (Min: 0.05ETH, Max:2ETH)'],
+    list: ['Hard Cap: 270 ETH', '1 ETH = 1,851,851,851,851 $SLC', 'Whitelist Volume: 80ETH (Min: 0.1ETH, Max:1ETH)', 'Public IDO Volume: 190ETH (Min: 0.05ETH, Max:2ETH)'],
     url: { text: 'Follow Twitter', href: '#' },
     img: '/images/illustrations/feature-illustration-2-dark.svg',
   },
@@ -65,18 +64,18 @@ const Features = () => {
       <section className='py-10 px-6' ref={ref}>
         <div className='container mx-auto'>
           <AnimateIn>
-            <h1 className='text-3xl md:text-4xl font-bold text-center'>Overview of SOLIME Tokens $LIMO</h1>
+            <h1 className='text-3xl md:text-4xl font-bold text-center'>Overview of SOLIME Tokens $SLC</h1>
           </AnimateIn>
 
           <MotionContainer className='grid grid-cols-1 lg:grid-cols-3 gap-8 mt-15' staggerChildren={0.2}>
             {features.map((item) => (
               <motion.div key={item?.title} className='flex flex-col gap-4' variants={fadeInUp} transition={springs.soft}>
                 <motion.div
-                  className='w-14 h-14 text-primary flex items-center justify-center rounded-2xl p-2 border border-divider bg-gradient-to-l from-card-bg/90 to-card-bg/50'
+                  className='w-14 h-14 text-2xl text-primary flex items-center justify-center rounded-2xl p-2 border border-divider bg-gradient-to-l from-card-bg/90 to-card-bg/50'
                   whileHover={{ rotate: 15, scale: 1.1 }}
                   transition={springs.bouncy}
                 >
-                  <item.icon />
+                  {item.icon}
                 </motion.div>
                 <h4 className='text-2xl md:text-3xl font-bold'>{item?.title}</h4>
                 <p className='text-gray-400 text-sm'>{item?.description}</p>
