@@ -1,13 +1,29 @@
 import type { Metadata } from 'next';
 import { Inter, Montserrat } from 'next/font/google';
 import './globals.css';
+import './critical.css';
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
 import { ThemeProvider } from '@/components/theme-provider';
 
-const inter = Inter({ variable: '--font-inter', subsets: ['latin'] });
+// 优化字体加载
+const inter = Inter({
+  variable: '--font-inter',
+  subsets: ['latin'],
+  display: 'swap',
+  preload: true,
+  fallback: ['system-ui', 'Arial', 'sans-serif'],
+  adjustFontFallback: true,
+});
 
-const montserrat = Montserrat({ variable: '--font-montserrat', subsets: ['latin'] });
+const montserrat = Montserrat({
+  variable: '--font-montserrat',
+  subsets: ['latin'],
+  display: 'swap',
+  preload: true,
+  fallback: ['system-ui', 'Arial', 'sans-serif'],
+  adjustFontFallback: true,
+});
 
 export const metadata: Metadata = {
   title: 'SOL-Lime - Web3.0 AI Social App',
@@ -49,10 +65,20 @@ interface RootLayoutProps {
 export default function RootLayout({ children }: RootLayoutProps) {
   return (
     <html lang='en' suppressHydrationWarning>
-      <body className={`${inter.variable} ${montserrat.variable} antialiased`}>
+      <head>
+        {/* 预加载关键资源 */}
+        <link rel='preconnect' href='https://fonts.googleapis.com' />
+        <link rel='preconnect' href='https://fonts.gstatic.com' crossOrigin='anonymous' />
+        <link rel='preload' as='image' href='/images/logo.png' />
+
+        {/* 预加载关键路由 */}
+        <link rel='prefetch' href='/about' />
+        <link rel='prefetch' href='/features' />
+      </head>
+      <body className={`${inter.variable} ${montserrat.variable} antialiased fade-in`}>
         <ThemeProvider attribute='class' defaultTheme='light' enableSystem disableTransitionOnChange>
           <Navbar />
-          {children}
+          <main className='min-h-screen'>{children}</main>
           <Footer />
         </ThemeProvider>
       </body>

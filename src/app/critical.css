@@ -1,0 +1,119 @@
+/* 关键 CSS - 仅包含首屏渲染所需的样式 */
+
+/* 基础重置 */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+/* 基础布局 */
+html,
+body {
+  height: 100%;
+  width: 100%;
+  overflow-x: hidden;
+}
+
+/* 字体基础样式 */
+body {
+  font-family: var(--font-inter), system-ui, -apple-system, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+}
+
+/* 首屏容器样式 */
+.container {
+  width: 100%;
+  max-width: 1280px;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 1rem;
+  padding-right: 1rem;
+}
+
+/* 首屏关键颜色 */
+:root {
+  --color-primary: rgb(59, 130, 246);
+  --color-secondary: rgb(168, 85, 247);
+  --color-background: #ffffff;
+  --color-text: #111827;
+  --color-divider: #e5e7eb;
+}
+
+.dark {
+  --color-background: #111827;
+  --color-text: #f3f4f6;
+  --color-divider: #374151;
+}
+
+/* 关键组件样式 */
+.bg-background {
+  background-color: var(--color-background);
+}
+
+.text-primary {
+  color: var(--color-primary);
+}
+
+/* 基础布局类 */
+.flex {
+  display: flex;
+}
+
+.flex-col {
+  flex-direction: column;
+}
+
+.items-center {
+  align-items: center;
+}
+
+.justify-center {
+  justify-content: center;
+}
+
+.w-full {
+  width: 100%;
+}
+
+.h-full {
+  height: 100%;
+}
+
+.text-center {
+  text-align: center;
+}
+
+/* 关键动画 - 减少首屏闪烁 */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.fade-in {
+  animation: fadeIn 0.3s ease-in-out;
+}
+
+/* 骨架屏样式 - 用于内容加载中 */
+.skeleton {
+  background: linear-gradient(90deg, #f0f0f0 25%, #e0e0e0 50%, #f0f0f0 75%);
+  background-size: 200% 100%;
+  animation: skeleton-loading 1.5s infinite;
+}
+
+@keyframes skeleton-loading {
+  0% {
+    background-position: 200% 0;
+  }
+  100% {
+    background-position: -200% 0;
+  }
+} 

@@ -1,12 +1,38 @@
 import Hero from '@/components/HomeComponents/Hero';
 import Features from '@/components/HomeComponents/Features';
-import UseCases from '@/components/HomeComponents/UseCases';
-import AppUsers from '@/components/HomeComponents/AppUsers';
-import Reviews from '@/components/HomeComponents/Reviews';
-import Pricing from '@/components/RoadmapComponents/Pricing';
-import FAQ from '@/components/HomeComponents/FAQ';
-import CTA from '@/components/HomeComponents/CTA';
+import dynamic from 'next/dynamic';
 import type { Metadata } from 'next';
+
+// 动态导入非首屏组件
+const UseCases = dynamic(() => import('@/components/HomeComponents/UseCases'), {
+  loading: () => <div className='w-full h-[400px] flex items-center justify-center'>Loading...</div>,
+  ssr: true,
+});
+
+const AppUsers = dynamic(() => import('@/components/HomeComponents/AppUsers'), {
+  loading: () => <div className='w-full h-[300px] flex items-center justify-center'>Loading...</div>,
+  ssr: true,
+});
+
+const Reviews = dynamic(() => import('@/components/HomeComponents/Reviews'), {
+  loading: () => <div className='w-full h-[400px] flex items-center justify-center'>Loading...</div>,
+  ssr: true,
+});
+
+const Pricing = dynamic(() => import('@/components/RoadmapComponents/Pricing'), {
+  loading: () => <div className='w-full h-[500px] flex items-center justify-center'>Loading...</div>,
+  ssr: true,
+});
+
+const FAQ = dynamic(() => import('@/components/HomeComponents/FAQ'), {
+  loading: () => <div className='w-full h-[300px] flex items-center justify-center'>Loading...</div>,
+  ssr: true,
+});
+
+const CTA = dynamic(() => import('@/components/HomeComponents/CTA'), {
+  loading: () => <div className='w-full h-[200px] flex items-center justify-center'>Loading...</div>,
+  ssr: true,
+});
 
 export const metadata: Metadata = {
   title: 'SOL-Lime - Web3.0 AI Social App',
@@ -31,17 +57,28 @@ export const metadata: Metadata = {
   },
 };
 
+// 获取页面数据，启用 ISR
+export async function generateStaticParams() {
+  return [{}]; // 主页只有一个路径
+}
+
+// 设置页面重新验证时间
+export const revalidate = 3600; // 每小时重新验证一次
+
 export default function Home() {
   return (
     <div className='w-screen'>
-      <Hero />
-      <Features />
-      <UseCases />
-      <AppUsers />
-      <Reviews />
-      <Pricing />
-      <FAQ />
-      <CTA />
+      {/* 添加骨架屏占位符，提高感知性能 */}
+      <div className='contents' id='page-content'>
+        <Hero />
+        <Features />
+        <UseCases />
+        <AppUsers />
+        <Reviews />
+        <Pricing />
+        <FAQ />
+        <CTA />
+      </div>
     </div>
   );
 }
