@@ -78,42 +78,25 @@ const Reviews = () => {
             slidesPerView='auto'
             spaceBetween={10}
             breakpoints={{
-              768: {
-                slidesPerView: 2,
-                spaceBetween: 10,
-              },
-              1024: {
-                slidesPerView: 3,
-                spaceBetween: 10,
-              },
+              768: { slidesPerView: 2, spaceBetween: 10 },
+              1024: { slidesPerView: 3, spaceBetween: 10 },
             }}
             modules={[Pagination, Autoplay]}
             pagination={{ dynamicBullets: true, clickable: true }}
             className='mt-10 h-max'
-            autoplay={{
-              delay: 2500,
-              disableOnInteraction: false,
-            }}
+            autoplay={{ delay: 2500, disableOnInteraction: false }}
             loop={true}
           >
             {reviewsContent.map((item, index) => (
               <SwiperSlide key={index} className='!h-auto'>
                 <motion.div
                   className='bg-[var(--card-bg)] rounded-2xl p-6 border border-[var(--divider)] border-opacity-10 h-full'
-                  whileHover={{
-                    scale: 1.03,
-                    boxShadow: '0 10px 30px rgba(0, 0, 0, 0.1)',
-                    borderColor: 'var(--primary)',
-                  }}
                   initial={{ opacity: 0, y: 30 }}
                   animate={{ opacity: 1, y: 0 }}
-                  transition={{
-                    duration: 0.5,
-                    delay: 0.1 * index,
-                  }}
+                  transition={{ duration: 0.5, delay: 0.1 * index }}
                 >
                   <div className='flex items-center gap-4 mb-6'>
-                    <motion.div className='w-12 h-12 rounded-full overflow-hidden' whileHover={{ scale: 1.1 }} transition={{ duration: 0.2 }}>
+                    <motion.div className='w-12 h-12 rounded-full overflow-hidden'>
                       <Image src={item.avatar} alt='' className='w-full h-full object-cover' width={48} height={48} />
                     </motion.div>
                     <h6 className='mb-1 text-lg font-bold'>{item.name}</h6>
