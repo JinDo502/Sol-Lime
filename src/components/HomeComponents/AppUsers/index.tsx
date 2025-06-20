@@ -52,20 +52,6 @@ const AppUsers = () => {
           );
         })}
       </MotionContainer>
-
-      {/* 分隔线动画 */}
-      <div className='hidden md:flex justify-between mt-10'>
-        {[0, 1].map((_, index) => (
-          <motion.div
-            key={index}
-            className='h-[1px] bg-divider opacity-50'
-            style={{ width: '32%' }}
-            initial={{ width: 0, opacity: 0 }}
-            animate={{ width: '32%', opacity: 0.5 }}
-            transition={{ delay: 0.5 + index * 0.2, duration: 0.8, ...springs.soft }}
-          />
-        ))}
-      </div>
     </section>
   );
 };

@@ -1,9 +1,11 @@
 'use client';
 
 import Image from 'next/image';
+import { memo } from 'react';
 import ReviewLogos from '@/components/HomeComponents/ReviewLogos';
 import { motion } from 'framer-motion';
 import { AnimateIn, MotionContainer, fadeInUp, fadeInLeft, fadeInRight, springs } from '@/animations';
+import { getImageProps } from '@/utils/imageUtils';
 
 const brands = [
   { name: 'Brand 1', image: '/images/brands/1.png' },
@@ -48,23 +50,27 @@ const Hero = () => {
           <motion.div className='relative w-full md:w-3/5' variants={fadeInRight}>
             <motion.div className='relative z-10' whileHover={{ scale: 1.02 }} transition={springs.soft}>
               <Image
-                src='/images/screens/screen-2.jpg'
-                alt=''
-                width={1000}
-                height={1000}
-                className='w-full object-cover border-1 border-divider rounded-md'
-                priority // 优先加载图片
+                {...getImageProps({
+                  src: '/images/screens/screen-2.jpg',
+                  alt: 'SOL-LIME App Screenshot',
+                  width: 800,
+                  height: 600,
+                  className: 'w-full object-cover border-1 border-divider rounded-md',
+                  priority: true,
+                  sizes: '(max-width: 768px) 100vw, 60vw',
+                  quality: 85,
+                })}
               />
             </motion.div>
 
             <div className='z-1'>
               <Image
-                src='/images/shapes/blurry-shape-2.svg'
-                alt=''
-                width={1000}
-                height={1000}
-                className='absolute top-[-20rem] md:top-[-25rem] left-[-7rem] w-[500px] h-auto'
-                priority
+                {...getImageProps({
+                  src: '/images/shapes/blurry-shape-2.svg',
+                  alt: '',
+                  className: 'absolute top-[-20rem] md:top-[-25rem] left-[-7rem] w-[500px] h-auto',
+                  unoptimized: true,
+                })}
               />
             </div>
           </motion.div>
@@ -80,7 +86,16 @@ const Hero = () => {
           <MotionContainer className='flex flex-wrap justify-center md:flex-nowrap md:gap-10' staggerChildren={0.1}>
             {brands.map((brand) => (
               <motion.div key={brand.name} className='w-1/3 py-1' variants={fadeInUp} whileHover={{ scale: 1.1 }} transition={springs.soft}>
-                <Image src={brand.image} alt={brand.name} width={1000} height={1000} className='md:w-full md:h-auto' priority />
+                <Image
+                  {...getImageProps({
+                    src: brand.image,
+                    alt: brand.name,
+                    className: 'md:w-full md:h-auto',
+                    width: 200,
+                    height: 100,
+                    loading: 'lazy',
+                  })}
+                />
               </motion.div>
             ))}
           </MotionContainer>
@@ -90,4 +105,4 @@ const Hero = () => {
   );
 };
 
-export default Hero;
+export default memo(Hero);

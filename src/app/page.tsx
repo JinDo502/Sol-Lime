@@ -1,12 +1,36 @@
+import dynamic from 'next/dynamic';
 import Hero from '@/components/HomeComponents/Hero';
-import Features from '@/components/HomeComponents/Features';
-import UseCases from '@/components/HomeComponents/UseCases';
-import AppUsers from '@/components/HomeComponents/AppUsers';
-import Reviews from '@/components/HomeComponents/Reviews';
-import Pricing from '@/components/RoadmapComponents/Pricing';
-import FAQ from '@/components/HomeComponents/FAQ';
-import CTA from '@/components/HomeComponents/CTA';
 import type { Metadata } from 'next';
+
+// 懒加载非首屏组件
+const Features = dynamic(() => import('@/components/HomeComponents/Features'), {
+  loading: () => <div className='min-h-[300px] animate-pulse bg-gray-100 rounded-md' />,
+  ssr: true,
+});
+
+const UseCases = dynamic(() => import('@/components/HomeComponents/UseCases'), {
+  ssr: true,
+});
+
+const AppUsers = dynamic(() => import('@/components/HomeComponents/AppUsers'), {
+  ssr: true,
+});
+
+const Reviews = dynamic(() => import('@/components/HomeComponents/Reviews'), {
+  ssr: true,
+});
+
+const Pricing = dynamic(() => import('@/components/RoadmapComponents/Pricing'), {
+  ssr: true,
+});
+
+const FAQ = dynamic(() => import('@/components/HomeComponents/FAQ'), {
+  ssr: true,
+});
+
+const CTA = dynamic(() => import('@/components/HomeComponents/CTA'), {
+  ssr: true,
+});
 
 export const metadata: Metadata = {
   title: 'SOL-Lime - Web3.0 AI Social App',

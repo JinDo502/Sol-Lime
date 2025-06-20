@@ -41,13 +41,13 @@ const Brands = () => {
         </AnimateIn>
 
         <motion.div
-          className='flex flex-wrap justify-center md:flex-nowrap md:gap-10'
+          className='flex flex-wrap justify-center md:flex-nowrap gap-4 md:gap-10'
           initial='hidden'
           animate={controls}
           variants={{ hidden: {}, visible: { transition: { staggerChildren: 0.2 } } }}
         >
           {brands.map((brand) => (
-            <motion.div key={brand.name} className='w-1/3 py-1' variants={fadeInUp} whileHover={{ scale: 1.1 }} transition={springs.bouncy}>
+            <motion.div key={brand.name} className='w-1/4 md:w-1/3 py-1' variants={fadeInUp} whileHover={{ scale: 1.1 }} transition={springs.bouncy}>
               <Image src={brand.image} alt={brand.name} width={1000} height={1000} className='md:w-full md:h-auto' />
             </motion.div>
           ))}

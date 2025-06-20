@@ -8,6 +8,7 @@ import { springs } from '@/animations';
 
 import ThemeModeButton from '../ThemeModeButton';
 import { useState } from 'react';
+import { usePathname } from 'next/navigation';
 
 const navItems = [
   { label: 'Home', href: '/' },
@@ -27,6 +28,11 @@ const navItemVariants = {
 
 const Navbar = () => {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+
+  // 判断当前所在页面 高亮对应路由
+  const pathname = usePathname();
+  const isActive = (href: string) => pathname === href;
+
   return (
     <motion.nav className='sticky top-0 left-0 right-0 z-50 bg-background' initial={{ y: -100 }} animate={{ y: 0 }} transition={springs.soft}>
       <div className='container mx-auto py-4 flex justify-between items-center relative'>
@@ -60,10 +66,15 @@ const Navbar = () => {
                   transition={springs.soft}
                 >
                   <Link
-                    className={`inline-block hover:text-primary transition-colors duration-300 w-max ${
-                      item.label === 'Join Now' ? 'border border-primary rounded-xl px-4 py-2 hover:bg-primary hover:text-background' : ''
+                    className={`inline-block hover:text-primary transition-colors duration-300 w-full md:w-max ${
+                      item.label === 'Join Now'
+                        ? 'w-max border border-primary rounded-xl px-4 py-2 hover:bg-primary hover:text-background'
+                        : isActive(item.href)
+                        ? 'text-primary'
+                        : ''
                     }`}
                     href={item.href}
+                    onClick={() => setMobileMenuOpen(false)}
                   >
                     {item.label}
                   </Link>

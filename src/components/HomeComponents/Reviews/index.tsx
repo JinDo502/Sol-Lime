@@ -1,5 +1,6 @@
 'use client';
 
+import { memo } from 'react';
 import Image from 'next/image';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import 'swiper/css';
@@ -10,6 +11,8 @@ import './index.css';
 import { Autoplay, Pagination } from 'swiper/modules';
 import { motion } from 'framer-motion';
 import { AnimateIn, springs } from '@/animations';
+import { getImageProps } from '@/utils/imageUtils';
+import { useMemoizedValue } from '@/utils/memoUtils';
 
 const reviewsContent = [
   {
@@ -40,7 +43,7 @@ const reviewsContent = [
   },
 ];
 
-const StarRating = () => {
+const StarRating = memo(() => {
   return (
     <motion.div className='flex items-center gap-1 mb-3 text-lg' initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ duration: 0.5 }}>
       {Array(5)
@@ -52,9 +55,37 @@ const StarRating = () => {
         ))}
     </motion.div>
   );
-};
+});
+
+StarRating.displayName = 'StarRating';
+
+const ReviewCard = memo(({ item }: { item: (typeof reviewsContent)[0] }) => {
+  return (
+    <motion.div
+      className='bg-card-bg rounded-2xl p-6 border border-divider border-opacity-10 h-full'
+      whileHover={{ borderColor: 'var(--color-primary)' }}
+      transition={springs.soft}
+    >
+      <div className='flex items-center gap-4 mb-6'>
+        <motion.div className='w-12 h-12 rounded-full overflow-hidden' whileHover={{ scale: 1.1 }} transition={springs.bouncy}>
+          {/* eslint-disable-next-line jsx-a11y/alt-text */}
+          <Image {...getImageProps({ src: item.avatar, alt: item.name, className: 'w-full h-full object-cover', width: 48, height: 48 })} />
+        </motion.div>
+        <h6 className='mb-1 text-lg font-bold'>{item.name}</h6>
+      </div>
+      <div className='flex flex-col gap-3'>
+        <StarRating />
+        <p className='mb-0 text-gray-500'>{item?.review}</p>
+      </div>
+    </motion.div>
+  );
+});
+
+ReviewCard.displayName = 'ReviewCard';
 
 const Reviews = () => {
+  const swiperBreakpoints = useMemoizedValue(() => ({ 768: { slidesPerView: 2, spaceBetween: 10 }, 1024: { slidesPerView: 3, spaceBetween: 10 } }), []);
+
   return (
     <section className='py-10 px-6'>
       <div className='container mx-auto'>
@@ -65,7 +96,8 @@ const Reviews = () => {
             </motion.span>
             &nbsp;&nbsp;Received
             <motion.div className='inline-block w-10 h-10' animate={{ rotate: [0, 10, -10, 0], scale: [1, 1.2, 1] }} transition={{ duration: 2, repeat: Infinity, repeatDelay: 3 }}>
-              <Image className='w-10 h-10' src='/images/icons/star.png' alt='' width={16} height={16} priority />
+              {/* eslint-disable-next-line jsx-a11y/alt-text */}
+              <Image {...getImageProps({ src: '/images/icons/star.png', alt: 'Star rating', className: 'w-10 h-10', width: 40, height: 40, priority: true })} />
             </motion.div>
             4.8/5 Stars in Over 10,000+ Reviews.
           </h1>
@@ -75,7 +107,7 @@ const Reviews = () => {
           <Swiper
             slidesPerView='auto'
             spaceBetween={10}
-            breakpoints={{ 768: { slidesPerView: 2, spaceBetween: 10 }, 1024: { slidesPerView: 3, spaceBetween: 10 } }}
+            breakpoints={swiperBreakpoints}
             modules={[Pagination, Autoplay]}
             pagination={{ dynamicBullets: true, clickable: true }}
             className='mt-10 h-max'
@@ -84,22 +116,7 @@ const Reviews = () => {
           >
             {reviewsContent.map((item, index) => (
               <SwiperSlide key={index} className='!h-auto'>
-                <motion.div
-                  className='bg-card-bg rounded-2xl p-6 border border-divider border-opacity-10 h-full'
-                  whileHover={{ y: -10, boxShadow: '0 10px 30px rgba(0, 0, 0, 0.1)' }}
-                  transition={springs.soft}
-                >
-                  <div className='flex items-center gap-4 mb-6'>
-                    <motion.div className='w-12 h-12 rounded-full overflow-hidden' whileHover={{ scale: 1.1 }} transition={springs.bouncy}>
-                      <Image src={item.avatar} alt='' className='w-full h-full object-cover' width={48} height={48} />
-                    </motion.div>
-                    <h6 className='mb-1 text-lg font-bold'>{item.name}</h6>
-                  </div>
-                  <div className='flex flex-col gap-3'>
-                    <StarRating />
-                    <p className='mb-0 text-gray-500'>{item?.review}</p>
-                  </div>
-                </motion.div>
+                <ReviewCard item={item} />
               </SwiperSlide>
             ))}
           </Swiper>
@@ -109,4 +126,4 @@ const Reviews = () => {
   );
 };
 
-export default Reviews;
+export default memo(Reviews);

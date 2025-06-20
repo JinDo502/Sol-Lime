@@ -64,7 +64,7 @@ const UseCaseDetails = () => {
 
         <hr className='border-top border-divider my-18' />
 
-        <AnimateIn>
+        <AnimateIn viewport={{ once: true, amount: 0.1 }}>
           <div className='flex flex-col gap-4'>
             <h1 className='text-3xl md:text-4xl font-bold mb-4'>How to use AI blog post generator to speed up your writing process.</h1>
             <p className='mb-4 text-gray-400'>
@@ -78,7 +78,7 @@ const UseCaseDetails = () => {
           </div>
         </AnimateIn>
 
-        <MotionContainer className='flex flex-col gap-10'>
+        <MotionContainer viewport={{ once: true, amount: 0.1 }} className='flex flex-col gap-10 mt-10'>
           {steps.map((step, index) => (
             <motion.div key={step.title + index} className='flex flex-col gap-4' variants={fadeInUp}>
               <h4 className='text-2xl md:text-3xl font-bold'>

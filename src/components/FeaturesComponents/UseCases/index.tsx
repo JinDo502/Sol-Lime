@@ -82,15 +82,13 @@ const useCasesContent = [
 ];
 
 const UseCases = () => {
-  const [ref, controls] = useScrollAnimation();
+  const [ref, controls] = useScrollAnimation({ threshold: 0.01 });
 
   return (
     <section className='py-10 px-6' ref={ref}>
       <div className='container mx-auto'>
         <AnimateIn className='text-center flex flex-col items-center gap-4'>
-          <motion.p className='text-primary font-bold' animate={{ scale: [1, 1.1, 1] }} transition={{ duration: 2, repeat: Infinity, repeatType: 'reverse' }}>
-            SOL-LIME Use Cases
-          </motion.p>
+          <p className='text-primary font-bold'>SOL-LIME Use Cases</p>
           <h1 className='text-foreground text-3xl md:text-4xl font-bold'>Streamline Your Web3 Experience, The Future of AI Blockchain Tools is Here</h1>
         </AnimateIn>
 
@@ -98,22 +96,15 @@ const UseCases = () => {
           className='grid grid-cols-1 gap-10 py-15 md:grid-cols-2 lg:grid-cols-4'
           initial='hidden'
           animate={controls}
-          variants={{
-            hidden: {},
-            visible: {
-              transition: {
-                staggerChildren: 0.1,
-              },
-            },
-          }}
+          variants={{ hidden: {}, visible: { transition: { staggerChildren: 0.1 } } }}
         >
           {useCasesContent.map((item) => {
             return (
               <motion.div
-                className='flex flex-col items-start gap-4 h-full text-start p-6 rounded-xl border border-divider hover:border-primary duration-300'
+                className='flex flex-col items-start gap-4 h-full text-start p-6 rounded-xl border border-divider'
                 key={item.title}
                 variants={fadeInUp}
-                whileHover={{ y: -10, boxShadow: '0 10px 30px rgba(0, 0, 0, 0.05)', borderColor: 'var(--color-primary)' }}
+                whileHover={{ boxShadow: '0 10px 30px rgba(0, 0, 0, 0.05)', borderColor: 'var(--color-primary)' }}
                 transition={springs.soft}
               >
                 <motion.div

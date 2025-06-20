@@ -31,9 +31,7 @@ const Pricing = () => {
     <section className='py-10 px-6'>
       <div className='container mx-auto'>
         <AnimateIn className='flex flex-col items-center justify-center gap-4 mb-10'>
-          <motion.p className='text-primary' animate={{ scale: [1, 1.1, 1] }} transition={{ duration: 2, repeat: Infinity, repeatType: 'reverse' }}>
-            Roadmap
-          </motion.p>
+          <p className='text-primary'>Roadmap</p>
           <h1 className=' text-3xl md:text-4xl font-bold mb-5 text-center'>
             Our Goals <br />
             Our Plans
@@ -46,7 +44,7 @@ const Pricing = () => {
             roadmap and start involve today!
           </p>
         </AnimateIn>
-        <MotionContainer className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mt-10' staggerChildren={0.2}>
+        <MotionContainer viewport={{ once: true, amount: 0.1 }} className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mt-10' staggerChildren={0.2}>
           {roadmap.map((item, index) => (
             <motion.div
               key={index}

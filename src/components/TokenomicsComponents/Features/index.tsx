@@ -57,8 +57,8 @@ const features2 = [
 ];
 
 const Features = () => {
-  const [ref] = useScrollAnimation();
-  const [ref2, controls2] = useScrollAnimation();
+  const [ref] = useScrollAnimation({ threshold: 0.01 });
+  const [ref2, controls2] = useScrollAnimation({ threshold: 0.01 });
 
   return (
     <>
@@ -70,13 +70,7 @@ const Features = () => {
 
           <MotionContainer className='grid grid-cols-1 lg:grid-cols-3 gap-8 mt-15' staggerChildren={0.2}>
             {features.map((item) => (
-              <motion.div
-                key={item?.title}
-                className='flex flex-col gap-4'
-                variants={fadeInUp}
-                whileHover={{ y: -10, boxShadow: '0 10px 30px rgba(0, 0, 0, 0.05)' }}
-                transition={springs.soft}
-              >
+              <motion.div key={item?.title} className='flex flex-col gap-4' variants={fadeInUp} transition={springs.soft}>
                 <motion.div
                   className='w-14 h-14 text-primary flex items-center justify-center rounded-2xl p-2 border border-divider bg-gradient-to-l from-card-bg/90 to-card-bg/50'
                   whileHover={{ rotate: 15, scale: 1.1 }}
@@ -108,13 +102,10 @@ const Features = () => {
                 initial={{ opacity: 0, y: 50 }}
                 animate={controls2}
                 variants={{ hidden: { opacity: 0, y: 50 }, visible: { opacity: 1, y: 0, transition: { delay: index * 0.2, ...springs.soft } } }}
-                whileHover={{ y: -10, boxShadow: '0 10px 30px rgba(0, 0, 0, 0.05)' }}
                 transition={springs.soft}
               >
                 <div className='w-full md:1/2 flex flex-col gap-6'>
-                  <motion.p className='text-primary font-bold md:text-xl' animate={{ scale: [1, 1.1, 1] }} transition={{ duration: 2, repeat: Infinity, repeatType: 'reverse' }}>
-                    Features {index + 1}
-                  </motion.p>
+                  <p className='text-primary font-bold md:text-xl'>Features {index + 1}</p>
                   <h1 className='text-2xl md:text-4xl font-bold'>{item.title}</h1>
                   <p className='text-gray-500'>{item.description}</p>
                   <div className='flex flex-col gap-2 text-gray-500 text-sm'>

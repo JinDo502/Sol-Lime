@@ -63,21 +63,21 @@ const Team = () => {
         </AnimateIn>
 
         <motion.div
-          className='grid grid-cols-1 md:grid-cols-3 xl:grid-cols-4 gap-8'
+          className='grid grid-cols-2 md:grid-cols-3 xl:grid-cols-4 gap-8'
           initial='hidden'
           animate={controls}
           variants={{ hidden: {}, visible: { transition: { staggerChildren: 0.1 } } }}
         >
           {teamContent.map((item) => {
             return (
-              <motion.div className='flex flex-col items-center gap-4' key={item.name} variants={fadeInUp} whileHover={{ y: -10 }} transition={springs.soft}>
-                <motion.div whileHover={{ scale: 1.1 }} transition={springs.bouncy} className='rounded-full w-1/3 overflow-hidden'>
+              <motion.div className='flex flex-col items-center gap-2 md:gap-4' key={item.name} variants={fadeInUp} transition={springs.soft}>
+                <motion.div whileHover={{ scale: 1.1 }} transition={springs.bouncy} className='rounded-full w-1/2 md:w-1/3 overflow-hidden'>
                   <Image src={item.image} alt={item.name} width={1000} height={1000} className='rounded-full w-full' />
                 </motion.div>
-                <motion.h4 className='text-xl font-bold text-foreground' whileHover={{ color: 'var(--color-primary)' }} transition={springs.soft}>
+                <motion.h4 className='text-base md:text-xl font-bold text-foreground' whileHover={{ color: 'var(--color-primary)' }} transition={springs.soft}>
                   {item.name}
                 </motion.h4>
-                <p className='text-sm text-gray-400 text-center'>{item.title}</p>
+                <p className='text-xs md:text-sm text-gray-400 text-center'>{item.title}</p>
               </motion.div>
             );
           })}

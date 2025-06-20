@@ -57,8 +57,9 @@ const featuresContent2 = [
 ];
 
 const Features = () => {
-  const [ref1, controls1] = useScrollAnimation();
-  const [ref2, controls2] = useScrollAnimation();
+  const [ref, controls] = useScrollAnimation({ threshold: 0.1 });
+  const [ref2, controls2] = useScrollAnimation({ threshold: 0.1 });
+  const [ref3, controls3] = useScrollAnimation({ threshold: 0.1 });
 
   return (
     <>
@@ -117,11 +118,10 @@ const Features = () => {
               <motion.div
                 key={item.title}
                 className={`bg-card-bg rounded-2xl p-6 flex flex-col md:flex-row gap-8 hover-lift`}
-                ref={index === 0 ? ref1 : ref2}
+                ref={index === 0 ? ref : index === 1 ? ref2 : ref3}
                 initial='hidden'
-                animate={index === 0 ? controls1 : controls2}
+                animate={index === 0 ? controls : index === 1 ? controls2 : controls3}
                 variants={fadeInUp}
-                whileHover={{ y: -5 }}
                 transition={springs.soft}
               >
                 <div className='w-full md:1/2 flex flex-col gap-6'>

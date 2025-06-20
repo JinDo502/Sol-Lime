@@ -80,20 +80,7 @@ const FAQ = () => {
           <span>
             Questions About our SOL-LIME ? <br />
           </span>
-          <motion.span
-            className='text-primary'
-            animate={{
-              scale: [1, 1.05, 1],
-              color: ['#3b82f6', '#10b981', '#3b82f6'],
-            }}
-            transition={{
-              duration: 4,
-              repeat: Infinity,
-              repeatType: 'reverse',
-            }}
-          >
-            We have Answers!
-          </motion.span>
+          <span className='text-primary'>We have Answers!</span>
         </h1>
       </AnimateIn>
 

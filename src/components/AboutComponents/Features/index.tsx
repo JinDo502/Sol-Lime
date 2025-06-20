@@ -30,15 +30,12 @@ const featuresContent = [
 
 const Features = () => {
   const [ref, controls] = useScrollAnimation();
-  const [videoRef, videoControls] = useScrollAnimation();
 
   return (
     <section className='py-10 px-6' ref={ref}>
       <div className='container mx-auto'>
         <AnimateIn className='text-center flex flex-col items-center gap-4'>
-          <motion.p className='text-primary font-bold' animate={{ scale: [1, 1.1, 1] }} transition={{ duration: 2, repeat: Infinity, repeatType: 'reverse' }}>
-            SOL-LIME Features
-          </motion.p>
+          <p className='text-primary font-bold'>SOL-LIME Features</p>
           <h1 className='text-foreground text-3xl md:text-4xl font-bold'>Streamline Your Web3 Experience, The Future of AI Blockchain Tools is Here</h1>
         </AnimateIn>
 
@@ -54,11 +51,7 @@ const Features = () => {
                 key={item?.title}
                 className='flex flex-col gap-4 p-6 rounded-xl border border-divider hover:border-primary duration-300'
                 variants={fadeInUp}
-                whileHover={{
-                  y: -10,
-                  boxShadow: '0 10px 30px rgba(0, 0, 0, 0.05)',
-                  borderColor: 'var(--color-primary)',
-                }}
+                whileHover={{ borderColor: 'var(--color-primary)' }}
                 transition={springs.soft}
               >
                 <motion.div
@@ -77,22 +70,14 @@ const Features = () => {
           })}
         </motion.div>
 
-        <motion.div className='relative mt-16' ref={videoRef} initial={{ opacity: 0, y: 50 }} animate={videoControls} transition={{ delay: 0.3, ...springs.soft }}>
+        <div className='relative mt-16'>
           <motion.div className='rounded-xl overflow-hidden' whileHover={{ scale: 1.02 }} transition={springs.soft}>
             <Image src='/images/thumbnails/video-thumb.jpg' width={1000} height={1000} alt='' className='w-full h-full object-cover' />
           </motion.div>
-          <motion.div
-            className='absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 bg-primary rounded-full p-4 cursor-pointer'
-            whileHover={{ scale: 1.2 }}
-            animate={{
-              scale: [1, 1.1, 1],
-              boxShadow: ['0 0 0 0 rgba(var(--color-primary-rgb), 0.7)', '0 0 0 10px rgba(var(--color-primary-rgb), 0)', '0 0 0 0 rgba(var(--color-primary-rgb), 0)'],
-            }}
-            transition={{ duration: 2, repeat: Infinity, repeatType: 'loop', ...springs.bouncy }}
-          >
+          <motion.div className='absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 bg-primary rounded-full p-4 cursor-pointer' whileHover={{ scale: 1.2 }}>
             <BsCaretRightFill className='text-background text-4xl md:text-5xl' />
           </motion.div>
-        </motion.div>
+        </div>
       </div>
     </section>
   );

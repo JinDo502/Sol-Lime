@@ -13,9 +13,7 @@ const Hero = () => {
   return (
     <section className='py-10 container mx-auto'>
       <AnimateIn className='relative z-1 text-center'>
-        <motion.p className='text-primary' animate={{ scale: [1, 1.1, 1] }} transition={{ duration: 2, repeat: Infinity, repeatType: 'reverse' }}>
-          Best AI Chat Tools
-        </motion.p>
+        <p className='text-primary'>Best AI Chat Tools</p>
         <h1 className='my-8 text-4xl md:text-5xl font-bold leading-tight'>
           Providing You The Best <br />
           <Printer />

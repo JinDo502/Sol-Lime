@@ -63,21 +63,13 @@ const UseCases = () => {
     <section className='py-10 px-6'>
       <div className='container mx-auto'>
         <AnimateIn className='text-center flex flex-col items-center gap-4'>
-          <motion.p className='text-primary font-bold' animate={{ scale: [1, 1.1, 1] }} transition={{ duration: 2, repeat: Infinity, repeatType: 'reverse' }}>
-            SOL-LIME Use Cases
-          </motion.p>
+          <p className='text-primary font-bold'>SOL-LIME Use Cases</p>
           <h1 className='text-foreground text-3xl md:text-4xl font-bold'>Navigate Web3 Easier and Faster, The Future of AI in Blockchain is Here</h1>
         </AnimateIn>
 
-        <MotionContainer className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10 py-15' staggerChildren={0.1}>
+        <MotionContainer viewport={{ once: true, amount: 0.1 }} className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10 py-15' staggerChildren={0.1}>
           {useCasesContent.map((item) => (
-            <motion.div
-              key={item.title}
-              className='flex flex-col justify-between gap-4 h-full text-center'
-              variants={fadeInUp}
-              whileHover={{ y: -10, boxShadow: '0 10px 30px rgba(0, 0, 0, 0.05)' }}
-              transition={springs.soft}
-            >
+            <motion.div key={item.title} className='flex flex-col justify-between gap-4 h-full text-center' variants={fadeInUp} transition={springs.soft}>
               <motion.div className='w-14 h-14 text-primary mx-auto' whileHover={{ rotate: 15, scale: 1.2 }} transition={springs.bouncy}>
                 {item.icon}
               </motion.div>
