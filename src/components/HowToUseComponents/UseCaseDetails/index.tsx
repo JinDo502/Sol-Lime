@@ -2,6 +2,8 @@
 
 import Image from 'next/image';
 import { BsSend } from 'react-icons/bs';
+import { motion } from 'framer-motion';
+import { AnimateIn, MotionContainer, fadeInUp, springs } from '@/animations';
 
 const steps = [
   {
@@ -30,37 +32,39 @@ const steps = [
   },
 ];
 
-// 自定义CSS弹性动画
-const cssSpringTransition =
-  '800ms linear(0, 0.1187, 0.3801, 0.6679, 0.9085, 1.069, 1.1478, 1.1617, 1.1346, 1.0894, 1.0435, 1.0072, 0.9844, 0.9745, 0.9743, 0.9797, 0.9873, 0.9945, 0.9999, 1.0031, 1.0043, 1.004, 1.003, 1.0018, 1.0006, 0.9998, 1)';
-
 const UseCaseDetails = () => {
   return (
     <section className='py-10 px-6'>
       <div className='container mx-auto'>
-        <div className='flex flex-col md:flex-row md:items-center gap-10 pt-10'>
-          <div className='text-center text-lg-start md:w-1/2'>
+        <MotionContainer className='flex flex-col md:flex-row md:items-center gap-10 pt-10'>
+          <motion.div className='text-center text-lg-start md:w-1/2' variants={fadeInUp}>
             <h1 className='text-3xl md:text-4xl font-bold mb-4'>Complete a blog entry in half the time.</h1>
             <p className='mb-8 text-gray-400'>With a few clicks of a button, you can create a whole outline, opening paragraph, and body for your blog.</p>
             <form action='#'>
               <div className='flex items-stretch'>
                 <input type='email' className='flex-1 border border-r-0 border-divider rounded-s-md p-2' placeholder='Your email' />
-                <div dir='rtl' className='bg-primary text-background rounded-s-md px-4 flex items-center justify-center' style={{ transition: `transform ${cssSpringTransition}` }}>
+                <motion.div
+                  dir='rtl'
+                  className='bg-primary text-background rounded-s-md px-4 flex items-center justify-center'
+                  whileHover={{ scale: 1.05 }}
+                  whileTap={{ scale: 0.95 }}
+                  transition={springs.bouncy}
+                >
                   <BsSend className='text-background' />
-                </div>
+                </motion.div>
               </div>
             </form>
-          </div>
-          <div className='text-center md:w-1/2'>
-            <div style={{ transition: `transform ${cssSpringTransition}` }}>
+          </motion.div>
+          <AnimateIn className='text-center md:w-1/2' transition={springs.bouncy}>
+            <motion.div whileHover={{ scale: 1.02 }} transition={springs.soft}>
               <Image src='/images/screens/screen-3.png' alt='' className='img-fluid d-inline-block' width={1000} height={1000} />
-            </div>
-          </div>
-        </div>
+            </motion.div>
+          </AnimateIn>
+        </MotionContainer>
 
         <hr className='border-top border-divider my-18' />
 
-        <div className='flex flex-col gap-10'>
+        <AnimateIn>
           <div className='flex flex-col gap-4'>
             <h1 className='text-3xl md:text-4xl font-bold mb-4'>How to use AI blog post generator to speed up your writing process.</h1>
             <p className='mb-4 text-gray-400'>
@@ -72,9 +76,11 @@ const UseCaseDetails = () => {
               cupidatat incididunt.
             </p>
           </div>
+        </AnimateIn>
 
+        <MotionContainer className='flex flex-col gap-10'>
           {steps.map((step, index) => (
-            <div key={step.title + index} className='flex flex-col gap-4'>
+            <motion.div key={step.title + index} className='flex flex-col gap-4' variants={fadeInUp}>
               <h4 className='text-2xl md:text-3xl font-bold'>
                 <span className='text-primary'>Step {index + 1}:</span> {step.title}
               </h4>
@@ -85,16 +91,16 @@ const UseCaseDetails = () => {
                   </p>
                 );
               })}
-              <div style={{ transition: `transform ${cssSpringTransition}` }}>
+              <motion.div whileHover={{ scale: 1.02 }} transition={springs.soft}>
                 <Image src={step.image} alt='' className='rounded shadow-lg' width={1000} height={1000} />
-              </div>
-            </div>
+              </motion.div>
+            </motion.div>
           ))}
 
-          <p className='text-gray-400'>
+          <motion.p className='text-gray-400' variants={fadeInUp}>
             GenAI has been there. Even the most seasoned and well-versed writers and content producers endure mental gaps. Nulla Lorem mollit cupidatat irure. Laborum magna.
-          </p>
-        </div>
+          </motion.p>
+        </MotionContainer>
       </div>
     </section>
   );

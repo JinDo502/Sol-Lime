@@ -2,6 +2,8 @@
 
 import Image from 'next/image';
 import { AiFillStar } from 'react-icons/ai';
+import { motion } from 'framer-motion';
+import { AnimateIn, springs } from '@/animations';
 
 const reviewsContent = [
   {
@@ -59,50 +61,68 @@ const reviewsContent = [
 const ReviewsScroll = () => {
   return (
     <div className='w-full overflow-hidden'>
-      <div className='flex gap-4 cursor-grab'>
+      <motion.div className='flex gap-4 cursor-grab' animate={{ x: [0, -2000] }} transition={{ duration: 60, repeat: Infinity, repeatType: 'loop', ease: 'linear' }}>
         {reviewsContent.map((item, index) => (
-          <div key={index} className='w-[90vw] max-w-[400px] min-w-[300px] bg-card-bg rounded-2xl p-6 border border-divider border-opacity-10 flex-shrink-0'>
+          <motion.div
+            key={index}
+            className='w-[90vw] max-w-[400px] min-w-[300px] bg-card-bg rounded-2xl p-6 border border-divider border-opacity-10 flex-shrink-0'
+            whileHover={{ y: -10, boxShadow: '0 10px 30px rgba(0, 0, 0, 0.05)', borderColor: 'var(--color-primary)' }}
+            transition={springs.soft}
+          >
             <div className='flex items-center gap-4 mb-6'>
-              <div className='w-12 h-12 rounded-full overflow-hidden'>
+              <motion.div className='w-12 h-12 rounded-full overflow-hidden' whileHover={{ scale: 1.1 }} transition={springs.bouncy}>
                 <Image src={item.avatar} alt={item.name} width={48} height={48} className='w-full h-full object-cover' />
-              </div>
+              </motion.div>
               <div>
-                <h6 className=' mb-1'>{item.name}</h6>
+                <motion.h6 className='mb-1' whileHover={{ color: 'var(--color-primary)' }} transition={springs.soft}>
+                  {item.name}
+                </motion.h6>
               </div>
             </div>
             <div>
               <div className='flex items-center gap-1 mb-3'>
                 {[...Array(5)].map((_, i) => (
-                  <AiFillStar key={i} className='text-primary' />
+                  <motion.div key={i} animate={{ scale: [1, 1.2, 1] }} transition={{ delay: i * 0.1 + index * 0.02, duration: 2, repeat: Infinity, repeatDelay: 5 }}>
+                    <AiFillStar className='text-primary' />
+                  </motion.div>
                 ))}
               </div>
               <p className='mb-0 text-gray-500'>{item?.review}</p>
             </div>
-          </div>
+          </motion.div>
         ))}
 
         {/* 复制评论卡片以实现无缝滚动效果 */}
         {reviewsContent.map((item, index) => (
-          <div key={`clone-${index}`} className='w-[90vw] max-w-[400px] min-w-[300px] bg-card-bg rounded-2xl p-6 border border-divider border-opacity-10 flex-shrink-0'>
+          <motion.div
+            key={`clone-${index}`}
+            className='w-[90vw] max-w-[400px] min-w-[300px] bg-card-bg rounded-2xl p-6 border border-divider border-opacity-10 flex-shrink-0'
+            whileHover={{ y: -10, boxShadow: '0 10px 30px rgba(0, 0, 0, 0.05)', borderColor: 'var(--color-primary)' }}
+            transition={springs.soft}
+          >
             <div className='flex items-center gap-4 mb-6'>
-              <div className='w-12 h-12 rounded-full overflow-hidden'>
+              <motion.div className='w-12 h-12 rounded-full overflow-hidden' whileHover={{ scale: 1.1 }} transition={springs.bouncy}>
                 <Image src={item.avatar} alt={item.name} width={48} height={48} className='w-full h-full object-cover' />
-              </div>
+              </motion.div>
               <div>
-                <h6 className=' mb-1'>{item.name}</h6>
+                <motion.h6 className='mb-1' whileHover={{ color: 'var(--color-primary)' }} transition={springs.soft}>
+                  {item.name}
+                </motion.h6>
               </div>
             </div>
             <div>
               <div className='flex items-center gap-1 mb-3'>
                 {[...Array(5)].map((_, i) => (
-                  <AiFillStar key={i} className='text-primary' />
+                  <motion.div key={i} animate={{ scale: [1, 1.2, 1] }} transition={{ delay: i * 0.1 + (index + 10) * 0.02, duration: 2, repeat: Infinity, repeatDelay: 5 }}>
+                    <AiFillStar className='text-primary' />
+                  </motion.div>
                 ))}
               </div>
               <p className='mb-0 text-gray-500'>{item?.review}</p>
             </div>
-          </div>
+          </motion.div>
         ))}
-      </div>
+      </motion.div>
     </div>
   );
 };
@@ -111,21 +131,34 @@ const Reviews = () => {
   return (
     <section className='overflow-hidden w-screen'>
       <div className='container mx-auto py-10 px-6 '>
-        <div>
+        <AnimateIn>
           <h1>
-            <span className='text-primary'>SOL-LIME .</span>
+            <motion.span className='text-primary' whileHover={{ scale: 1.1 }} transition={springs.bouncy}>
+              SOL-LIME .
+            </motion.span>
             Received{' '}
-            <span className='inline-block'>
+            <motion.span
+              className='inline-block'
+              animate={{
+                rotate: [0, 10, -10, 0],
+                scale: [1, 1.2, 1],
+              }}
+              transition={{
+                duration: 2,
+                repeat: Infinity,
+                repeatDelay: 3,
+              }}
+            >
               <Image src='/images/icons/star.png' className='inline-block w-10' alt='' width={1000} height={1000} />
-            </span>{' '}
+            </motion.span>{' '}
             <span>4.8/5 Stars in Over 10,000+ Reviews.</span>
           </h1>
-        </div>
+        </AnimateIn>
       </div>
       <ReviewsScroll />
-      <div className='mt-4'>
+      <motion.div className='mt-4' animate={{ x: [0, 2000] }} transition={{ duration: 80, repeat: Infinity, repeatType: 'loop', ease: 'linear' }}>
         <ReviewsScroll />
-      </div>
+      </motion.div>
     </section>
   );
 };

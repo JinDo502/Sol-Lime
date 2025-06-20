@@ -1,4 +1,8 @@
+'use client';
+
 import Image from 'next/image';
+import { motion } from 'framer-motion';
+import { AnimateIn, springs, fadeInUp, useScrollAnimation } from '@/animations';
 
 const teamContent = [
   {
@@ -44,24 +48,40 @@ const teamContent = [
 ];
 
 const Team = () => {
-  return (
-    <section className='py-10 px-6'>
-      <div className='container mx-auto'>
-        <h1 className='text-foreground text-center text-3xl md:text-4xl font-bold mb-10'>
-          <span className='text-primary'>SOL-LIME </span> Powered by a Team of Web3 Enthusiasts
-        </h1>
+  const [ref, controls] = useScrollAnimation();
 
-        <div className='grid grid-cols-1 md:grid-cols-3 xl:grid-cols-4 gap-8'>
+  return (
+    <section className='py-10 px-6' ref={ref}>
+      <div className='container mx-auto'>
+        <AnimateIn>
+          <h1 className='text-foreground text-center text-3xl md:text-4xl font-bold mb-10'>
+            <motion.span className='text-primary' whileHover={{ scale: 1.1 }} transition={springs.bouncy}>
+              SOL-LIME
+            </motion.span>{' '}
+            Powered by a Team of Web3 Enthusiasts
+          </h1>
+        </AnimateIn>
+
+        <motion.div
+          className='grid grid-cols-1 md:grid-cols-3 xl:grid-cols-4 gap-8'
+          initial='hidden'
+          animate={controls}
+          variants={{ hidden: {}, visible: { transition: { staggerChildren: 0.1 } } }}
+        >
           {teamContent.map((item) => {
             return (
-              <div className='flex flex-col items-center gap-4' key={item.name}>
-                <Image src={item.image} alt='' width={1000} height={1000} className='rounded-full w-1/3' />
-                <h4 className='text-xl font-bold text-foreground'>{item.name}</h4>
+              <motion.div className='flex flex-col items-center gap-4' key={item.name} variants={fadeInUp} whileHover={{ y: -10 }} transition={springs.soft}>
+                <motion.div whileHover={{ scale: 1.1 }} transition={springs.bouncy} className='rounded-full w-1/3 overflow-hidden'>
+                  <Image src={item.image} alt={item.name} width={1000} height={1000} className='rounded-full w-full' />
+                </motion.div>
+                <motion.h4 className='text-xl font-bold text-foreground' whileHover={{ color: 'var(--color-primary)' }} transition={springs.soft}>
+                  {item.name}
+                </motion.h4>
                 <p className='text-sm text-gray-400 text-center'>{item.title}</p>
-              </div>
+              </motion.div>
             );
           })}
-        </div>
+        </motion.div>
       </div>
     </section>
   );

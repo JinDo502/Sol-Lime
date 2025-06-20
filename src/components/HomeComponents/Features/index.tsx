@@ -3,6 +3,8 @@
 import Image from 'next/image';
 import Link from 'next/link';
 import { BsArrowUpRight, BsCheck } from 'react-icons/bs';
+import { motion } from 'framer-motion';
+import { AnimateIn, MotionContainer, fadeInUp, springs, useScrollAnimation } from '@/animations';
 
 const featuresContent = [
   {
@@ -55,6 +57,9 @@ const featuresContent2 = [
 ];
 
 const Features = () => {
+  const [ref1, controls1] = useScrollAnimation();
+  const [ref2, controls2] = useScrollAnimation();
+
   return (
     <>
       <section className='relative overflow-hidden py-10 px-6'>
@@ -62,35 +67,45 @@ const Features = () => {
           <Image src='/images/shapes/blurry-shape-3.svg' alt='' width={1000} height={1000} />
         </div>
         <div className='container mx-auto'>
-          <div className='text-center mb-18'>
+          <AnimateIn className='text-center mb-18'>
             <h1 className='mb-0 text-3xl md:text-4xl font-bold'>
               Seamlessly Navigate Web3 with AI, <br className='d-none d-lg-block' />
               Across Your Favorite Platforms
             </h1>
-          </div>
+          </AnimateIn>
 
-          <div className='grid grid-cols-1 lg:grid-cols-3 gap-8'>
+          <MotionContainer className='grid grid-cols-1 lg:grid-cols-3 gap-8' staggerChildren={0.2}>
             {featuresContent?.map((item, index) => {
               return (
-                <div key={item.title} className='col'>
-                  <div className='flex flex-col lg:flex-row gap-6'>
-                    <div className='w-14 h-14 flex items-center justify-center rounded-2xl p-2 border border-divider bg-gradient-to-l from-card-bg/90 to-card-bg/50'>
+                <motion.div key={item.title} className='col' variants={fadeInUp}>
+                  <motion.div className='flex flex-col lg:flex-row gap-6' whileHover={{ y: -5 }} transition={springs.soft}>
+                    <motion.div
+                      className='w-14 h-14 flex items-center justify-center rounded-2xl p-2 border border-divider bg-gradient-to-l from-card-bg/90 to-card-bg/50'
+                      whileHover={{ scale: 1.1, rotate: 5 }}
+                      transition={springs.bouncy}
+                    >
                       <h4 className='m-0 p-0 text-xl font-bold text-primary'>0{index + 1}</h4>
-                    </div>
+                    </motion.div>
                     <div className='flex flex-col gap-4 flex-1'>
                       <h4 className='text-2xl md:text-3xl font-bold'>{item.title}</h4>
                       <p className='text-gray-500'>{item.description}</p>
                     </div>
-                  </div>
-                </div>
+                  </motion.div>
+                </motion.div>
               );
             })}
-          </div>
+          </MotionContainer>
 
           <div className='text-center mt-12'>
-            <a href='#' className='bg-primary text-background px-6 py-4 rounded-lg inline-block'>
+            <motion.a
+              href='#'
+              className='bg-primary text-background px-6 py-4 rounded-lg inline-block'
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.95 }}
+              transition={springs.bouncy}
+            >
               Try Now
-            </a>
+            </motion.a>
           </div>
         </div>
       </section>
@@ -99,30 +114,45 @@ const Features = () => {
         <div className='container mx-auto grid grid-cols-1 gap-8'>
           {featuresContent2?.map((item, index) => {
             return (
-              <div key={item.title} className={`bg-card-bg rounded-2xl p-6 flex flex-col md:flex-row gap-8 hover-lift`}>
+              <motion.div
+                key={item.title}
+                className={`bg-card-bg rounded-2xl p-6 flex flex-col md:flex-row gap-8 hover-lift`}
+                ref={index === 0 ? ref1 : ref2}
+                initial='hidden'
+                animate={index === 0 ? controls1 : controls2}
+                variants={fadeInUp}
+                whileHover={{ y: -5 }}
+                transition={springs.soft}
+              >
                 <div className='w-full md:1/2 flex flex-col gap-6'>
-                  <p className='text-primary font-bold md:text-xl'>Features {index + 1}</p>
+                  <motion.p className='text-primary font-bold md:text-xl' whileHover={{ scale: 1.05 }} transition={springs.soft}>
+                    Features {index + 1}
+                  </motion.p>
                   <h1 className='text-2xl md:text-4xl font-bold'>{item.title}</h1>
                   <p className='text-gray-500'>{item.description}</p>
                   <div className='flex flex-col gap-2 text-gray-500 text-sm'>
                     {item.list?.map((listItem) => {
                       return (
-                        <div key={listItem} className='flex items-start gap-2'>
+                        <motion.div key={listItem} className='flex items-start gap-2' whileHover={{ x: 5 }} transition={springs.soft}>
                           <BsCheck className='text-xl text-primary' />
                           {listItem}
-                        </div>
+                        </motion.div>
                       );
                     })}
                   </div>
-                  <Link href={item.link.href} className='flex font-bold items-center gap-3 text-primary'>
-                    <span>{item.link.text}</span>
-                    <BsArrowUpRight />
-                  </Link>
+                  <motion.div whileHover={{ x: 5 }} transition={springs.soft}>
+                    <Link href={item.link.href} className='flex font-bold items-center gap-3 text-primary'>
+                      <span>{item.link.text}</span>
+                      <motion.span whileHover={{ x: 3 }} transition={springs.bouncy}>
+                        <BsArrowUpRight />
+                      </motion.span>
+                    </Link>
+                  </motion.div>
                 </div>
-                <div className='w-full md:1/2 lg:w-1/3 flex justify-end'>
+                <motion.div className='w-full md:1/2 lg:w-1/3 flex justify-end' whileHover={{ scale: 1.05 }} transition={springs.soft}>
                   <Image src={item.img} alt='' width={1000} height={1000} className='w-full' />
-                </div>
-              </div>
+                </motion.div>
+              </motion.div>
             );
           })}
         </div>

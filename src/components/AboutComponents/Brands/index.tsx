@@ -1,6 +1,8 @@
 'use client';
 
 import Image from 'next/image';
+import { motion } from 'framer-motion';
+import { AnimateIn, springs, fadeInUp, useScrollAnimation } from '@/animations';
 
 const brands = [
   { name: 'Brand 1', image: '/images/brands/1.png' },
@@ -11,22 +13,45 @@ const brands = [
 ];
 
 const Brands = () => {
-  return (
-    <section className='py-10 px-6 '>
-      <div className='container mx-auto flex flex-col mt-10 items-center gap-10 text-center'>
-        <h4 className='font-[var(--font-montserrat)] text-2xl md:text-3xl font-bold'>
-          <span className='text-transparent bg-clip-text bg-gradient-to-r from-primary to-secondary'>Famous Partners</span>
-          &nbsp;that choose and trust&nbsp;
-          <span className='text-transparent bg-clip-text bg-gradient-to-r from-primary to-secondary'>SOL-LIME .</span>
-        </h4>
+  const [ref, controls] = useScrollAnimation();
 
-        <div className='flex flex-wrap justify-center md:flex-nowrap md:gap-10'>
+  return (
+    <section className='py-10 px-6' ref={ref}>
+      <div className='container mx-auto flex flex-col mt-10 items-center gap-10 text-center'>
+        <AnimateIn>
+          <h4 className='font-[var(--font-montserrat)] text-2xl md:text-3xl font-bold'>
+            <motion.span
+              className='text-transparent bg-clip-text bg-gradient-to-r from-primary to-secondary'
+              animate={{ backgroundPosition: ['0% 0%', '100% 100%', '0% 0%'] }}
+              transition={{ duration: 8, repeat: Infinity, repeatType: 'reverse' }}
+              style={{ backgroundSize: '200% 200%' }}
+            >
+              Famous Partners
+            </motion.span>
+            &nbsp;that choose and trust&nbsp;
+            <motion.span
+              className='text-transparent bg-clip-text bg-gradient-to-r from-primary to-secondary'
+              animate={{ backgroundPosition: ['0% 0%', '100% 100%', '0% 0%'] }}
+              transition={{ duration: 8, repeat: Infinity, repeatType: 'reverse', delay: 0.5 }}
+              style={{ backgroundSize: '200% 200%' }}
+            >
+              SOL-LIME .
+            </motion.span>
+          </h4>
+        </AnimateIn>
+
+        <motion.div
+          className='flex flex-wrap justify-center md:flex-nowrap md:gap-10'
+          initial='hidden'
+          animate={controls}
+          variants={{ hidden: {}, visible: { transition: { staggerChildren: 0.2 } } }}
+        >
           {brands.map((brand) => (
-            <div key={brand.name} className='w-1/3 py-1'>
+            <motion.div key={brand.name} className='w-1/3 py-1' variants={fadeInUp} whileHover={{ scale: 1.1 }} transition={springs.bouncy}>
               <Image src={brand.image} alt={brand.name} width={1000} height={1000} className='md:w-full md:h-auto' />
-            </div>
+            </motion.div>
           ))}
-        </div>
+        </motion.div>
       </div>
     </section>
   );

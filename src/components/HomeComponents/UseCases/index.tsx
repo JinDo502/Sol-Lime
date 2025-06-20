@@ -3,6 +3,8 @@
 import { BsArrowUpRight } from 'react-icons/bs';
 import { Icon1, Icon2, Icon3, Icon4, Icon5, Icon6, Icon7, Icon8 } from './Icon';
 import Link from 'next/link';
+import { motion } from 'framer-motion';
+import { AnimateIn, MotionContainer, fadeInUp, springs } from '@/animations';
 
 const useCasesContent = [
   {
@@ -60,24 +62,38 @@ const UseCases = () => {
   return (
     <section className='py-10 px-6'>
       <div className='container mx-auto'>
-        <div className='text-center flex flex-col items-center gap-4'>
-          <p className='text-primary font-bold'>SOL-LIME Use Cases</p>
+        <AnimateIn className='text-center flex flex-col items-center gap-4'>
+          <motion.p className='text-primary font-bold' animate={{ scale: [1, 1.1, 1] }} transition={{ duration: 2, repeat: Infinity, repeatType: 'reverse' }}>
+            SOL-LIME Use Cases
+          </motion.p>
           <h1 className='text-foreground text-3xl md:text-4xl font-bold'>Navigate Web3 Easier and Faster, The Future of AI in Blockchain is Here</h1>
-        </div>
+        </AnimateIn>
 
-        <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10 py-15'>
+        <MotionContainer className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10 py-15' staggerChildren={0.1}>
           {useCasesContent.map((item) => (
-            <div key={item.title} className='flex flex-col justify-between gap-4 h-full text-center'>
-              <div className='w-14 h-14 text-primary mx-auto'>{item.icon}</div>
+            <motion.div
+              key={item.title}
+              className='flex flex-col justify-between gap-4 h-full text-center'
+              variants={fadeInUp}
+              whileHover={{ y: -10, boxShadow: '0 10px 30px rgba(0, 0, 0, 0.05)' }}
+              transition={springs.soft}
+            >
+              <motion.div className='w-14 h-14 text-primary mx-auto' whileHover={{ rotate: 15, scale: 1.2 }} transition={springs.bouncy}>
+                {item.icon}
+              </motion.div>
               <h5 className='text-xl font-bold'>{item.title}</h5>
               <p className='mb-0 text-gray-400 text-sm'>{item.description}</p>
-              <Link href={item.link.href} className='flex items-center justify-center gap-2 text-gray-500 text-sm font-bold'>
-                <span>{item.link.text}</span>
-                <BsArrowUpRight className='scale-75' />
-              </Link>
-            </div>
+              <motion.div whileHover={{ x: 5 }} transition={springs.soft}>
+                <Link href={item.link.href} className='flex items-center justify-center gap-2 text-gray-500 text-sm font-bold'>
+                  <span>{item.link.text}</span>
+                  <motion.span whileHover={{ x: 3 }} transition={springs.bouncy}>
+                    <BsArrowUpRight className='scale-75' />
+                  </motion.span>
+                </Link>
+              </motion.div>
+            </motion.div>
           ))}
-        </div>
+        </MotionContainer>
       </div>
     </section>
   );

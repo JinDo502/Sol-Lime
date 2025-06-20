@@ -4,6 +4,8 @@ import Link from 'next/link';
 import { Icon1, Icon2, Icon3 } from './Icon';
 import Image from 'next/image';
 import { BsArrowUpRight, BsCheck } from 'react-icons/bs';
+import { motion } from 'framer-motion';
+import { AnimateIn, MotionContainer, fadeInUp, springs, useScrollAnimation } from '@/animations';
 
 const features = [
   {
@@ -55,64 +57,100 @@ const features2 = [
 ];
 
 const Features = () => {
+  const [ref] = useScrollAnimation();
+  const [ref2, controls2] = useScrollAnimation();
+
   return (
     <>
-      <section className='py-10 px-6'>
+      <section className='py-10 px-6' ref={ref}>
         <div className='container mx-auto'>
-          <h1 className='text-3xl md:text-4xl font-bold text-center'>Overview of SOL-Lime Tokens $LIMO</h1>
+          <AnimateIn>
+            <h1 className='text-3xl md:text-4xl font-bold text-center'>Overview of SOL-Lime Tokens $LIMO</h1>
+          </AnimateIn>
 
-          <div className='grid grid-cols-1 lg:grid-cols-3 gap-8 mt-15'>
+          <MotionContainer className='grid grid-cols-1 lg:grid-cols-3 gap-8 mt-15' staggerChildren={0.2}>
             {features.map((item) => (
-              <div key={item?.title} className='flex flex-col gap-4'>
-                <div className='w-14 h-14 text-primary flex items-center justify-center rounded-2xl p-2 border border-divider bg-gradient-to-l from-card-bg/90 to-card-bg/50'>
+              <motion.div
+                key={item?.title}
+                className='flex flex-col gap-4'
+                variants={fadeInUp}
+                whileHover={{ y: -10, boxShadow: '0 10px 30px rgba(0, 0, 0, 0.05)' }}
+                transition={springs.soft}
+              >
+                <motion.div
+                  className='w-14 h-14 text-primary flex items-center justify-center rounded-2xl p-2 border border-divider bg-gradient-to-l from-card-bg/90 to-card-bg/50'
+                  whileHover={{ rotate: 15, scale: 1.1 }}
+                  transition={springs.bouncy}
+                >
                   <item.icon />
-                </div>
+                </motion.div>
                 <h4 className='text-2xl md:text-3xl font-bold'>{item?.title}</h4>
                 <p className='text-gray-400 text-sm'>{item?.description}</p>
-              </div>
+              </motion.div>
             ))}
-          </div>
+          </MotionContainer>
 
-          <Link href='#' className='block w-max bg-primary text-background px-6 py-4 rounded-lg mt-12 mx-auto'>
-            Join Now
-          </Link>
+          <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }} transition={springs.bouncy} className='block w-max mx-auto mt-12'>
+            <Link href='#' className='bg-primary text-background px-6 py-4 rounded-lg'>
+              Join Now
+            </Link>
+          </motion.div>
         </div>
       </section>
 
-      <section className='py-10 px-6'>
+      <section className='py-10 px-6' ref={ref2}>
         <div className='container mx-auto grid grid-cols-1 gap-8'>
           {features2?.map((item, index) => {
             return (
-              <div key={item.title} className={`bg-card-bg rounded-2xl p-6 flex flex-col md:flex-row gap-8`}>
+              <motion.div
+                key={item.title}
+                className='bg-card-bg rounded-2xl p-6 flex flex-col md:flex-row gap-8'
+                initial={{ opacity: 0, y: 50 }}
+                animate={controls2}
+                variants={{ hidden: { opacity: 0, y: 50 }, visible: { opacity: 1, y: 0, transition: { delay: index * 0.2, ...springs.soft } } }}
+                whileHover={{ y: -10, boxShadow: '0 10px 30px rgba(0, 0, 0, 0.05)' }}
+                transition={springs.soft}
+              >
                 <div className='w-full md:1/2 flex flex-col gap-6'>
-                  <p className='text-primary font-bold md:text-xl'>Features {index + 1}</p>
+                  <motion.p className='text-primary font-bold md:text-xl' animate={{ scale: [1, 1.1, 1] }} transition={{ duration: 2, repeat: Infinity, repeatType: 'reverse' }}>
+                    Features {index + 1}
+                  </motion.p>
                   <h1 className='text-2xl md:text-4xl font-bold'>{item.title}</h1>
                   <p className='text-gray-500'>{item.description}</p>
                   <div className='flex flex-col gap-2 text-gray-500 text-sm'>
-                    {item.list?.map((listItem) => {
+                    {item.list?.map((listItem, listIndex) => {
                       return (
-                        <div key={listItem} className='flex items-start gap-2'>
-                          <BsCheck className='text-xl' />
+                        <motion.div
+                          key={listItem}
+                          className='flex items-start gap-2'
+                          initial={{ opacity: 0, x: -20 }}
+                          animate={{ opacity: 1, x: 0 }}
+                          transition={{ delay: 0.5 + listIndex * 0.1, ...springs.soft }}
+                          whileHover={{ x: 5 }}
+                        >
+                          <motion.span whileHover={{ scale: 1.2, color: 'var(--color-primary)' }} transition={springs.bouncy}>
+                            <BsCheck className='text-xl' />
+                          </motion.span>
                           {listItem}
-                        </div>
+                        </motion.div>
                       );
                     })}
                   </div>
-                  <div>
+                  <motion.div whileHover={{ x: 5 }} transition={springs.soft}>
                     <Link href={item.url.href} className='flex font-bold items-center gap-3 text-primary'>
                       <span>{item.url.text}</span>
-                      <div>
+                      <motion.div whileHover={{ x: 3 }} transition={springs.bouncy}>
                         <BsArrowUpRight />
-                      </div>
+                      </motion.div>
                     </Link>
-                  </div>
+                  </motion.div>
                 </div>
-                <div className='w-full md:1/2 lg:w-1/3 flex justify-end'>
+                <motion.div className='w-full md:1/2 lg:w-1/3 flex justify-end' whileHover={{ scale: 1.05 }} transition={springs.soft}>
                   <div>
-                    <Image src={item.img} alt='' width={1000} height={1000} className='w-full' />
+                    <Image src={item.img} alt='' width={1000} height={1000} className='w-full' priority />
                   </div>
-                </div>
-              </div>
+                </motion.div>
+              </motion.div>
             );
           })}
         </div>

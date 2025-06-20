@@ -8,6 +8,8 @@ import 'swiper/css/autoplay';
 import { AiFillStar } from 'react-icons/ai';
 import './index.css';
 import { Autoplay, Pagination } from 'swiper/modules';
+import { motion } from 'framer-motion';
+import { AnimateIn, springs } from '@/animations';
 
 const reviewsContent = [
   {
@@ -40,15 +42,15 @@ const reviewsContent = [
 
 const StarRating = () => {
   return (
-    <div className='flex items-center gap-1 mb-3 text-lg'>
+    <motion.div className='flex items-center gap-1 mb-3 text-lg' initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ duration: 0.5 }}>
       {Array(5)
         .fill(0)
         .map((_, index) => (
-          <div key={index}>
+          <motion.div key={index} animate={{ scale: [1, 1.2, 1] }} transition={{ delay: index * 0.1, duration: 2, repeat: Infinity, repeatDelay: 5 }}>
             <AiFillStar className='text-primary' />
-          </div>
+          </motion.div>
         ))}
-    </div>
+    </motion.div>
   );
 };
 
@@ -56,44 +58,52 @@ const Reviews = () => {
   return (
     <section className='py-10 px-6'>
       <div className='container mx-auto'>
-        <h1 className='text-3xl md:text-4xl font-bold text-center'>
-          <span className='text-primary'>SOL-LIME .</span>&nbsp;&nbsp;Received
-          <div className='inline-block w-10 h-10'>
-            <Image className='w-10 h-10' src='/images/icons/star.png' alt='' width={16} height={16} />
-          </div>
-          4.8/5 Stars in Over 10,000+ Reviews.
-        </h1>
+        <AnimateIn>
+          <h1 className='text-3xl md:text-4xl font-bold text-center'>
+            <motion.span className='text-primary' whileHover={{ scale: 1.1 }} transition={springs.bouncy}>
+              SOL-LIME .
+            </motion.span>
+            &nbsp;&nbsp;Received
+            <motion.div className='inline-block w-10 h-10' animate={{ rotate: [0, 10, -10, 0], scale: [1, 1.2, 1] }} transition={{ duration: 2, repeat: Infinity, repeatDelay: 3 }}>
+              <Image className='w-10 h-10' src='/images/icons/star.png' alt='' width={16} height={16} priority />
+            </motion.div>
+            4.8/5 Stars in Over 10,000+ Reviews.
+          </h1>
+        </AnimateIn>
 
-        <Swiper
-          slidesPerView='auto'
-          spaceBetween={10}
-          breakpoints={{
-            768: { slidesPerView: 2, spaceBetween: 10 },
-            1024: { slidesPerView: 3, spaceBetween: 10 },
-          }}
-          modules={[Pagination, Autoplay]}
-          pagination={{ dynamicBullets: true, clickable: true }}
-          className='mt-10 h-max'
-          autoplay={{ delay: 2500, disableOnInteraction: false }}
-          loop={true}
-        >
-          {reviewsContent.map((item, index) => (
-            <SwiperSlide key={index} className='!h-auto'>
-              <div className='bg-card-bg rounded-2xl p-6 border border-divider border-opacity-10 h-full'>
-                <div className='flex items-center gap-4 mb-6'>
-                  <div className='w-12 h-12 rounded-full overflow-hidden'>
-                    <Image src={item.avatar} alt='' className='w-full h-full object-cover' width={48} height={48} />
+        <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.3, ...springs.soft }}>
+          <Swiper
+            slidesPerView='auto'
+            spaceBetween={10}
+            breakpoints={{ 768: { slidesPerView: 2, spaceBetween: 10 }, 1024: { slidesPerView: 3, spaceBetween: 10 } }}
+            modules={[Pagination, Autoplay]}
+            pagination={{ dynamicBullets: true, clickable: true }}
+            className='mt-10 h-max'
+            autoplay={{ delay: 2500, disableOnInteraction: false }}
+            loop={true}
+          >
+            {reviewsContent.map((item, index) => (
+              <SwiperSlide key={index} className='!h-auto'>
+                <motion.div
+                  className='bg-card-bg rounded-2xl p-6 border border-divider border-opacity-10 h-full'
+                  whileHover={{ y: -10, boxShadow: '0 10px 30px rgba(0, 0, 0, 0.1)' }}
+                  transition={springs.soft}
+                >
+                  <div className='flex items-center gap-4 mb-6'>
+                    <motion.div className='w-12 h-12 rounded-full overflow-hidden' whileHover={{ scale: 1.1 }} transition={springs.bouncy}>
+                      <Image src={item.avatar} alt='' className='w-full h-full object-cover' width={48} height={48} />
+                    </motion.div>
+                    <h6 className='mb-1 text-lg font-bold'>{item.name}</h6>
                   </div>
-                  <h6 className='mb-1 text-lg font-bold'>{item.name}</h6>
-                </div>
-                <div className='flex flex-col gap-3'>
-                  <StarRating />
-                  <p className='mb-0 text-gray-500'>{item?.review}</p>
-                </div>
-              </div>
-            </SwiperSlide>
-          ))}
-        </Swiper>
+                  <div className='flex flex-col gap-3'>
+                    <StarRating />
+                    <p className='mb-0 text-gray-500'>{item?.review}</p>
+                  </div>
+                </motion.div>
+              </SwiperSlide>
+            ))}
+          </Swiper>
+        </motion.div>
       </div>
     </section>
   );

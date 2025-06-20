@@ -3,6 +3,8 @@
 import { BsArrowUpRight } from 'react-icons/bs';
 import { Icon1, Icon2, Icon3, Icon4, Icon5, Icon6, Icon7, Icon8, Icon9, Icon10, Icon11, Icon12 } from './Icon';
 import Link from 'next/link';
+import { motion } from 'framer-motion';
+import { AnimateIn, springs, fadeInUp, useScrollAnimation } from '@/animations';
 
 const useCasesContent = [
   {
@@ -80,35 +82,61 @@ const useCasesContent = [
 ];
 
 const UseCases = () => {
-  return (
-    <section className='py-10 px-6'>
-      <div className='container mx-auto'>
-        <div className='text-center flex flex-col items-center gap-4'>
-          <p className='text-primary font-bold'>SOL-LIME Use Cases</p>
-          <h1 className='text-foreground text-3xl md:text-4xl font-bold'>Streamline Your Web3 Experience, The Future of AI Blockchain Tools is Here</h1>
-        </div>
+  const [ref, controls] = useScrollAnimation();
 
-        <div className='grid grid-cols-1 gap-10 py-15 md:grid-cols-2 lg:grid-cols-4'>
+  return (
+    <section className='py-10 px-6' ref={ref}>
+      <div className='container mx-auto'>
+        <AnimateIn className='text-center flex flex-col items-center gap-4'>
+          <motion.p className='text-primary font-bold' animate={{ scale: [1, 1.1, 1] }} transition={{ duration: 2, repeat: Infinity, repeatType: 'reverse' }}>
+            SOL-LIME Use Cases
+          </motion.p>
+          <h1 className='text-foreground text-3xl md:text-4xl font-bold'>Streamline Your Web3 Experience, The Future of AI Blockchain Tools is Here</h1>
+        </AnimateIn>
+
+        <motion.div
+          className='grid grid-cols-1 gap-10 py-15 md:grid-cols-2 lg:grid-cols-4'
+          initial='hidden'
+          animate={controls}
+          variants={{
+            hidden: {},
+            visible: {
+              transition: {
+                staggerChildren: 0.1,
+              },
+            },
+          }}
+        >
           {useCasesContent.map((item) => {
             return (
-              <div className='flex flex-col items-start gap-4 h-full text-start p-6 rounded-xl border border-divider hover:border-primary  duration-300' key={item.title}>
-                <div className='w-14 h-14 text-primary flex items-center justify-center rounded-2xl p-2 border border-divider bg-gradient-to-l from-card-bg/90 to-card-bg/50'>
+              <motion.div
+                className='flex flex-col items-start gap-4 h-full text-start p-6 rounded-xl border border-divider hover:border-primary duration-300'
+                key={item.title}
+                variants={fadeInUp}
+                whileHover={{ y: -10, boxShadow: '0 10px 30px rgba(0, 0, 0, 0.05)', borderColor: 'var(--color-primary)' }}
+                transition={springs.soft}
+              >
+                <motion.div
+                  className='w-14 h-14 text-primary flex items-center justify-center rounded-2xl p-2 border border-divider bg-gradient-to-l from-card-bg/90 to-card-bg/50'
+                  whileHover={{ rotate: 15, scale: 1.1 }}
+                  transition={springs.bouncy}
+                >
                   {item.icon}
-                </div>
+                </motion.div>
                 <h5 className='text-xl font-bold'>{item.title}</h5>
                 <p className='m-0 text-gray-400 text-sm'>{item.description}</p>
-                <div>
+                <motion.div whileHover={{ x: 5 }} transition={springs.soft}>
                   <Link href={item.link.href} className='flex items-center justify-center gap-2 text-primary text-sm font-bold'>
                     <span>{item.link.text}</span>
-                    <div>
+                    <motion.div whileHover={{ x: 3 }} transition={springs.bouncy}>
                       <BsArrowUpRight className='scale-75' />
-                    </div>
+                    </motion.div>
                   </Link>
-                </div>
-              </div>
+                </motion.div>
+              </motion.div>
             );
           })}
-        </div>
+        </motion.div>
       </div>
     </section>
   );

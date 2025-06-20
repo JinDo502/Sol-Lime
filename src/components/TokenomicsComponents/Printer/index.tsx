@@ -1,6 +1,8 @@
 'use client';
 
 import { useState, useEffect } from 'react';
+import { motion } from 'framer-motion';
+import { springs } from '@/animations';
 
 const strings = ['Social Connection', 'Web3 Surfing', 'Assets Management', 'Trading Experiences'];
 
@@ -51,17 +53,25 @@ const Printer = () => {
   }, [text, isDeleting, currentIndex, typingSpeed]);
 
   return (
-    <span className='text-primary' key={currentIndex}>
+    <motion.span className='text-primary' key={currentIndex} initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }} transition={springs.soft}>
       <span className='inline-flex'>
         {text.split('').map((char, index) => (
-          <span key={`${index}-${char}`} style={{ display: 'inline-block', position: 'relative' }}>
+          <motion.span
+            key={`${index}-${char}`}
+            style={{ display: 'inline-block', position: 'relative' }}
+            initial={{ opacity: 0, y: 10 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: index * 0.03, ...springs.soft }}
+          >
             {char === ' ' ? '\u00A0' : char}
-            {index === text.length - 1 && !isDeleting && <span className='absolute -bottom-1 left-0 w-full h-0.5 bg-primary' />}
-          </span>
+            {index === text.length - 1 && !isDeleting && (
+              <motion.span className='absolute -bottom-1 left-0 w-full h-0.5 bg-primary' initial={{ width: 0 }} animate={{ width: '100%' }} transition={springs.soft} />
+            )}
+          </motion.span>
         ))}
       </span>
-      <span className='inline-block ml-1 w-1 h-8 bg-current' />
-    </span>
+      <motion.span className='inline-block ml-1 w-1 h-8 bg-current' animate={{ opacity: [0, 1, 0] }} transition={{ duration: 0.8, repeat: Infinity }} />
+    </motion.span>
   );
 };
 
