@@ -15,9 +15,9 @@ const Brands = () => {
     <section className='py-10 px-6'>
       <div className='container mx-auto flex flex-col mt-10 items-center gap-10 text-center'>
         <h4 className='font-[var(--font-montserrat)] text-2xl md:text-3xl font-bold'>
-          <span className='text-transparent bg-clip-text bg-gradient-to-r from-[var(--primary)] to-[var(--secondary)]'>Famous Partners</span>
+          <span className='text-transparent bg-clip-text bg-gradient-to-r from-primary to-secondary'>Famous Partners</span>
           &nbsp;that choose and trust&nbsp;
-          <span className='text-transparent bg-clip-text bg-gradient-to-r from-[var(--primary)] to-[var(--secondary)]'>SOL-LIME .</span>
+          <span className='text-transparent bg-clip-text bg-gradient-to-r from-primary to-secondary'>SOL-LIME .</span>
         </h4>
 
         <div className='flex flex-wrap justify-center md:flex-nowrap md:gap-10'>

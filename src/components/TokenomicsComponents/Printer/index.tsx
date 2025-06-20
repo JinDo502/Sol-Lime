@@ -51,12 +51,12 @@ const Printer = () => {
   }, [text, isDeleting, currentIndex, typingSpeed]);
 
   return (
-    <span className='text-[var(--primary)]' key={currentIndex}>
+    <span className='text-primary' key={currentIndex}>
       <span className='inline-flex'>
         {text.split('').map((char, index) => (
           <span key={`${index}-${char}`} style={{ display: 'inline-block', position: 'relative' }}>
             {char === ' ' ? '\u00A0' : char}
-            {index === text.length - 1 && !isDeleting && <span className='absolute -bottom-1 left-0 w-full h-0.5 bg-[var(--primary)]' />}
+            {index === text.length - 1 && !isDeleting && <span className='absolute -bottom-1 left-0 w-full h-0.5 bg-primary' />}
           </span>
         ))}
       </span>

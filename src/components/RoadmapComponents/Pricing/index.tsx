@@ -26,19 +26,19 @@ const Pricing = () => {
     <section className='pt-20 pb-10 px-8 md:px-0'>
       <div className='container mx-auto'>
         <div className='flex flex-col items-center justify-center gap-4 mb-10'>
-          <p className='text-[var(--primary)]'>Roadmap</p>
+          <p className='text-primary'>Roadmap</p>
           <h1 className=' text-3xl md:text-4xl font-bold mb-5 text-center'>
             Our Goals <br />
             Our Plans
           </h1>
           <p className='text-center text-gray-500 text-sm'>
-            Understand <span className='text-[var(--primary)]'>Sol Lime</span> roadmap and start involve today!
+            Understand <span className='text-primary'>Sol Lime</span> roadmap and start involve today!
           </p>
         </div>
         <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mt-10'>
           {roadmap.map((item, index) => (
-            <div key={index} className='col-md-6 col-lg-4 border border-[var(--divider)] rounded-lg p-6'>
-              <h3 className='text-[var(--primary)] text-2xl md:text-3xl font-bold mb-0'>{item?.title}</h3>
+            <div key={index} className='col-md-6 col-lg-4 border border-divider rounded-lg p-6'>
+              <h3 className='text-primary text-2xl md:text-3xl font-bold mb-0'>{item?.title}</h3>
               <p className=' lead fw-normal mt-4 mb-0'>{item?.description}</p>
               <ul className='list-disc list-outside text-gray-500 text-sm mt-4'>
                 {item?.features.map((feature) => (

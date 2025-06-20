@@ -44,13 +44,9 @@ const UseCaseDetails = () => {
             <p className='mb-8 text-gray-400'>With a few clicks of a button, you can create a whole outline, opening paragraph, and body for your blog.</p>
             <form action='#'>
               <div className='flex items-stretch'>
-                <input type='email' className='flex-1 border border-r-0 border-[var(--divider)] rounded-s-md p-2' placeholder='Your email' />
-                <div
-                  dir='rtl'
-                  className='bg-[var(--primary)] text-[var(--background)] rounded-s-md px-4 flex items-center justify-center'
-                  style={{ transition: `transform ${cssSpringTransition}` }}
-                >
-                  <BsSend className='text-[var(--background)]' />
+                <input type='email' className='flex-1 border border-r-0 border-divider rounded-s-md p-2' placeholder='Your email' />
+                <div dir='rtl' className='bg-primary text-background rounded-s-md px-4 flex items-center justify-center' style={{ transition: `transform ${cssSpringTransition}` }}>
+                  <BsSend className='text-background' />
                 </div>
               </div>
             </form>
@@ -62,7 +58,7 @@ const UseCaseDetails = () => {
           </div>
         </div>
 
-        <hr className='border-top border-[var(--divider)] my-18' />
+        <hr className='border-top border-divider my-18' />
 
         <div className='flex flex-col gap-10'>
           <div className='flex flex-col gap-4'>
@@ -80,7 +76,7 @@ const UseCaseDetails = () => {
           {steps.map((step, index) => (
             <div key={step.title + index} className='flex flex-col gap-4'>
               <h4 className='text-2xl md:text-3xl font-bold'>
-                <span className='text-[var(--primary)]'>Step {index + 1}:</span> {step.title}
+                <span className='text-primary'>Step {index + 1}:</span> {step.title}
               </h4>
               {step.description.map((description, idx) => {
                 return (

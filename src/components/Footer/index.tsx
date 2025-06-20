@@ -122,9 +122,9 @@ const Footer = () => {
               <h6 className='mb-4 font-bold'>News & Update</h6>
               <form action='#'>
                 <div className='flex items-stretch w-full'>
-                  <input type='email' className='flex-1 w-full border border-r-0 border-[var(--divider)] rounded-s-md p-2' placeholder='Your email' />
-                  <div dir='rtl' className='bg-[var(--primary)] rounded-s-md px-4 flex items-center justify-center'>
-                    <BsSend className='text-[var(--background)]' />
+                  <input type='email' className='flex-1 w-full border border-r-0 border-divider rounded-s-md p-2' placeholder='Your email' />
+                  <div dir='rtl' className='bg-primary rounded-s-md px-4 flex items-center justify-center'>
+                    <BsSend className='text-background' />
                   </div>
                 </div>
               </form>
@@ -147,7 +147,7 @@ const Footer = () => {
           </div>
 
           <div className='text-sm text-gray-400 text-center'>
-            Copyright <span className='text-[var(--primary)]'>SOL-LIME </span>.
+            Copyright <span className='text-primary'>SOL-LIME </span>.
           </div>
         </div>
       </footer>
@@ -163,7 +163,7 @@ const Footer = () => {
             <div className='flex flex-col gap-2 text-sm text-gray-400'>
               {footerLinks.map((link) => (
                 <div key={link.label}>
-                  <Link href={link.href} className='hover:text-[var(--primary)]  duration-300'>
+                  <Link href={link.href} className='hover:text-primary  duration-300'>
                     {link.label}
                   </Link>
                 </div>
@@ -176,7 +176,7 @@ const Footer = () => {
             <div className='flex flex-col gap-2 text-sm text-gray-400'>
               {footerDocuments.map((document) => (
                 <div key={document.label}>
-                  <Link href={document.href} className='hover:text-[var(--primary)]  duration-300'>
+                  <Link href={document.href} className='hover:text-primary  duration-300'>
                     {document.label}
                   </Link>
                 </div>
@@ -188,15 +188,15 @@ const Footer = () => {
             <h6 className='mb-4 font-bold'>News & Update</h6>
             <form action='#'>
               <div className='flex items-stretch w-full'>
-                <input type='email' className='flex-1 w-full border border-r-0 border-[var(--divider)] rounded-s-md p-2' placeholder='Your email' />
-                <div dir='rtl' className='bg-[var(--primary)] rounded-s-md px-4 flex items-center justify-center cursor-pointer'>
-                  <BsSend className='text-[var(--background)]' />
+                <input type='email' className='flex-1 w-full border border-r-0 border-divider rounded-s-md p-2' placeholder='Your email' />
+                <div dir='rtl' className='bg-primary rounded-s-md px-4 flex items-center justify-center cursor-pointer'>
+                  <BsSend className='text-background' />
                 </div>
               </div>
             </form>
             <div className='flex flex-wrap justify-center gap-4 mt-10 md:mt-6'>
               {socialLinks.map((link) => (
-                <div key={link.label} className='text-gray-400 hover:text-[var(--primary)]  duration-300'>
+                <div key={link.label} className='text-gray-400 hover:text-primary  duration-300'>
                   <Link href={link.href}>{link.icon}</Link>
                 </div>
               ))}
@@ -215,7 +215,7 @@ const Footer = () => {
         </div>
 
         <div className='text-sm text-gray-400 text-center'>
-          Copyright <span className='text-[var(--primary)]'>SOL-LIME </span>.
+          Copyright <span className='text-primary'>SOL-LIME </span>.
         </div>
       </div>
     </footer>

@@ -11,10 +11,10 @@ const About = () => {
       <div className='container mx-auto'>
         <div className='flex flex-col items-center gap-8 md:flex-row'>
           <div className='text-center flex flex-col items-center gap-4 w-full md:w-2/5'>
-            <p className='text-[var(--primary)] text-sm font-bold'>About SOL-LIME</p>
+            <p className='text-primary text-sm font-bold'>About SOL-LIME</p>
             <h2 className='text-3xl md:text-4xl font-bold'>Blockchain enthusiasts love SOL-LIME .</h2>
             <p className='mb-4 text-gray-500'>With a few simple chat commands, users can navigate the web3 space, manage their digital assets, and much more.</p>
-            <Link href='#' className='bg-[var(--primary)] text-[var(--background)] px-6 py-4 rounded-lg font-bold inline-block  duration-300'>
+            <Link href='#' className='bg-primary text-background px-6 py-4 rounded-lg font-bold inline-block  duration-300'>
               Start Experience
             </Link>
           </div>
@@ -22,7 +22,7 @@ const About = () => {
             <Image className='w-full mb-8 rounded-md' src='/images/screens/screen-4.png' alt='' width={1000} height={1000} />
           </div>
         </div>
-        <hr className='border-t border-[var(--divider)]' />
+        <hr className='border-t border-divider' />
         <div className='flex gap-8 items-center justify-center mt-12 px-8'>
           <div className='w-1/2 md:w-55'>
             {theme === 'dark' && <Image className='w-full' src={`/images/review-logos/trustpilot_reviews.svg`} alt='' width={1000} height={1000} />}

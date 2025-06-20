@@ -45,7 +45,7 @@ const StarRating = () => {
         .fill(0)
         .map((_, index) => (
           <div key={index}>
-            <AiFillStar className='text-[var(--primary)]' />
+            <AiFillStar className='text-primary' />
           </div>
         ))}
     </div>
@@ -57,7 +57,7 @@ const Reviews = () => {
     <section className='pt-20 pb-10 px-8 md:px-0'>
       <div className='container mx-auto'>
         <h1 className='text-3xl md:text-4xl font-bold text-center'>
-          <span className='text-[var(--primary)]'>SOL-LIME .</span>&nbsp;&nbsp;Received
+          <span className='text-primary'>SOL-LIME .</span>&nbsp;&nbsp;Received
           <div className='inline-block w-10 h-10'>
             <Image className='w-10 h-10' src='/images/icons/star.png' alt='' width={16} height={16} />
           </div>
@@ -79,7 +79,7 @@ const Reviews = () => {
         >
           {reviewsContent.map((item, index) => (
             <SwiperSlide key={index} className='!h-auto'>
-              <div className='bg-[var(--card-bg)] rounded-2xl p-6 border border-[var(--divider)] border-opacity-10 h-full'>
+              <div className='bg-card-bg rounded-2xl p-6 border border-divider border-opacity-10 h-full'>
                 <div className='flex items-center gap-4 mb-6'>
                   <div className='w-12 h-12 rounded-full overflow-hidden'>
                     <Image src={item.avatar} alt='' className='w-full h-full object-cover' width={48} height={48} />

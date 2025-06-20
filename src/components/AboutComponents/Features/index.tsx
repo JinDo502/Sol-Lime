@@ -31,15 +31,15 @@ const Features = () => {
     <section className='py-10 px-6'>
       <div className='container mx-auto'>
         <div className='text-center flex flex-col items-center gap-4'>
-          <p className='text-[var(--primary)] font-bold'>SOL-LIME Features</p>
+          <p className='text-primary font-bold'>SOL-LIME Features</p>
           <h1 className='text-foreground text-3xl md:text-4xl font-bold'>Streamline Your Web3 Experience, The Future of AI Blockchain Tools is Here</h1>
         </div>
 
         <div className='grid grid-cols-1 lg:grid-cols-3 gap-8 mt-15'>
           {featuresContent.map((item) => {
             return (
-              <div key={item?.title} className='flex flex-col gap-4 p-6 rounded-xl border border-[var(--divider)] hover:border-[var(--primary)]  duration-300'>
-                <div className='w-14 h-14 text-[var(--primary)] flex items-center justify-center rounded-2xl p-2 border border-[var(--divider)] bg-gradient-to-l from-[var(--card-bg)]/90 to-[var(--card-bg)]/50'>
+              <div key={item?.title} className='flex flex-col gap-4 p-6 rounded-xl border border-divider hover:border-primary  duration-300'>
+                <div className='w-14 h-14 text-primary flex items-center justify-center rounded-2xl p-2 border border-divider bg-gradient-to-l from-card-bg/90 to-card-bg/50'>
                   <item.icon />
                 </div>
                 <h4 className='text-2xl md:text-3xl font-bold'>{item?.title}</h4>
@@ -53,8 +53,8 @@ const Features = () => {
           <div className='rounded-xl overflow-hidden'>
             <Image src='/images/thumbnails/video-thumb.jpg' width={1000} height={1000} alt='' className='w-full h-full object-cover' />
           </div>
-          <div className='absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 bg-[var(--primary)] rounded-full p-4 cursor-pointer'>
-            <BsCaretRightFill className='text-[var(--background)] text-4xl md:text-5xl' />
+          <div className='absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 bg-primary rounded-full p-4 cursor-pointer'>
+            <BsCaretRightFill className='text-background text-4xl md:text-5xl' />
           </div>
         </div>
       </div>

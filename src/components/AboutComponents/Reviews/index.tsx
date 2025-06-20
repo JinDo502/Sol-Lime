@@ -61,7 +61,7 @@ const ReviewsScroll = () => {
     <div className='w-full overflow-hidden'>
       <div className='flex gap-4 cursor-grab'>
         {reviewsContent.map((item, index) => (
-          <div key={index} className='w-[90vw] max-w-[400px] min-w-[300px] bg-[var(--card-bg)] rounded-2xl p-6 border border-[var(--divider)] border-opacity-10 flex-shrink-0'>
+          <div key={index} className='w-[90vw] max-w-[400px] min-w-[300px] bg-card-bg rounded-2xl p-6 border border-divider border-opacity-10 flex-shrink-0'>
             <div className='flex items-center gap-4 mb-6'>
               <div className='w-12 h-12 rounded-full overflow-hidden'>
                 <Image src={item.avatar} alt={item.name} width={48} height={48} className='w-full h-full object-cover' />
@@ -73,7 +73,7 @@ const ReviewsScroll = () => {
             <div>
               <div className='flex items-center gap-1 mb-3'>
                 {[...Array(5)].map((_, i) => (
-                  <AiFillStar key={i} className='text-[var(--primary)]' />
+                  <AiFillStar key={i} className='text-primary' />
                 ))}
               </div>
               <p className='mb-0 text-gray-500'>{item?.review}</p>
@@ -83,10 +83,7 @@ const ReviewsScroll = () => {
 
         {/* 复制评论卡片以实现无缝滚动效果 */}
         {reviewsContent.map((item, index) => (
-          <div
-            key={`clone-${index}`}
-            className='w-[90vw] max-w-[400px] min-w-[300px] bg-[var(--card-bg)] rounded-2xl p-6 border border-[var(--divider)] border-opacity-10 flex-shrink-0'
-          >
+          <div key={`clone-${index}`} className='w-[90vw] max-w-[400px] min-w-[300px] bg-card-bg rounded-2xl p-6 border border-divider border-opacity-10 flex-shrink-0'>
             <div className='flex items-center gap-4 mb-6'>
               <div className='w-12 h-12 rounded-full overflow-hidden'>
                 <Image src={item.avatar} alt={item.name} width={48} height={48} className='w-full h-full object-cover' />
@@ -98,7 +95,7 @@ const ReviewsScroll = () => {
             <div>
               <div className='flex items-center gap-1 mb-3'>
                 {[...Array(5)].map((_, i) => (
-                  <AiFillStar key={i} className='text-[var(--primary)]' />
+                  <AiFillStar key={i} className='text-primary' />
                 ))}
               </div>
               <p className='mb-0 text-gray-500'>{item?.review}</p>
@@ -116,7 +113,7 @@ const Reviews = () => {
       <div className='container mx-auto mx-auto px-8 md:px-0'>
         <div>
           <h1>
-            <span className='text-[var(--primary)]'>SOL-LIME .</span>
+            <span className='text-primary'>SOL-LIME .</span>
             Received{' '}
             <span className='inline-block'>
               <Image src='/images/icons/star.png' className='inline-block w-10' alt='' width={1000} height={1000} />

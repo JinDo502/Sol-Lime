@@ -48,7 +48,7 @@ const Team = () => {
     <section className='py-10 px-6'>
       <div className='container mx-auto'>
         <h1 className='text-foreground text-center text-3xl md:text-4xl font-bold mb-10'>
-          <span className='text-[var(--primary)]'>SOL-LIME </span> Powered by a Team of Web3 Enthusiasts
+          <span className='text-primary'>SOL-LIME </span> Powered by a Team of Web3 Enthusiasts
         </h1>
 
         <div className='grid grid-cols-1 md:grid-cols-3 xl:grid-cols-4 gap-8'>

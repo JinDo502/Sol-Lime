@@ -64,7 +64,7 @@ const Features = () => {
           <div className='grid grid-cols-1 lg:grid-cols-3 gap-8 mt-15'>
             {features.map((item) => (
               <div key={item?.title} className='flex flex-col gap-4'>
-                <div className='w-14 h-14 text-[var(--primary)] flex items-center justify-center rounded-2xl p-2 border border-[var(--divider)] bg-gradient-to-l from-[var(--card-bg)]/90 to-[var(--card-bg)]/50'>
+                <div className='w-14 h-14 text-primary flex items-center justify-center rounded-2xl p-2 border border-divider bg-gradient-to-l from-card-bg/90 to-card-bg/50'>
                   <item.icon />
                 </div>
                 <h4 className='text-2xl md:text-3xl font-bold'>{item?.title}</h4>
@@ -73,7 +73,7 @@ const Features = () => {
             ))}
           </div>
 
-          <Link href='#' className='block w-max bg-[var(--primary)] text-[var(--background)] px-6 py-4 rounded-lg mt-12 mx-auto'>
+          <Link href='#' className='block w-max bg-primary text-background px-6 py-4 rounded-lg mt-12 mx-auto'>
             Join Now
           </Link>
         </div>
@@ -83,9 +83,9 @@ const Features = () => {
         <div className='container mx-auto grid grid-cols-1 gap-8'>
           {features2?.map((item, index) => {
             return (
-              <div key={item.title} className={`bg-[var(--card-bg)] rounded-2xl p-6 flex flex-col md:flex-row gap-8`}>
+              <div key={item.title} className={`bg-card-bg rounded-2xl p-6 flex flex-col md:flex-row gap-8`}>
                 <div className='w-full md:1/2 flex flex-col gap-6'>
-                  <p className='text-[var(--primary)] font-bold md:text-xl'>Features {index + 1}</p>
+                  <p className='text-primary font-bold md:text-xl'>Features {index + 1}</p>
                   <h1 className='text-2xl md:text-4xl font-bold'>{item.title}</h1>
                   <p className='text-gray-500'>{item.description}</p>
                   <div className='flex flex-col gap-2 text-gray-500 text-sm'>
@@ -99,7 +99,7 @@ const Features = () => {
                     })}
                   </div>
                   <div>
-                    <Link href={item.url.href} className='flex font-bold items-center gap-3 text-[var(--primary)]'>
+                    <Link href={item.url.href} className='flex font-bold items-center gap-3 text-primary'>
                       <span>{item.url.text}</span>
                       <div>
                         <BsArrowUpRight />

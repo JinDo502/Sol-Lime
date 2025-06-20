@@ -34,10 +34,7 @@ const Navbar = () => {
           <div className='hidden lg:flex lg:items-center lg:flex-row'>
             {navItems.map((item) => (
               <div key={item.label} className='lg:ml-4'>
-                <Link
-                  className={`inline-block hover:text-[var(--primary)] w-max ${item.label === 'Join Now' ? 'border border-[var(--primary)] rounded-xl px-4 py-2' : ''}`}
-                  href={item.href}
-                >
+                <Link className={`inline-block hover:text-primary w-max ${item.label === 'Join Now' ? 'border border-primary rounded-xl px-4 py-2' : ''}`} href={item.href}>
                   {item.label}
                 </Link>
               </div>

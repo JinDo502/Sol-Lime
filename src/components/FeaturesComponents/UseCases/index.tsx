@@ -84,24 +84,21 @@ const UseCases = () => {
     <section className='pt-10 px-8 md:px-0'>
       <div className='container mx-auto'>
         <div className='text-center flex flex-col items-center gap-4'>
-          <p className='text-[var(--primary)] font-bold'>SOL-LIME Use Cases</p>
+          <p className='text-primary font-bold'>SOL-LIME Use Cases</p>
           <h1 className='text-foreground text-3xl md:text-4xl font-bold'>Streamline Your Web3 Experience, The Future of AI Blockchain Tools is Here</h1>
         </div>
 
         <div className='grid grid-cols-1 gap-10 py-15 md:grid-cols-2 lg:grid-cols-4'>
           {useCasesContent.map((item) => {
             return (
-              <div
-                className='flex flex-col items-start gap-4 h-full text-start p-6 rounded-xl border border-[var(--divider)] hover:border-[var(--primary)]  duration-300'
-                key={item.title}
-              >
-                <div className='w-14 h-14 text-[var(--primary)] flex items-center justify-center rounded-2xl p-2 border border-[var(--divider)] bg-gradient-to-l from-[var(--card-bg)]/90 to-[var(--card-bg)]/50'>
+              <div className='flex flex-col items-start gap-4 h-full text-start p-6 rounded-xl border border-divider hover:border-primary  duration-300' key={item.title}>
+                <div className='w-14 h-14 text-primary flex items-center justify-center rounded-2xl p-2 border border-divider bg-gradient-to-l from-card-bg/90 to-card-bg/50'>
                   {item.icon}
                 </div>
                 <h5 className='text-xl font-bold'>{item.title}</h5>
                 <p className='m-0 text-gray-400 text-sm'>{item.description}</p>
                 <div>
-                  <Link href={item.link.href} className='flex items-center justify-center gap-2 text-[var(--primary)] text-sm font-bold'>
+                  <Link href={item.link.href} className='flex items-center justify-center gap-2 text-primary text-sm font-bold'>
                     <span>{item.link.text}</span>
                     <div>
                       <BsArrowUpRight className='scale-75' />

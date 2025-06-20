@@ -35,9 +35,9 @@ const FAQItem = ({ question, answer }: { question: string; answer: string }) => 
   const [isOpen, setIsOpen] = useState(false);
 
   return (
-    <div className='cursor-pointer border border-[var(--divider)] border-opacity-10 rounded-lg p-4 hover:border-[var(--primary)]  duration-300' onClick={() => setIsOpen(!isOpen)}>
+    <div className='cursor-pointer border border-divider border-opacity-10 rounded-lg p-4 hover:border-primary  duration-300' onClick={() => setIsOpen(!isOpen)}>
       <h2 className='flex items-center justify-between md:justify-start py-2 font-semibold gap-4'>
-        <div className='bg-[var(--primary)] text-[var(--background)] rounded-full p-1'>
+        <div className='bg-primary text-background rounded-full p-1'>
           {isOpen ? <AiOutlineMinus className='text-xl md:text-2xl' /> : <AiOutlinePlus className='text-xl md:text-2xl' />}
         </div>
         <span className='flex-1'>{question}</span>
@@ -59,7 +59,7 @@ const FAQ = () => {
         <span>
           Questions About our SOL-LIME ? <br />
         </span>
-        <span className='text-[var(--primary)]'>We have Answers!</span>
+        <span className='text-primary'>We have Answers!</span>
       </h1>
 
       <div className='flex flex-col gap-6'>

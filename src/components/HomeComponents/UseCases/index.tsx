@@ -61,14 +61,14 @@ const UseCases = () => {
     <section className='pt-10 px-8 md:px-0'>
       <div className='container mx-auto'>
         <div className='text-center flex flex-col items-center gap-4'>
-          <p className='text-[var(--primary)] font-bold'>SOL-LIME Use Cases</p>
+          <p className='text-primary font-bold'>SOL-LIME Use Cases</p>
           <h1 className='text-foreground text-3xl md:text-4xl font-bold'>Navigate Web3 Easier and Faster, The Future of AI in Blockchain is Here</h1>
         </div>
 
         <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10 py-15'>
           {useCasesContent.map((item) => (
             <div key={item.title} className='flex flex-col justify-between gap-4 h-full text-center'>
-              <div className='w-14 h-14 text-[var(--primary)] mx-auto'>{item.icon}</div>
+              <div className='w-14 h-14 text-primary mx-auto'>{item.icon}</div>
               <h5 className='text-xl font-bold'>{item.title}</h5>
               <p className='mb-0 text-gray-400 text-sm'>{item.description}</p>
               <Link href={item.link.href} className='flex items-center justify-center gap-2 text-gray-500 text-sm font-bold'>

@@ -6,7 +6,7 @@ import Printer from '../Printer';
 
 import { useTheme } from 'next-themes';
 
-const btnBg = 'bg-linear-65 from-[var(--primary)] to-[var(--secondary)]';
+const btnBg = 'bg-linear-65 from-primary to-secondary';
 
 const Hero = () => {
   const { theme } = useTheme();
@@ -14,13 +14,13 @@ const Hero = () => {
   return (
     <section className='py-10 container mx-auto'>
       <div className='relative z-1 text-center'>
-        <p className='text-[var(--primary)]'>Best AI Chat Tools</p>
+        <p className='text-primary'>Best AI Chat Tools</p>
         <h1 className='my-8 text-4xl md:text-5xl font-bold leading-tight'>
           Providing You The Best <br />
           <Printer />
         </h1>
         <div>
-          <Link href='#' className={`${btnBg} mt-4 font-bold font-2xl px-6 py-4 rounded-xl text-[var(--background)]`}>
+          <Link href='#' className={`${btnBg} mt-4 font-bold font-2xl px-6 py-4 rounded-xl text-background`}>
             Follow Us Today
           </Link>
         </div>
@@ -36,7 +36,7 @@ const Hero = () => {
               alt=''
               width={1000}
               height={1000}
-              className='mt-12 w-full rounded-xl border border-[var(--divider)] shadow-lg overflow-hidden relative z-1'
+              className='mt-12 w-full rounded-xl border border-divider shadow-lg overflow-hidden relative z-1'
             />
           </div>
         </div>

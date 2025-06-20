@@ -74,8 +74,8 @@ const Features = () => {
               return (
                 <div key={item.title} className='col'>
                   <div className='flex flex-col lg:flex-row gap-6'>
-                    <div className='w-14 h-14 flex items-center justify-center rounded-2xl p-2 border border-[var(--divider)] bg-gradient-to-l from-[var(--card-bg)]/90 to-[var(--card-bg)]/50'>
-                      <h4 className='m-0 p-0 text-xl font-bold text-[var(--primary)]'>0{index + 1}</h4>
+                    <div className='w-14 h-14 flex items-center justify-center rounded-2xl p-2 border border-divider bg-gradient-to-l from-card-bg/90 to-card-bg/50'>
+                      <h4 className='m-0 p-0 text-xl font-bold text-primary'>0{index + 1}</h4>
                     </div>
                     <div className='flex flex-col gap-4 flex-1'>
                       <h4 className='text-2xl md:text-3xl font-bold'>{item.title}</h4>
@@ -88,7 +88,7 @@ const Features = () => {
           </div>
 
           <div className='text-center mt-12'>
-            <a href='#' className='bg-[var(--primary)] text-[var(--background)] px-6 py-4 rounded-lg inline-block'>
+            <a href='#' className='bg-primary text-background px-6 py-4 rounded-lg inline-block'>
               Try Now
             </a>
           </div>
@@ -99,9 +99,9 @@ const Features = () => {
         <div className='container mx-auto grid grid-cols-1 gap-8'>
           {featuresContent2?.map((item, index) => {
             return (
-              <div key={item.title} className={`bg-[var(--card-bg)] rounded-2xl p-6 flex flex-col md:flex-row gap-8`}>
+              <div key={item.title} className={`bg-card-bg rounded-2xl p-6 flex flex-col md:flex-row gap-8`}>
                 <div className='w-full md:1/2 flex flex-col gap-6'>
-                  <p className='text-[var(--primary)] font-bold md:text-xl'>Features {index + 1}</p>
+                  <p className='text-primary font-bold md:text-xl'>Features {index + 1}</p>
                   <h1 className='text-2xl md:text-4xl font-bold'>{item.title}</h1>
                   <p className='text-gray-500'>{item.description}</p>
                   <div className='flex flex-col gap-2 text-gray-500 text-sm'>
@@ -114,7 +114,7 @@ const Features = () => {
                       );
                     })}
                   </div>
-                  <Link href={item.link.href} className='flex font-bold items-center gap-3 text-[var(--primary)]'>
+                  <Link href={item.link.href} className='flex font-bold items-center gap-3 text-primary'>
                     <span>{item.link.text}</span>
                     <BsArrowUpRight />
                   </Link>
