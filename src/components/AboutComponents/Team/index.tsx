@@ -8,42 +8,42 @@ const teamContent = [
   {
     name: 'Toni Ulaisi',
     title: 'Founder',
-    image: '/images/team/1.png',
+    image: '/images/team/1.jpeg',
   },
   {
     name: 'Eric Dizon',
     title: 'Technical Designer',
-    image: '/images/team/2.png',
+    image: '/images/team/2.jpeg',
   },
   {
     name: 'Clara James',
     title: 'Technical Designer',
-    image: '/images/team/3.png',
+    image: '/images/team/3.jpeg',
   },
   {
     name: 'Holly Linenberger',
     title: 'Marketing Advisor',
-    image: '/images/team/4.png',
+    image: '/images/team/4.jpeg',
   },
   {
     name: 'Redur Rebwar',
     title: 'Product Designer',
-    image: '/images/team/5.png',
+    image: '/images/team/5.jpeg',
   },
   {
     name: 'Verdiana M.',
     title: 'Product Designer',
-    image: '/images/team/6.png',
+    image: '/images/team/6.jpeg',
   },
   {
     name: 'Sarim Akram',
     title: 'Marketing Manager',
-    image: '/images/team/7.png',
+    image: '/images/team/7.jpeg',
   },
   {
     name: 'Dion Yoo',
     title: 'Marketing Manager',
-    image: '/images/team/8.png',
+    image: '/images/team/8.jpeg',
   },
 ];
 
