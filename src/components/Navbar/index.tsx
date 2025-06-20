@@ -18,7 +18,7 @@ const navItems = [
   { label: 'Roadmap', href: '/roadmap' },
   { label: 'How To Use', href: '/how-to-use' },
   { label: 'Contact', href: '/contact' },
-  { label: 'Start', href: '#' },
+  { label: 'Start', href: '/chat' },
 ];
 
 const navItemVariants = {
@@ -65,19 +65,25 @@ const Navbar = () => {
                   whileHover={{ scale: 1.05 }}
                   transition={springs.soft}
                 >
-                  <Link
-                    className={`inline-block hover:text-primary transition-colors duration-300 w-full md:w-max ${
-                      item.label === 'Join Now'
-                        ? 'w-max border border-primary rounded-xl px-4 py-2 hover:bg-primary hover:text-background'
-                        : isActive(item.href)
-                        ? 'text-primary'
-                        : ''
-                    }`}
-                    href={item.href}
-                    onClick={() => setMobileMenuOpen(false)}
-                  >
-                    {item.label}
-                  </Link>
+                  {item.label !== 'Start' && (
+                    <Link
+                      className={`inline-block hover:text-primary transition-colors duration-300 w-full md:w-max ${isActive(item.href) ? 'text-primary' : ''}`}
+                      href={item.href}
+                      onClick={() => setMobileMenuOpen(false)}
+                    >
+                      {item.label}
+                    </Link>
+                  )}
+
+                  {item.label === 'Start' && (
+                    <Link
+                      className={`inline-block transition-colors duration-300 w-full md:w-max w-max border border-primary rounded-xl px-4 py-2 hover:bg-primary hover:text-background`}
+                      href={item.href}
+                      onClick={() => setMobileMenuOpen(false)}
+                    >
+                      {item.label}
+                    </Link>
+                  )}
                 </motion.div>
               ))}
             </div>

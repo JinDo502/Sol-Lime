@@ -64,3 +64,22 @@ h5,
 h6 {
   font-family: var(--font-montserrat);
 }
+
+
+.custom-button {
+  border: 1px solid var(--primary) !important;
+  padding: 0.5rem 1rem !important;
+  height: auto !important;
+  border-radius: 0.5rem !important;
+  color: var(--foreground) !important;
+  font-family: var(--font-montserrat) !important;
+  font-weight: 600 !important;  
+  &:hover {
+    color: var(--background) !important;
+    background-color: var(--primary) !important;
+  }
+  .ant-web3-address{
+    font-family: var(--font-montserrat) !important;
+    font-weight: 600 !important;
+  }
+}

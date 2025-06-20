@@ -1,6 +1,8 @@
 import dynamic from 'next/dynamic';
 import Hero from '@/components/HomeComponents/Hero';
 import type { Metadata } from 'next';
+import Navbar from '@/components/Navbar';
+import Footer from '@/components/Footer';
 
 // 懒加载非首屏组件
 const Features = dynamic(() => import('@/components/HomeComponents/Features'), {
@@ -57,15 +59,19 @@ export const metadata: Metadata = {
 
 export default function Home() {
   return (
-    <div className='w-screen'>
-      <Hero />
-      <Features />
-      <UseCases />
-      <AppUsers />
-      <Reviews />
-      <Pricing />
-      <FAQ />
-      <CTA />
-    </div>
+    <main>
+      <Navbar />
+      <div className='w-screen'>
+        <Hero />
+        <Features />
+        <UseCases />
+        <AppUsers />
+        <Reviews />
+        <Pricing />
+        <FAQ />
+        <CTA />
+      </div>
+      <Footer />
+    </main>
   );
 }

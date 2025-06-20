@@ -1,8 +1,6 @@
 import type { Metadata, Viewport } from 'next';
 import { Inter, Montserrat } from 'next/font/google';
 import './globals.css';
-import Navbar from '@/components/Navbar';
-import Footer from '@/components/Footer';
 import { ThemeProvider } from '@/components/theme-provider';
 
 const inter = Inter({
@@ -71,9 +69,7 @@ export default function RootLayout({ children }: RootLayoutProps) {
       </head>
       <body className={`${inter.variable} ${montserrat.variable} antialiased`}>
         <ThemeProvider attribute='class' defaultTheme='light' enableSystem disableTransitionOnChange>
-          <Navbar />
           {children}
-          <Footer />
         </ThemeProvider>
       </body>
     </html>
