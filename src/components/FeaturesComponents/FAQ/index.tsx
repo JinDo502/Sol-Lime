@@ -2,8 +2,6 @@
 
 import { useState } from 'react';
 import { AiOutlinePlus, AiOutlineMinus } from 'react-icons/ai';
-import { motion, AnimatePresence } from 'framer-motion';
-import { AnimateOnScroll } from '@/components/animations';
 
 const faqContent = [
   {
@@ -33,68 +31,42 @@ const faqContent = [
   },
 ];
 
-const FAQItem = ({ question, answer, index }: { question: string; answer: string; index: number }) => {
+const FAQItem = ({ question, answer }: { question: string; answer: string }) => {
   const [isOpen, setIsOpen] = useState(false);
 
   return (
-    <motion.div
-      className='cursor-pointer border border-[var(--divider)] border-opacity-10 rounded-lg p-4 hover:border-[var(--primary)] transition-all duration-300'
-      initial={{ opacity: 0, y: 20 }}
-      animate={{ opacity: 1, y: 0 }}
-      transition={{ duration: 0.5, delay: 0.1 * index }}
-      onClick={() => setIsOpen(!isOpen)}
-      whileHover={{ boxShadow: '0 10px 30px rgba(0, 0, 0, 0.05)', y: -5 }}
-    >
-      <motion.h2 className='flex items-center justify-between md:justify-start py-2 font-semibold gap-4' initial={{ opacity: 0.8 }} animate={{ opacity: 1 }}>
-        <motion.div
-          whileHover={{ rotate: isOpen ? -90 : 90 }}
-          animate={{ rotate: isOpen ? 180 : 0 }}
-          transition={{ duration: 0.3 }}
-          className='bg-[var(--primary)] text-[var(--background)] rounded-full p-1'
-        >
+    <div className='cursor-pointer border border-[var(--divider)] border-opacity-10 rounded-lg p-4 hover:border-[var(--primary)]' onClick={() => setIsOpen(!isOpen)}>
+      <h2 className='flex items-center justify-between md:justify-start py-2 font-semibold gap-4'>
+        <div className='bg-[var(--primary)] text-[var(--background)] rounded-full p-1'>
           {isOpen ? <AiOutlineMinus className='text-xl md:text-2xl' /> : <AiOutlinePlus className='text-xl md:text-2xl' />}
-        </motion.div>
+        </div>
         <span className='flex-1'>{question}</span>
-      </motion.h2>
+      </h2>
 
-      <AnimatePresence>
-        {isOpen && (
-          <motion.div
-            initial={{ height: 0, opacity: 0 }}
-            animate={{ height: 'auto', opacity: 1 }}
-            exit={{ height: 0, opacity: 0 }}
-            transition={{ duration: 0.3 }}
-            className='overflow-hidden'
-          >
-            <motion.div className='py-4 pl-10 text-gray-500' initial={{ y: -10 }} animate={{ y: 0 }} transition={{ duration: 0.2 }}>
-              {answer}
-            </motion.div>
-          </motion.div>
-        )}
-      </AnimatePresence>
-    </motion.div>
+      {isOpen && (
+        <div className='overflow-hidden'>
+          <div className='py-4 pl-10 text-gray-500'>{answer}</div>
+        </div>
+      )}
+    </div>
   );
 };
 
 const FAQ = () => {
   return (
     <section className='py-10 px-6 container mx-auto'>
-      <AnimateOnScroll animation='fadeIn'>
-        <motion.h1 className='mb-10 text-center text-3xl md:text-4xl font-bold' initial={{ opacity: 0, y: 30 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.7 }}>
-          <motion.span initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ duration: 0.5, delay: 0.3 }}>
-            Questions About our SOL-LIME ? <br />
-          </motion.span>
-          <motion.span initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.5, delay: 0.5 }} className='text-[var(--primary)]'>
-            We have Answers!
-          </motion.span>
-        </motion.h1>
-      </AnimateOnScroll>
+      <h1 className='mb-10 text-center text-3xl md:text-4xl font-bold'>
+        <span>
+          Questions About our SOL-LIME ? <br />
+        </span>
+        <span className='text-[var(--primary)]'>We have Answers!</span>
+      </h1>
 
-      <AnimateOnScroll animation='fadeIn' className='flex flex-col gap-6'>
-        {faqContent.map((item, index) => (
-          <FAQItem key={item.question} question={item.question} answer={item.answer} index={index} />
+      <div className='flex flex-col gap-6'>
+        {faqContent.map((item) => (
+          <FAQItem key={item.question} question={item.question} answer={item.answer} />
         ))}
-      </AnimateOnScroll>
+      </div>
     </section>
   );
 };

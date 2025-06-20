@@ -3,13 +3,6 @@
 import { useTheme } from 'next-themes';
 import { useEffect, useState } from 'react';
 import { BsMoon, BsSun } from 'react-icons/bs';
-import { motion } from 'framer-motion';
-
-const ANIMATION_CONFIG = {
-  DURATION: 0.8,
-  HOVER_DURATION: 0.3,
-};
-
 export default function ThemeModeButton() {
   const { theme, setTheme } = useTheme();
   const [mounted, setMounted] = useState(false);
@@ -53,18 +46,8 @@ export default function ThemeModeButton() {
   }
 
   return (
-    <motion.button
-      onClick={toggleTheme}
-      className='p-2 rounded-lg transition-colors hover:bg-foreground/10'
-      aria-label='Toggle theme'
-      initial={{ scale: 0 }}
-      animate={{ scale: 1 }}
-      whileHover={{ rotate: 360 }}
-      transition={{ duration: ANIMATION_CONFIG.DURATION }}
-    >
-      <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ duration: ANIMATION_CONFIG.DURATION }}>
-        {theme === 'dark' ? <BsSun className='w-5 h-5' /> : <BsMoon className='w-5 h-5' />}
-      </motion.div>
-    </motion.button>
+    <button onClick={toggleTheme} className='p-2 rounded-lg transition-colors hover:bg-foreground/10' aria-label='Toggle theme'>
+      <div>{theme === 'dark' ? <BsSun className='w-5 h-5' /> : <BsMoon className='w-5 h-5' />}</div>
+    </button>
   );
 }

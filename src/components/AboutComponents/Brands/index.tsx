@@ -1,7 +1,6 @@
 'use client';
 
 import Image from 'next/image';
-import { motion } from 'framer-motion';
 
 const brands = [
   { name: 'Brand 1', image: '/images/brands/1.png' },
@@ -22,17 +21,10 @@ const Brands = () => {
         </h4>
 
         <div className='flex flex-wrap justify-center md:flex-nowrap md:gap-10'>
-          {brands.map((brand, index) => (
-            <motion.div
-              key={brand.name}
-              className='w-1/3 py-1'
-              whileHover={{ scale: 1.1 }}
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5, delay: 0.8 + index * 0.1 }}
-            >
+          {brands.map((brand) => (
+            <div key={brand.name} className='w-1/3 py-1'>
               <Image src={brand.image} alt={brand.name} width={1000} height={1000} className='md:w-full md:h-auto' />
-            </motion.div>
+            </div>
           ))}
         </div>
       </div>

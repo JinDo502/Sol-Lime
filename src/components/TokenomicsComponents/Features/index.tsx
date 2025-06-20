@@ -4,8 +4,6 @@ import Link from 'next/link';
 import { Icon1, Icon2, Icon3 } from './Icon';
 import Image from 'next/image';
 import { BsArrowUpRight, BsCheck } from 'react-icons/bs';
-import { motion } from 'framer-motion';
-import { AnimateOnScroll } from '@/components/animations';
 
 const features = [
   {
@@ -85,58 +83,36 @@ const Features = () => {
         <div className='container mx-auto grid grid-cols-1 gap-8'>
           {features2?.map((item, index) => {
             return (
-              <AnimateOnScroll key={item.title} className={`bg-[var(--card-bg)] rounded-2xl p-6 flex flex-col md:flex-row gap-8`} animation='fadeIn' delay={index * 0.3}>
+              <div key={item.title} className={`bg-[var(--card-bg)] rounded-2xl p-6 flex flex-col md:flex-row gap-8`}>
                 <div className='w-full md:1/2 flex flex-col gap-6'>
-                  <motion.p
-                    className='text-[var(--primary)] font-bold md:text-xl'
-                    initial={{ opacity: 0, x: -20 }}
-                    animate={{ opacity: 1, x: 0 }}
-                    transition={{ delay: 0.2 + index * 0.3, duration: 0.5 }}
-                  >
-                    Features {index + 1}
-                  </motion.p>
-                  <motion.h1
-                    className='text-2xl md:text-4xl font-bold'
-                    initial={{ opacity: 0, x: -20 }}
-                    animate={{ opacity: 1, x: 0 }}
-                    transition={{ delay: 0.3 + index * 0.3, duration: 0.5 }}
-                  >
-                    {item.title}
-                  </motion.h1>
-                  <motion.p className='text-gray-500' initial={{ opacity: 0, x: -20 }} animate={{ opacity: 1, x: 0 }} transition={{ delay: 0.4 + index * 0.3, duration: 0.5 }}>
-                    {item.description}
-                  </motion.p>
+                  <p className='text-[var(--primary)] font-bold md:text-xl'>Features {index + 1}</p>
+                  <h1 className='text-2xl md:text-4xl font-bold'>{item.title}</h1>
+                  <p className='text-gray-500'>{item.description}</p>
                   <div className='flex flex-col gap-2 text-gray-500 text-sm'>
-                    {item.list?.map((listItem, listIndex) => {
+                    {item.list?.map((listItem) => {
                       return (
-                        <motion.div
-                          key={listItem}
-                          className='flex items-start gap-2'
-                          initial={{ opacity: 0, x: -20 }}
-                          animate={{ opacity: 1, x: 0 }}
-                          transition={{ delay: 0.5 + listIndex * 0.1 + index * 0.3, duration: 0.5 }}
-                        >
+                        <div key={listItem} className='flex items-start gap-2'>
                           <BsCheck className='text-xl' />
                           {listItem}
-                        </motion.div>
+                        </div>
                       );
                     })}
                   </div>
-                  <motion.div whileHover={{ x: 5 }} transition={{ duration: 0.2 }}>
+                  <div>
                     <Link href={item.url.href} className='flex font-bold items-center gap-3 text-[var(--primary)]'>
                       <span>{item.url.text}</span>
-                      <motion.div animate={{ x: [0, 5, 0] }} transition={{ duration: 1.5, repeat: Infinity }}>
+                      <div>
                         <BsArrowUpRight />
-                      </motion.div>
+                      </div>
                     </Link>
-                  </motion.div>
+                  </div>
                 </div>
                 <div className='w-full md:1/2 lg:w-1/3 flex justify-end'>
-                  <motion.div whileHover={{ scale: 1.05 }} transition={{ duration: 0.3 }}>
+                  <div>
                     <Image src={item.img} alt='' width={1000} height={1000} className='w-full' />
-                  </motion.div>
+                  </div>
                 </div>
-              </AnimateOnScroll>
+              </div>
             );
           })}
         </div>

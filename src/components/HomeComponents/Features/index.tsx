@@ -3,8 +3,6 @@
 import Image from 'next/image';
 import Link from 'next/link';
 import { BsArrowUpRight, BsCheck } from 'react-icons/bs';
-import { motion } from 'framer-motion';
-import { AnimateOnScroll, Pulse } from '@/components/animations';
 
 const featuresContent = [
   {
@@ -61,48 +59,38 @@ const Features = () => {
     <>
       <section className='relative overflow-hidden py-10 px-6'>
         <div className='absolute top-0 left-1/2 -translate-x-1/2 w-[1000px] z-[-1]'>
-          <motion.div initial={{ opacity: 0, scale: 0.8 }} animate={{ opacity: 1, scale: 1 }} transition={{ duration: 1 }}>
-            <Image src='/images/shapes/blurry-shape-3.svg' alt='' width={1000} height={1000} className='img-fluid' />
-          </motion.div>
+          <Image src='/images/shapes/blurry-shape-3.svg' alt='' width={1000} height={1000} className='img-fluid' />
         </div>
         <div className='container mx-auto'>
-          <AnimateOnScroll animation='fadeIn' className='text-center mb-18'>
+          <div className='text-center mb-18'>
             <h1 className=' mb-0 text-3xl md:text-4xl font-bold'>
               Seamlessly Navigate Web3 with AI, <br className='d-none d-lg-block' />
               Across Your Favorite Platforms
             </h1>
-          </AnimateOnScroll>
+          </div>
 
           <div className='grid grid-cols-1 lg:grid-cols-3 gap-8'>
             {featuresContent?.map((item, index) => {
               return (
-                <AnimateOnScroll key={item.title} className='col' animation='slideUp' delay={index * 0.2}>
+                <div key={item.title} className='col'>
                   <div className='flex flex-col lg:flex-row gap-6'>
-                    <motion.div
-                      className='w-14 h-14 flex items-center justify-center rounded-2xl p-2 border border-[var(--divider)] bg-gradient-to-l from-[var(--card-bg)]/90 to-[var(--card-bg)]/50'
-                      whileHover={{ scale: 1.1 }}
-                      initial={{ scale: 0.8 }}
-                      animate={{ scale: 1 }}
-                      transition={{ type: 'spring', stiffness: 260, damping: 20 }}
-                    >
+                    <div className='w-14 h-14 flex items-center justify-center rounded-2xl p-2 border border-[var(--divider)] bg-gradient-to-l from-[var(--card-bg)]/90 to-[var(--card-bg)]/50'>
                       <h4 className='m-0 p-0 text-xl font-bold text-[var(--primary)]'>0{index + 1}</h4>
-                    </motion.div>
+                    </div>
                     <div className='flex flex-col gap-4 flex-1'>
                       <h4 className='text-2xl md:text-3xl font-bold'>{item.title}</h4>
                       <p className='text-gray-500'>{item.description}</p>
                     </div>
                   </div>
-                </AnimateOnScroll>
+                </div>
               );
             })}
           </div>
 
           <div className='text-center mt-12'>
-            <Pulse>
-              <motion.a href='#' className='bg-[var(--primary)] text-[var(--background)] px-6 py-4 rounded-lg inline-block' whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
-                Try Now
-              </motion.a>
-            </Pulse>
+            <a href='#' className='bg-[var(--primary)] text-[var(--background)] px-6 py-4 rounded-lg inline-block'>
+              Try Now
+            </a>
           </div>
         </div>
       </section>
@@ -111,58 +99,30 @@ const Features = () => {
         <div className='container mx-auto grid grid-cols-1 gap-8'>
           {featuresContent2?.map((item, index) => {
             return (
-              <AnimateOnScroll key={item.title} className={`bg-[var(--card-bg)] rounded-2xl p-6 flex flex-col md:flex-row gap-8`} animation='fadeIn' delay={index * 0.3}>
+              <div key={item.title} className={`bg-[var(--card-bg)] rounded-2xl p-6 flex flex-col md:flex-row gap-8`}>
                 <div className='w-full md:1/2 flex flex-col gap-6'>
-                  <motion.p
-                    className='text-[var(--primary)] font-bold md:text-xl'
-                    initial={{ opacity: 0, x: -20 }}
-                    animate={{ opacity: 1, x: 0 }}
-                    transition={{ delay: 0.2 + index * 0.3, duration: 0.5 }}
-                  >
-                    Features {index + 1}
-                  </motion.p>
-                  <motion.h1
-                    className='text-2xl md:text-4xl font-bold'
-                    initial={{ opacity: 0, x: -20 }}
-                    animate={{ opacity: 1, x: 0 }}
-                    transition={{ delay: 0.3 + index * 0.3, duration: 0.5 }}
-                  >
-                    {item.title}
-                  </motion.h1>
-                  <motion.p className='text-gray-500' initial={{ opacity: 0, x: -20 }} animate={{ opacity: 1, x: 0 }} transition={{ delay: 0.4 + index * 0.3, duration: 0.5 }}>
-                    {item.description}
-                  </motion.p>
+                  <p className='text-[var(--primary)] font-bold md:text-xl'>Features {index + 1}</p>
+                  <h1 className='text-2xl md:text-4xl font-bold'>{item.title}</h1>
+                  <p className='text-gray-500'>{item.description}</p>
                   <div className='flex flex-col gap-2 text-gray-500 text-sm'>
-                    {item.list?.map((listItem, listIndex) => {
+                    {item.list?.map((listItem) => {
                       return (
-                        <motion.div
-                          key={listItem}
-                          className='flex items-start gap-2'
-                          initial={{ opacity: 0, x: -20 }}
-                          animate={{ opacity: 1, x: 0 }}
-                          transition={{ delay: 0.5 + listIndex * 0.1 + index * 0.3, duration: 0.5 }}
-                        >
+                        <div key={listItem} className='flex items-start gap-2'>
                           <BsCheck className='text-xl' />
                           {listItem}
-                        </motion.div>
+                        </div>
                       );
                     })}
                   </div>
-                  <motion.div whileHover={{ x: 5 }} transition={{ duration: 0.2 }}>
-                    <Link href={item.link.href} className='flex font-bold items-center gap-3 text-[var(--primary)]'>
-                      <span>{item.link.text}</span>
-                      <motion.div animate={{ x: [0, 5, 0] }} transition={{ duration: 1.5, repeat: Infinity }}>
-                        <BsArrowUpRight />
-                      </motion.div>
-                    </Link>
-                  </motion.div>
+                  <Link href={item.link.href} className='flex font-bold items-center gap-3 text-[var(--primary)]'>
+                    <span>{item.link.text}</span>
+                    <BsArrowUpRight />
+                  </Link>
                 </div>
                 <div className='w-full md:1/2 lg:w-1/3 flex justify-end'>
-                  <motion.div whileHover={{ scale: 1.05 }} transition={{ duration: 0.3 }}>
-                    <Image src={item.img} alt='' width={1000} height={1000} className='w-full' />
-                  </motion.div>
+                  <Image src={item.img} alt='' width={1000} height={1000} className='w-full' />
                 </div>
-              </AnimateOnScroll>
+              </div>
             );
           })}
         </div>

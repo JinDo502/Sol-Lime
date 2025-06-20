@@ -4,7 +4,6 @@ import './globals.css';
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
 import { ThemeProvider } from '@/components/theme-provider';
-import ClientProviders from '@/components/ClientProviders';
 
 const inter = Inter({ variable: '--font-inter', subsets: ['latin'] });
 
@@ -52,11 +51,9 @@ export default function RootLayout({ children }: RootLayoutProps) {
     <html lang='en' suppressHydrationWarning>
       <body className={`${inter.variable} ${montserrat.variable} antialiased`}>
         <ThemeProvider attribute='class' defaultTheme='light' enableSystem disableTransitionOnChange>
-          <ClientProviders>
-            <Navbar />
-            {children}
-            <Footer />
-          </ClientProviders>
+          <Navbar />
+          {children}
+          <Footer />
         </ThemeProvider>
       </body>
     </html>
