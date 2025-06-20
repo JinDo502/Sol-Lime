@@ -1,7 +1,5 @@
-'use client';
-
 import Image from 'next/image';
-import { useTheme } from 'next-themes';
+import ReviewLogos from '@/components/HomeComponents/ReviewLogos';
 
 const brands = [
   { name: 'Brand 1', image: '/images/brands/1.png' },
@@ -12,8 +10,6 @@ const brands = [
 ];
 
 const Hero = () => {
-  const { theme } = useTheme();
-
   return (
     <section className='relative bg-background py-10 px-6'>
       <div className='container mx-auto flex flex-col items-center'>
@@ -36,16 +32,7 @@ const Hero = () => {
               </div>
             </form>
 
-            <div className='flex gap-8 items-center justify-center px-8'>
-              <div className='w-1/2 md:w-55'>
-                {theme === 'dark' && <Image className='w-full' src={`/images/review-logos/trustpilot_reviews.svg`} alt='' width={1000} height={1000} />}
-                {theme === 'light' && <Image className='w-full' src={`/images/review-logos/trustpilot_reviews_2.svg`} alt='' width={1000} height={1000} />}
-              </div>
-              <div className='w-1/2 md:w-55'>
-                {theme === 'dark' && <Image className='w-full' src={`/images/review-logos/capterra_reviews.svg`} alt='' width={1000} height={1000} />}
-                {theme === 'light' && <Image className='w-full' src={`/images/review-logos/capterra_reviews_2.svg`} alt='' width={1000} height={1000} />}
-              </div>
-            </div>
+            <ReviewLogos />
           </div>
 
           <div className='relative w-full md:w-3/5'>
@@ -61,7 +48,14 @@ const Hero = () => {
             </div>
 
             <div className='z-1'>
-              <Image src='/images/shapes/blurry-shape-2.svg' alt='' width={1000} height={1000} className='absolute top-[-20rem] md:top-[-25rem] left-[-7rem] w-[500px] h-auto' />
+              <Image
+                src='/images/shapes/blurry-shape-2.svg'
+                alt=''
+                width={1000}
+                height={1000}
+                className='absolute top-[-20rem] md:top-[-25rem] left-[-7rem] w-[500px] h-auto'
+                priority
+              />
             </div>
           </div>
         </div>
@@ -76,7 +70,7 @@ const Hero = () => {
           <div className='flex flex-wrap justify-center md:flex-nowrap md:gap-10'>
             {brands.map((brand) => (
               <div key={brand.name} className='w-1/3 py-1'>
-                <Image src={brand.image} alt={brand.name} width={1000} height={1000} className='md:w-full md:h-auto' />
+                <Image src={brand.image} alt={brand.name} width={1000} height={1000} className='md:w-full md:h-auto' priority />
               </div>
             ))}
           </div>

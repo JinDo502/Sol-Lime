@@ -1,16 +1,11 @@
-'use client';
-
 import Image from 'next/image';
 import Link from 'next/link';
 import Printer from '../Printer';
-
-import { useTheme } from 'next-themes';
+import ReviewLogos from '@/components/HomeComponents/ReviewLogos';
 
 const btnBg = 'bg-linear-65 from-primary to-secondary';
 
 const Hero = () => {
-  const { theme } = useTheme();
-
   return (
     <section className='py-10 container mx-auto'>
       <div className='relative z-1 text-center'>
@@ -46,16 +41,7 @@ const Hero = () => {
         <li>Manage Your Assets</li>
         <li>As Good As ChatGPT</li>
       </ul>
-      <div className='flex gap-8 items-center justify-center px-8'>
-        <div className='w-1/2 md:w-55'>
-          {theme === 'dark' && <Image className='w-full' src={`/images/review-logos/trustpilot_reviews.svg`} alt='' width={1000} height={1000} />}
-          {theme === 'light' && <Image className='w-full' src={`/images/review-logos/trustpilot_reviews_2.svg`} alt='' width={1000} height={1000} />}
-        </div>
-        <div className='w-1/2 md:w-55'>
-          {theme === 'dark' && <Image className='w-full' src={`/images/review-logos/capterra_reviews.svg`} alt='' width={1000} height={1000} />}
-          {theme === 'light' && <Image className='w-full' src={`/images/review-logos/capterra_reviews_2.svg`} alt='' width={1000} height={1000} />}
-        </div>
-      </div>
+      <ReviewLogos />
     </section>
   );
 };

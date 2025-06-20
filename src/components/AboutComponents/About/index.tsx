@@ -1,11 +1,8 @@
-'use client';
-
 import Image from 'next/image';
 import Link from 'next/link';
-import { useTheme } from 'next-themes';
+import ReviewLogos from '@/components/HomeComponents/ReviewLogos';
 
 const About = () => {
-  const { theme } = useTheme();
   return (
     <section className='py-10 px-6 '>
       <div className='container mx-auto'>
@@ -19,20 +16,11 @@ const About = () => {
             </Link>
           </div>
           <div className='w-full md:w-3/5'>
-            <Image className='w-full mb-8 rounded-md' src='/images/screens/screen-4.png' alt='' width={1000} height={1000} />
+            <Image className='w-full rounded-md' src='/images/screens/screen-4.png' alt='' width={1000} height={1000} />
           </div>
         </div>
-        <hr className='border-t border-divider' />
-        <div className='flex gap-8 items-center justify-center mt-12 px-8'>
-          <div className='w-1/2 md:w-55'>
-            {theme === 'dark' && <Image className='w-full' src={`/images/review-logos/trustpilot_reviews.svg`} alt='' width={1000} height={1000} />}
-            {theme === 'light' && <Image className='w-full' src={`/images/review-logos/trustpilot_reviews_2.svg`} alt='' width={1000} height={1000} />}
-          </div>
-          <div className='w-1/2 md:w-55'>
-            {theme === 'dark' && <Image className='w-full' src={`/images/review-logos/capterra_reviews.svg`} alt='' width={1000} height={1000} />}
-            {theme === 'light' && <Image className='w-full' src={`/images/review-logos/capterra_reviews_2.svg`} alt='' width={1000} height={1000} />}
-          </div>
-        </div>
+        <hr className='border-t border-divider mb-8' />
+        <ReviewLogos />
       </div>
     </section>
   );
