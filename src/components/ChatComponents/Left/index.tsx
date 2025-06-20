@@ -35,7 +35,7 @@ const Left = () => {
   const { theme } = useTheme();
 
   return (
-    <div className='w-auto px-6 md:bg-card-bg flex items-center justify-between pr-15 md:pr-6 w-full md:w-max flex-row md:flex-col flex absolute md:relative'>
+    <div className='px-6 md:bg-card-bg flex items-center justify-between pr-0 w-[calc(100%-56px)] md:pr-6 md:w-max flex-row md:flex-col flex absolute md:relative'>
       {/* Logo */}
       <Link href='/' className='flex items-center my-4 md:border-b md:border-divider pb-4 gap-2'>
         <div className='h-10 w-10 md:h-14 md:w-14'>

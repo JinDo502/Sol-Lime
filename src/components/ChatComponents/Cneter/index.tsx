@@ -13,7 +13,7 @@ const Center = () => {
   return (
     <div className='md:flex-1 flex flex-col md:w-auto w-screen'>
       {/* Header */}
-      <div className='w-full p-4 flex justify-end z-10'>
+      <div className='w-full p-4 flex justify-end'>
         <ThemeModeButton />
       </div>
 
