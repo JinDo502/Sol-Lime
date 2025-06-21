@@ -7,7 +7,7 @@ const guide1 = [
   { title: 'Workflow', icon: <BsBezier /> },
 ];
 
-const guide2 = ['show my assets', "what's zkSync?", "what's BAYC?", 'Crypot influeecners on twitter', 'Linea testnet Interaction'];
+const guide2 = ['show my assets', "what's Solana?", "what's memecoin?", 'Crypot influeecners on twitter', 'Linea testnet Interaction'];
 
 const Center = () => {
   return (
