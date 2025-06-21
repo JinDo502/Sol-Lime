@@ -4,7 +4,7 @@ FROM node:20-alpine AS builder
 WORKDIR /app
 
 # 安装构建依赖
-RUN apk add --no-cache python3 make g++ gcc git openssl
+RUN apk add --no-cache python3 make g++ gcc git openssl linux-headers
 
 # 复制依赖文件
 COPY package*.json ./
