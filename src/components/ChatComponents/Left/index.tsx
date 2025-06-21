@@ -3,36 +3,37 @@
 import Image from 'next/image';
 import Link from 'next/link';
 import { BsPlusLg } from 'react-icons/bs';
-import { OKXWallet, SolanaWeb3ConfigProvider, WalletConnectWallet } from '@ant-design/web3-solana';
-import { ConnectButton, Connector } from '@ant-design/web3';
-import { ConfigProvider, theme as antdTheme } from 'antd';
-import { useTheme } from 'next-themes';
+// import { OKXWallet, SolanaWeb3ConfigProvider, WalletConnectWallet } from '@ant-design/web3-solana';
+// import { ConnectButton, Connector } from '@ant-design/web3';
+// import { ConfigProvider, theme as antdTheme } from 'antd';
+// import { useTheme } from 'next-themes';
+import { WalletMultiButton } from '@solana/wallet-adapter-react-ui';
 
-const customToken = {
-  dark: {
-    token: { colorPrimary: '#6C22A2', colorLink: '#6C22A2', colorLinkHover: '#6C22A2' },
-    components: {
-      Modal: {
-        contentBg: '#171825',
-        footerBg: '#171825',
-        headerBg: '#171825',
-      },
-    },
-  },
-  light: {
-    token: { colorPrimary: '#ba40ed', colorLink: '#ba40ed', colorLinkHover: '#ba40ed' },
-    components: {
-      Modal: {
-        contentBg: '#ffffff',
-        footerBg: '#ffffff',
-        headerBg: '#ffffff',
-      },
-    },
-  },
-};
+// const customToken = {
+//   dark: {
+//     token: { colorPrimary: '#6C22A2', colorLink: '#6C22A2', colorLinkHover: '#6C22A2' },
+//     components: {
+//       Modal: {
+//         contentBg: '#171825',
+//         footerBg: '#171825',
+//         headerBg: '#171825',
+//       },
+//     },
+//   },
+//   light: {
+//     token: { colorPrimary: '#ba40ed', colorLink: '#ba40ed', colorLinkHover: '#ba40ed' },
+//     components: {
+//       Modal: {
+//         contentBg: '#ffffff',
+//         footerBg: '#ffffff',
+//         headerBg: '#ffffff',
+//       },
+//     },
+//   },
+// };
 
 const Left = () => {
-  const { theme } = useTheme();
+  // const { theme } = useTheme();
 
   return (
     <div className='px-6 md:bg-card-bg flex items-center justify-between pr-0 w-[calc(100%-56px)] md:pr-6 md:w-max flex-row md:flex-col flex absolute md:relative'>
@@ -53,7 +54,7 @@ const Left = () => {
 
       {/* Wallt Btn */}
       <div className='mb-4'>
-        <ConfigProvider
+        {/* <ConfigProvider
           theme={{
             algorithm: theme === 'dark' ? antdTheme.darkAlgorithm : undefined,
             token: customToken[theme === 'dark' ? 'dark' : 'light']?.token,
@@ -71,7 +72,8 @@ const Left = () => {
               <ConnectButton size='small' className='custom-button w-full' />
             </Connector>
           </SolanaWeb3ConfigProvider>
-        </ConfigProvider>
+        </ConfigProvider> */}
+        <WalletMultiButton className='w-full' />
       </div>
     </div>
   );

@@ -2,6 +2,7 @@ import type { Metadata, Viewport } from 'next';
 import { Inter, Montserrat } from 'next/font/google';
 import './globals.css';
 import { ThemeProvider } from '@/components/theme-provider';
+import { SolanaProvider } from '@/components/Solana/SolanaProvider';
 
 const inter = Inter({
   variable: '--font-inter',
@@ -69,7 +70,7 @@ export default function RootLayout({ children }: RootLayoutProps) {
       </head>
       <body className={`${inter.variable} ${montserrat.variable} antialiased`}>
         <ThemeProvider attribute='class' defaultTheme='light' enableSystem disableTransitionOnChange>
-          {children}
+          <SolanaProvider>{children}</SolanaProvider>
         </ThemeProvider>
       </body>
     </html>

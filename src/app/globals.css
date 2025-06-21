@@ -66,20 +66,35 @@ h6 {
 }
 
 
-.custom-button {
-  border: 1px solid var(--primary) !important;
-  padding: 0.5rem 1rem !important;
-  height: auto !important;
-  border-radius: 0.5rem !important;
+.wallet-adapter-button-trigger {
   color: var(--foreground) !important;
+  border: 1px solid var(--primary) !important;
+  background-color: transparent !important;
   font-family: var(--font-montserrat) !important;
-  font-weight: 600 !important;  
+  border-radius: 0.5rem !important;
   &:hover {
     color: var(--background) !important;
     background-color: var(--primary) !important;
   }
-  .ant-web3-address{
-    font-family: var(--font-montserrat) !important;
-    font-weight: 600 !important;
+}
+
+.wallet-adapter-dropdown-list {
+  bottom: 100% !important;
+  left: 0 !important;
+  right: auto !important;
+  top: auto !important;
+  background: var(--card-bg) !important;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.5) !important;
+}
+
+.wallet-adapter-dropdown-list-item{
+  color: var(--foreground) !important;
+  &:hover{
+    background-color: var(--primary) !important;
+    color: var(--background) !important;
   }
+}
+
+.wallet-adapter-dropdown-list-active{
+  transform: translateY(-10px) !important;
 }
