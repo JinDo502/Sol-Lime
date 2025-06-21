@@ -3,7 +3,7 @@ import Center from '@/components/ChatComponents/Cneter';
 
 const Chat = () => {
   return (
-    <div className='w-screen h-screen box-border'>
+    <div className='w-dvw h-dvh box-border'>
       <div className='flex mx-auto h-full relative'>
         <Left />
         <Center />
