@@ -13,7 +13,7 @@ export const metadata: Metadata = {
     description: 'Understand SOLIME tokenomics, including token distribution, utility, staking rewards, governance, and how our token powers the Web3.0 AI social ecosystem.',
     url: 'https://solime.xyz/tokenomics',
     siteName: 'SOLIME',
-    images: [{ url: 'https://solime.xyz/screen-1.jpg', width: 1200, height: 630, alt: 'SOLIME - Web3.0 AI Social App' }],
+    images: [{ url: 'https://solime.xyz/images/screen-1.jpg', width: 1200, height: 630, alt: 'SOLIME - Web3.0 AI Social App' }],
     locale: 'en_US',
     type: 'website',
   },
@@ -21,7 +21,7 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     title: 'SOLIME Tokenomics - Token Distribution & Utility',
     description: 'Understand SOLIME tokenomics, including token distribution, utility, staking rewards, governance, and how our token powers the Web3.0 AI social ecosystem.',
-    images: ['https://solime.xyz/screen-1.jpg'],
+    images: ['https://solime.xyz/images/screen-1.jpg'],
     creator: '@SOLIME',
   },
 };

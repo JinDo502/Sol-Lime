@@ -34,7 +34,7 @@ export const metadata: Metadata = {
     description: 'An AI Social App As Good As ChatGPT - SOLIME is arrived.',
     url: 'https://SOLIME.xyz',
     siteName: 'SOLIME',
-    images: [{ url: 'https://solime.xyz/screen-1.jpg', width: 1200, height: 630, alt: 'SOLIME - Web3.0 AI Social App' }],
+    images: [{ url: 'https://solime.xyz/images/screen-1.jpg', width: 1200, height: 630, alt: 'SOLIME - Web3.0 AI Social App' }],
     locale: 'en_US',
     type: 'website',
   },
@@ -42,7 +42,7 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     title: 'SOLIME - Web3.0 AI Social App',
     description: 'An AI Social App As Good As ChatGPT - SOLIME is arrived.',
-    images: ['https://solime.xyz/screen-1.jpg'],
+    images: ['https://solime.xyz/images/screen-1.jpg'],
   },
   robots: {
     index: true,

@@ -26,7 +26,15 @@ export const SolanaProvider: FC<SolanaProviderProps> = ({ children }) => {
       new SolflareWalletAdapter(),
       new WalletConnectWalletAdapter({
         network: network,
-        options: { projectId: '18b068f4236bba0588d15a6236ec00e4' },
+        options: {
+          projectId: '18b068f4236bba0588d15a6236ec00e4',
+          metadata: {
+            name: 'Solime',
+            description: 'Solime',
+            url: 'https://solime.xyz',
+            icons: ['https://solime.xyz/images/logo.png'],
+          },
+        },
       }),
     ],
     [network]
