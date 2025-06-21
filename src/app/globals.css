@@ -1,4 +1,4 @@
-@import "tailwindcss";
+@import 'tailwindcss';
 
 ::view-transition-old(root),
 ::view-transition-new(root) {
@@ -22,7 +22,7 @@
   --primary: #ba40ed;
   --demitint: #708fc6;
   --secondary: #26dea0;
-  --divider: #e0e0e0; 
+  --divider: #e0e0e0;
   --card-bg: #f5f5f5;
 }
 
@@ -38,13 +38,12 @@
   --font-montserrat: var(--font-montserrat);
 }
 
-
 :root.dark {
   --background: #0a0a0a;
   --foreground: #ededed;
-  --primary: #6C22A2;  
-  --demitint: #263340; 
-  --secondary: #196648; 
+  --primary: #6c22a2;
+  --demitint: #263340;
+  --secondary: #196648;
   --divider: #2e2f45;
   --card-bg: #171825;
 }
@@ -65,13 +64,17 @@ h6 {
   font-family: var(--font-montserrat);
 }
 
-
 .wallet-adapter-button-trigger {
   color: var(--foreground) !important;
   border: 1px solid var(--primary) !important;
   background-color: transparent !important;
   font-family: var(--font-montserrat) !important;
   border-radius: 0.5rem !important;
+  height: max-content !important;
+  padding: 0.5rem 1rem !important;
+  left: 0 !important;
+  right: auto !important;
+  line-height: 1 !important;
   &:hover {
     color: var(--background) !important;
     background-color: var(--primary) !important;
@@ -79,22 +82,36 @@ h6 {
 }
 
 .wallet-adapter-dropdown-list {
-  bottom: 100% !important;
-  left: 0 !important;
-  right: auto !important;
-  top: auto !important;
   background: var(--card-bg) !important;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.5) !important;
 }
 
-.wallet-adapter-dropdown-list-item{
+.wallet-adapter-dropdown-list-item {
   color: var(--foreground) !important;
-  &:hover{
+  &:hover {
     background-color: var(--primary) !important;
     color: var(--background) !important;
   }
 }
 
-.wallet-adapter-dropdown-list-active{
-  transform: translateY(-10px) !important;
+.wallet-adapter-button-start-icon {
+  height: 20px !important;
+  width: 20px !important;
+}
+
+@media (min-width: 768px) {
+  .wallet-adapter-dropdown-list {
+    bottom: 100% !important;
+    left: 0 !important;
+    right: auto !important;
+    top: auto !important;
+  }
+
+  .wallet-adapter-dropdown-list-active {
+    transform: translateY(-10px) !important;
+  }
+  .wallet-adapter-button-start-icon {
+    height: 24px !important;
+    width: 24px !important;
+  }
 }
