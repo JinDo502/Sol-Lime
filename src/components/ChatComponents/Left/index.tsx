@@ -3,7 +3,10 @@
 import Image from 'next/image';
 import Link from 'next/link';
 import { BsPlusLg } from 'react-icons/bs';
-import { WalletMultiButton } from '@solana/wallet-adapter-react-ui';
+import dynamic from 'next/dynamic';
+
+// 动态导入WalletMultiButton组件，禁用SSR
+const WalletMultiButton = dynamic(async () => (await import('@solana/wallet-adapter-react-ui')).WalletMultiButton, { ssr: false });
 
 const Left = () => {
   return (

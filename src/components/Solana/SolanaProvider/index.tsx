@@ -6,7 +6,6 @@ import { WalletAdapterNetwork } from '@solana/wallet-adapter-base';
 import { WalletModalProvider } from '@solana/wallet-adapter-react-ui';
 import { clusterApiUrl } from '@solana/web3.js';
 import '@solana/wallet-adapter-react-ui/styles.css';
-import { PhantomWalletAdapter } from '@solana/wallet-adapter-phantom';
 import { SolflareWalletAdapter } from '@solana/wallet-adapter-solflare';
 import { WalletConnectWalletAdapter } from '@solana/wallet-adapter-wallets';
 
@@ -20,24 +19,31 @@ export const SolanaProvider: FC<SolanaProviderProps> = ({ children }) => {
   // You can also provide a custom RPC endpoint.
   const endpoint = useMemo(() => clusterApiUrl(network), [network]);
 
+  // 根据当前环境确定URL
+  const appUrl = useMemo(() => {
+    if (typeof window !== 'undefined') {
+      return window.location.origin;
+    }
+    return 'https://solime.xyz'; // 服务器端渲染时的默认值
+  }, []);
+
   const wallets = useMemo(
     () => [
-      new PhantomWalletAdapter(),
       new SolflareWalletAdapter(),
       new WalletConnectWalletAdapter({
         network: network,
         options: {
-          projectId: '18b068f4236bba0588d15a6236ec00e4',
+          projectId: '9c43d95019f023b93743bf332fbbbd5a',
           metadata: {
             name: 'Solime',
             description: 'Solime',
-            url: 'https://solime.xyz',
-            icons: ['https://solime.xyz/images/logo.png'],
+            url: appUrl,
+            icons: [`${appUrl}/images/logo.png`],
           },
         },
       }),
     ],
-    [network]
+    [network, appUrl]
   );
 
   return (
