@@ -34,7 +34,7 @@ export const SolanaProvider: FC<SolanaProviderProps> = ({ children }) => {
           projectId: '9c43d95019f023b93743bf332fbbbd5a',
           metadata: {
             name: 'Solime',
-            description: 'Solime',
+            description: 'SOLIME is a revolutionary Web3.0 AI social application that brings AI capabilities to social interactions on the Solana blockchain.',
             url: appUrl,
             icons: [`${appUrl}/images/logo.png`],
           },
