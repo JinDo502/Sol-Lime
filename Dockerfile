@@ -4,13 +4,13 @@ FROM node:20-alpine AS builder
 WORKDIR /app
 
 # 安装构建依赖
-RUN apk add --no-cache python3 make g++ gcc git openssl linux-headers
+RUN apk add --no-cache python3 make g++ gcc git openssl
 
 # 复制依赖文件
 COPY package*.json ./
 
 # 安装依赖
-RUN npm install
+RUN npm install --ignore-scripts
 
 # 复制源代码
 COPY . .
