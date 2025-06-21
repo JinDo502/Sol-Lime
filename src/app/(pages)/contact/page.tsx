@@ -12,7 +12,7 @@ export const metadata: Metadata = {
     description: 'Contact the SOLIME team for partnership opportunities, technical support, or general inquiries about our Web3.0 AI social platform on Solana.',
     url: 'https://solime.xyz/contact',
     siteName: 'SOLIME',
-    images: [{ url: 'https://solime.xyz/images/screen-1.jpg', width: 1200, height: 630, alt: 'SOLIME - Web3.0 AI Social App' }],
+    images: [{ url: 'https://solime.xyz/images/screens/chat_dark.jpg', width: 1200, height: 630, alt: 'SOLIME - Web3.0 AI Social App' }],
     locale: 'en_US',
     type: 'website',
   },
@@ -20,7 +20,7 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     title: 'Contact SOLIME - Get in Touch With Our Team',
     description: 'Contact the SOLIME team for partnership opportunities, technical support, or general inquiries about our Web3.0 AI social platform on Solana.',
-    images: ['https://solime.xyz/images/screen-1.jpg'],
+    images: ['https://solime.xyz/images/screens/chat_dark.jpg'],
     creator: '@SOLIME',
   },
 };

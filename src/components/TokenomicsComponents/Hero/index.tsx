@@ -1,11 +1,14 @@
 'use client';
 
+import dynamic from 'next/dynamic';
 import Image from 'next/image';
 import Link from 'next/link';
 import Printer from '../Printer';
 import ReviewLogos from '@/components/HomeComponents/ReviewLogos';
 import { motion } from 'framer-motion';
 import { AnimateIn, springs } from '@/animations';
+
+const Screen = dynamic(() => import('@/components/Screen'), { ssr: false });
 
 const btnBg = 'bg-linear-65 from-primary to-secondary';
 
@@ -36,13 +39,7 @@ const Hero = () => {
         </motion.div>
         <div>
           <motion.div whileHover={{ y: -10 }} transition={springs.soft}>
-            <Image
-              src='/images/screens/screen-1.jpg'
-              alt=''
-              width={1000}
-              height={1000}
-              className='mt-12 w-full rounded-xl border border-divider shadow-lg overflow-hidden relative z-1'
-            />
+            <Screen />
           </motion.div>
         </div>
       </motion.div>

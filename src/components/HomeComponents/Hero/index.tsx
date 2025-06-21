@@ -6,6 +6,7 @@ import ReviewLogos from '@/components/HomeComponents/ReviewLogos';
 import { motion } from 'framer-motion';
 import { AnimateIn, MotionContainer, fadeInUp, fadeInLeft, fadeInRight, springs } from '@/animations';
 import { getImageProps } from '@/utils/imageUtils';
+import dynamic from 'next/dynamic';
 
 const brands = [
   { name: 'Brand 1', image: '/images/brands/1.png' },
@@ -14,6 +15,8 @@ const brands = [
   { name: 'Brand 4', image: '/images/brands/4.png' },
   { name: 'Brand 5', image: '/images/brands/5.png' },
 ];
+
+const Screen = dynamic(() => import('@/components/Screen'), { ssr: false });
 
 const Hero = () => {
   return (
@@ -49,18 +52,7 @@ const Hero = () => {
 
           <motion.div className='relative w-full md:w-3/5' variants={fadeInRight}>
             <motion.div className='relative z-10' whileHover={{ scale: 1.02 }} transition={springs.soft}>
-              <Image
-                alt='SOLIME App Screenshot'
-                {...getImageProps({
-                  src: '/images/screens/screen-2.jpg',
-                  width: 800,
-                  height: 600,
-                  className: 'w-full object-cover border-1 border-divider rounded-md',
-                  priority: true,
-                  sizes: '(max-width: 768px) 100vw, 60vw',
-                  quality: 85,
-                })}
-              />
+              <Screen />
             </motion.div>
 
             <div className='z-1'>

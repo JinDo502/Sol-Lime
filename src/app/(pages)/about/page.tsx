@@ -16,7 +16,7 @@ export const metadata: Metadata = {
     description: 'Learn about SOLIME, our mission to revolutionize social interactions with AI on the blockchain, and meet the team behind this innovative Web3.0 project.',
     url: 'https://solime.xyz/about',
     siteName: 'SOLIME',
-    images: [{ url: 'https://solime.xyz/images/screen-1.jpg', width: 1200, height: 630, alt: 'SOLIME - Web3.0 AI Social App' }],
+    images: [{ url: 'https://solime.xyz/images/screens/chat_dark.jpg', width: 1200, height: 630, alt: 'SOLIME - Web3.0 AI Social App' }],
     locale: 'en_US',
     type: 'website',
   },
@@ -24,7 +24,7 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     title: 'About SOLIME - Our Mission and Team',
     description: 'Learn about SOLIME, our mission to revolutionize social interactions with AI on the blockchain, and meet the team behind this innovative Web3.0 project.',
-    images: ['https://solime.xyz/images/screen-1.jpg'],
+    images: ['https://solime.xyz/images/screens/chat_dark.jpg'],
     creator: '@SOLIME',
   },
 };

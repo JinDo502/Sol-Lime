@@ -1,10 +1,12 @@
 'use client';
 
-import Image from 'next/image';
 import Icon from './Icon';
 import Link from 'next/link';
 import { motion } from 'framer-motion';
 import { AnimateIn, fadeInLeft, fadeInRight, springs } from '@/animations';
+import dynamic from 'next/dynamic';
+
+const Screen = dynamic(() => import('@/components/Screen'), { ssr: false });
 
 const CTA = () => {
   return (
@@ -35,14 +37,7 @@ const CTA = () => {
               <Icon />
             </motion.div>
             <motion.div whileHover={{ scale: 1.03, rotate: 1 }} transition={springs.soft}>
-              <Image
-                src='/images/screens/screen-2.jpg'
-                width={500}
-                height={500}
-                alt=''
-                className='w-full h-auto object-cover rounded-2xl border border-divider border-opacity-10'
-                priority
-              />
+              <Screen />
             </motion.div>
           </motion.div>
         </motion.div>

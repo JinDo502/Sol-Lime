@@ -13,7 +13,7 @@ export const metadata: Metadata = {
     description: 'Learn how to use SOLIME with our comprehensive guides and tutorials. Get started with our Web3.0 AI social platform on Solana blockchain.',
     url: 'https://solime.xyz/how-to-use',
     siteName: 'SOLIME',
-    images: [{ url: 'https://solime.xyz/images/screen-1.jpg', width: 1200, height: 630, alt: 'SOLIME - Web3.0 AI Social App' }],
+    images: [{ url: 'https://solime.xyz/images/screens/chat_dark.jpg', width: 1200, height: 630, alt: 'SOLIME - Web3.0 AI Social App' }],
     locale: 'en_US',
     type: 'website',
   },
@@ -21,7 +21,7 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     title: 'How to Use SOLIME - User Guide & Tutorials',
     description: 'Learn how to use SOLIME with our comprehensive guides and tutorials. Get started with our Web3.0 AI social platform on Solana blockchain.',
-    images: ['https://solime.xyz/images/screen-1.jpg'],
+    images: ['https://solime.xyz/images/screens/chat_dark.jpg'],
     creator: '@SOLIME',
   },
 };

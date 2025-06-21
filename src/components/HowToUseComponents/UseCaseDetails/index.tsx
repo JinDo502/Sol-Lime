@@ -4,10 +4,12 @@ import Image from 'next/image';
 import { BsSend } from 'react-icons/bs';
 import { motion } from 'framer-motion';
 import { AnimateIn, MotionContainer, fadeInUp, springs } from '@/animations';
+import dynamic from 'next/dynamic';
+
+const Screen = dynamic(() => import('@/components/Screen'), { ssr: false });
 
 const steps = [
   {
-    image: '/images/screens/screen-1.jpg',
     title: 'Write Higher Converting Posts',
     description: [
       'Everyone has been there. Even the most seasoned and well-versed writers and content producers endure mental gaps. Nulla Lorem mollit cupidatat irure. Laborum magna nulla duis ullamco cillum dolor. Voluptate anyone exercitation incididunt aliquip deserunt reprehenderit elit laborum.  Aliqua id fugiat nostrud irure ex duis ea quis id quis ad et. Sunt qui esse pariatur duis deserunt mollit dolore cillum minim tempor enim. Elit aute irure tempor cupidatat incididunt.',
@@ -15,7 +17,6 @@ const steps = [
     ],
   },
   {
-    image: '/images/screens/screen-1.jpg',
     title: 'Start creating powerful content, for blog post',
     description: [
       'Everyone has been there. Even the most seasoned and well-versed writers and content producers endure mental gaps. Nulla Lorem mollit cupidatat irure. Laborum magna nulla duis ullamco cillum dolor. Voluptate anyone exercitation incididunt aliquip deserunt reprehenderit elit laborum.  Aliqua id fugiat nostrud irure ex duis ea quis id quis ad et. Sunt qui esse pariatur duis deserunt mollit dolore cillum minim tempor enim. Elit aute irure tempor cupidatat incididunt.',
@@ -23,7 +24,6 @@ const steps = [
     ],
   },
   {
-    image: '/images/screens/screen-1.jpg',
     title: 'Start creating powerful content, for blog post',
     description: [
       'Everyone has been there. Even the most seasoned and well-versed writers and content producers endure mental gaps. Nulla Lorem mollit cupidatat irure. Laborum magna nulla duis ullamco cillum dolor. Voluptate anyone exercitation incididunt aliquip deserunt reprehenderit elit laborum.  Aliqua id fugiat nostrud irure ex duis ea quis id quis ad et. Sunt qui esse pariatur duis deserunt mollit dolore cillum minim tempor enim. Elit aute irure tempor cupidatat incididunt.',
@@ -92,7 +92,7 @@ const UseCaseDetails = () => {
                 );
               })}
               <motion.div whileHover={{ scale: 1.02 }} transition={springs.soft}>
-                <Image src={step.image} alt='' className='rounded shadow-lg' width={1000} height={1000} />
+                <Screen />
               </motion.div>
             </motion.div>
           ))}

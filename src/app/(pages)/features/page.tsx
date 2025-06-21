@@ -13,7 +13,7 @@ export const metadata: Metadata = {
     description: 'Explore the innovative features of SOLIME, including AI-powered interactions, decentralized social networking, and blockchain rewards on the Solana network.',
     url: 'https://solime.xyz/features',
     siteName: 'SOLIME',
-    images: [{ url: 'https://solime.xyz/images/screen-1.jpg', width: 1200, height: 630, alt: 'SOLIME - Web3.0 AI Social App' }],
+    images: [{ url: 'https://solime.xyz/images/screens/chat_dark.jpg', width: 1200, height: 630, alt: 'SOLIME - Web3.0 AI Social App' }],
     locale: 'en_US',
     type: 'website',
   },
@@ -21,7 +21,7 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     title: 'SOLIME Features - AI-Powered Web3 Social Experience',
     description: 'Explore the innovative features of SOLIME, including AI-powered interactions, decentralized social networking, and blockchain rewards on the Solana network.',
-    images: ['https://solime.xyz/images/screen-1.jpg'],
+    images: ['https://solime.xyz/images/screens/chat_dark.jpg'],
     creator: '@SOLIME',
   },
 };
