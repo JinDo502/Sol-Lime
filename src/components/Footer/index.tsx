@@ -2,7 +2,7 @@
 
 import Image from 'next/image';
 import Link from 'next/link';
-import { BsDiscord, BsGithub, BsInstagram, BsSend, BsTelegram, BsTwitter } from 'react-icons/bs';
+import { BsSend, BsTwitter } from 'react-icons/bs';
 import { motion } from 'framer-motion';
 import { AnimateIn, MotionContainer, fadeInUp, springs, useScrollAnimation } from '@/animations';
 
@@ -22,13 +22,7 @@ const footerDocuments = [
   { label: 'Whitepaper', href: '#' },
 ];
 
-const socialLinks = [
-  { label: 'Github', href: '#', icon: <BsGithub /> },
-  { label: 'Discord', href: '#', icon: <BsDiscord /> },
-  { label: 'Telegram', href: '#', icon: <BsTelegram /> },
-  { label: 'Twitter', href: '#', icon: <BsTwitter /> },
-  { label: 'Instagram', href: '#', icon: <BsInstagram /> },
-];
+const socialLinks = [{ label: 'Twitter', href: 'https://x.com/SoLime_xyz', icon: <BsTwitter /> }];
 
 const footerBeforeClass = `before:no-repeat before:bg-cover before:bg-center before:z-[-1] before:blur-[100px] before:absolute before:inset-0 before:block before:w-full before:h-full before:bg-[url(/images/shapes/stripe-colored.svg)]`;
 

@@ -38,7 +38,7 @@ const features2 = [
     title: 'Join our IDO and get your $SLC!',
     description: 'We will be launching our IDO here at our official platform Please stay tuned for more information and updates.',
     list: ['Hard Cap: 270 ETH', '1 ETH = 1,851,851,851,851 $SLC', 'Whitelist Volume: 80ETH (Min: 0.1ETH, Max:1ETH)', 'Public IDO Volume: 190ETH (Min: 0.05ETH, Max:2ETH)'],
-    url: { text: 'Follow Twitter', href: '#' },
+    url: { text: 'Follow Twitter', href: 'https://x.com/SoLime_xyz' },
     img: '/images/illustrations/feature-illustration-2-dark.svg',
   },
   {

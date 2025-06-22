@@ -40,7 +40,7 @@ const featuresContent2 = [
   {
     title: 'A Revolutionary Tool to Simplify Your Web3 Interactions.',
     description: 'SOLIME enables you to navigate the web3 space seamlessly. Identify your blockchain needs and understand how SOLIME can streamline your experience.',
-    link: { text: 'Join Community For Updates', href: 'https://twitter.com/SOL-CHAT_eth' },
+    link: { text: 'Join Community For Updates', href: 'https://x.com/SoLime_xyz' },
     img: '/images/illustrations/feature-illustration-2-dark.svg',
   },
   {
