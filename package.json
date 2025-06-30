@@ -9,11 +9,13 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@google/generative-ai": "^0.24.1",
     "@solana/wallet-adapter-base": "^0.9.27",
     "@solana/wallet-adapter-react": "^0.15.39",
     "@solana/wallet-adapter-react-ui": "^0.9.35",
     "@solana/wallet-adapter-wallets": "^0.19.32",
     "@solana/web3.js": "^1.98.2",
+    "@types/uuid": "^10.0.0",
     "@walletconnect/solana-adapter": "^0.0.8",
     "critters": "^0.0.23",
     "motion": "^12.18.1",
@@ -23,7 +25,9 @@
     "react-dom": "^19.0.0",
     "react-icons": "^5.5.0",
     "react-intersection-observer": "^9.16.0",
-    "swiper": "^11.2.8"
+    "react-markdown": "^10.1.0",
+    "swiper": "^11.2.8",
+    "uuid": "^11.1.0"
   },
   "devDependencies": {
     "@eslint/eslintrc": "^3",

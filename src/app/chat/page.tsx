@@ -1,15 +1,7 @@
-import Left from '@/components/ChatComponents/Left';
-import Center from '@/components/ChatComponents/Cneter';
+import Center from '@/components/ChatComponents/Center';
 
 const Chat = () => {
-  return (
-    <div className='w-dvw h-dvh box-border'>
-      <div className='flex mx-auto h-full relative'>
-        <Left />
-        <Center />
-      </div>
-    </div>
-  );
+  return <Center />;
 };
 
 export default Chat;
