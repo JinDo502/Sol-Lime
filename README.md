@@ -55,13 +55,23 @@ SOLIME 通过 AI 驱动的聊天机器人提供无缝的 Web3 导航体验，帮
    npm install
    ```
 
-3. 运行开发服务器
+3. 设置环境变量
+
+   创建一个 `.env.local` 文件在项目根目录下，并添加以下内容：
+
+   ```
+   # Gemini API密钥
+   GEMINI_API_KEY=your_gemini_api_key_here
+   NEXT_PUBLIC_GEMINI_API_KEY=your_gemini_api_key_here
+   ```
+
+4. 运行开发服务器
 
    ```bash
    npm run dev
    ```
 
-4. 打开浏览器访问 [http://localhost:3000](http://localhost:3000)
+5. 打开浏览器访问 [http://localhost:3000](http://localhost:3000)
 
 ## 开发指南
 
@@ -97,13 +107,23 @@ npm run lint
 
 项目包含 Docker 和 Docker Compose 配置，可以轻松部署到任何支持 Docker 的环境。
 
-1. 构建并启动容器
+1. 创建环境变量文件
+
+   在项目根目录创建一个 `.env` 文件，包含以下内容：
+
+   ```
+   # Gemini API密钥
+   GEMINI_API_KEY=your_gemini_api_key_here
+   NEXT_PUBLIC_GEMINI_API_KEY=your_gemini_api_key_here
+   ```
+
+2. 构建并启动容器
 
    ```bash
    docker-compose up -d
    ```
 
-2. 应用将在 `https://yourdomain.com` 上可用
+3. 应用将在 `https://yourdomain.com` 上可用
 
 ### 配置说明
 
