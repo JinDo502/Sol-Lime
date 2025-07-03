@@ -43,6 +43,7 @@ RUN apk add --no-cache openssl
 # 设置为生产环境
 ENV NODE_ENV production
 ENV NEXT_TELEMETRY_DISABLED 1
+ENV PATH $PATH:/app/node_modules/.bin
 
 # 创建非root用户提高安全性
 RUN addgroup --system --gid 1001 nodejs \
@@ -51,6 +52,7 @@ RUN addgroup --system --gid 1001 nodejs \
 # 只复制必要的文件
 COPY --from=builder /app/public ./public
 COPY --from=builder /app/package.json ./package.json
+COPY --from=builder /app/node_modules ./node_modules
 COPY --from=builder --chown=nextjs:nodejs /app/.next ./.next
 COPY --from=builder /app/next.config.ts ./
 
