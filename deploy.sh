@@ -43,13 +43,13 @@ fi
 
 # 构建并启动Docker容器
 echo -e "${GREEN}构建并启动Docker容器...${NC}"
-docker-compose down
-docker-compose build --no-cache
-docker-compose up -d
+docker compose down
+docker compose build --no-cache
+docker compose up -d
 
 # 检查容器状态
 echo -e "${GREEN}检查容器状态...${NC}"
-docker-compose ps
+docker compose ps
 
 echo -e "${GREEN}部署完成!${NC}"
 echo "========================================"
