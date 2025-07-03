@@ -9,8 +9,8 @@ RUN apk add --no-cache python3 make g++ gcc git openssl
 # 只复制依赖相关文件，提高缓存利用率
 COPY package.json package-lock.json ./
 
-# 安装依赖
-RUN npm ci --only=production --ignore-scripts
+# 安装依赖 - 包括开发依赖
+RUN npm install --ignore-scripts
 
 # 构建阶段
 FROM node:20-alpine AS builder
